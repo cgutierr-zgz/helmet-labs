@@ -5,43 +5,92 @@
       "WhiteHouse", 
       "ABORDELOMKT",
       "Politico",
-      "theabordelomkt"
+      "theabordelomkt",
+      "axios",
+      "thehill"
     ],
     "geopolitics": [
       "TheStudyofWar",
       "IntelCrab",
       "RALee85",
-      "sentdefender"
+      "sentdefender",
+      "ISWResearch",
+      "KyivIndependent"
     ],
     "crypto": [
       "whale_alert",
       "DocumentingBTC",
       "tier10k",
-      "WatcherGuru"
+      "WatcherGuru",
+      "CoinDesk",
+      "cz_binance",
+      "michael_saylor"
     ],
     "econ": [
       "federalreserve",
       "WSJ",
       "markets",
-      "DeItaone"
+      "DeItaone",
+      "Bloomberg",
+      "YahooFinance",
+      "FedWatch",
+      "NickTimiraos"
     ],
     "breaking": [
       "BNONews",
       "disclosetv",
-      "unusual_whales"
+      "unusual_whales",
+      "FirstSquawk",
+      "zerohedge",
+      "LiveSquawk"
+    ],
+    "fed_specific": [
+      "federalreserve",
+      "NickTimiraos",
+      "JavierBlas",
+      "FedWatch",
+      "LizAnnSonders"
+    ],
+    "bloomberg_terminal": [
+      "DeItaone",
+      "Fxhedgers",
+      "FirstSquawk",
+      "LiveSquawk"
     ]
   },
   "rss_feeds": {
     "politics": [
       "https://feeds.reuters.com/Reuters/politicsNews",
-      "https://thehill.com/feed/"
+      "https://thehill.com/feed/",
+      "https://feeds.politico.com/political-news",
+      "https://feeds.washingtonpost.com/rss/politics"
     ],
     "world": [
       "https://feeds.reuters.com/Reuters/worldNews",
-      "https://feeds.bbci.co.uk/news/world/rss.xml"
+      "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "https://www.aljazeera.com/xml/rss/all.xml"
     ],
     "markets": [
-      "https://feeds.reuters.com/reuters/businessNews"
+      "https://feeds.reuters.com/reuters/businessNews",
+      "https://feeds.finance.yahoo.com/rss/2.0/headline",
+      "https://feeds.marketwatch.com/marketwatch/topstories/"
+    ],
+    "fed": [
+      "https://www.federalreserve.gov/feeds/press_all.xml",
+      "https://feeds.marketwatch.com/marketwatch/economy/"
+    ],
+    "crypto": [
+      "https://feeds.coindesk.com/coindesk/bitcoin",
+      "https://feeds.coindesk.com/coindesk/policy",
+      "https://cointelegraph.com/rss"
+    ],
+    "breaking": [
+      "https://feeds.reuters.com/reuters/breakingviews",
+      "https://feeds.bloomberg.com/politics/articles.rss"
+    ],
+    "ukraine": [
+      "https://kyivindependent.com/rss/",
+      "https://feeds.reuters.com/Reuters/worldNews"
     ]
   },
   "market_mappings": {
@@ -51,5 +100,15 @@
     "china": ["taiwan_invasion"],
     "btc": ["price_targets"],
     "gta": ["release_date", "price"]
+  },
+  "priority_sources": {
+    "high": [
+      "https://www.federalreserve.gov/feeds/press_all.xml",
+      "https://feeds.reuters.com/reuters/breakingviews"
+    ],
+    "medium": [
+      "https://feeds.politico.com/political-news",
+      "https://feeds.coindesk.com/coindesk/bitcoin"
+    ]
   }
 }
