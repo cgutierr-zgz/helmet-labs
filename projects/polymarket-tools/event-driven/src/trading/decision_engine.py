@@ -4,19 +4,20 @@ Autonomous Trading Decision Engine
 
 Makes intelligent trading decisions based on signals and portfolio state.
 Implements risk management rules and position sizing.
+Includes active trading exit strategy for profit taking and loss cutting.
 """
 import sys
 import os
 from dataclasses import dataclass
-from typing import Optional, Dict
-from datetime import datetime
+from typing import Optional, Dict, Tuple, List
+from datetime import datetime, timedelta
 import math
 
 # Add project root to path
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../..'))
 
 from src.models import Signal
-from .portfolio import PaperPortfolio, TradeRecord
+from .portfolio import PaperPortfolio, TradeRecord, Position
 
 
 @dataclass
@@ -40,6 +41,176 @@ class TradingDecision:
             'signal': self.signal.to_dict(),
             'timestamp': datetime.now().isoformat()
         }
+
+
+@dataclass
+class ExitDecision:
+    """Result of an exit strategy evaluation."""
+    should_exit: bool
+    reason: str
+    current_pnl_pct: float
+    days_held: float
+    market_id: str
+    
+    def to_dict(self) -> Dict:
+        """Convert to dictionary for serialization."""
+        return {
+            'should_exit': self.should_exit,
+            'reason': self.reason,
+            'current_pnl_pct': self.current_pnl_pct,
+            'days_held': self.days_held,
+            'market_id': self.market_id,
+            'timestamp': datetime.now().isoformat()
+        }
+
+
+class ExitStrategy:
+    """
+    Active trading exit strategy for profit taking and loss cutting.
+    
+    Rules:
+    - Take Profit: +10% → sell position
+    - Stop Loss: -7% → sell position  
+    - Time Limit: 7 days → close position
+    
+    This makes us active traders, not holders waiting for market resolution.
+    """
+    
+    TAKE_PROFIT_PCT = 0.10  # +10% → sell
+    STOP_LOSS_PCT = -0.07   # -7% → sell
+    MAX_HOLD_DAYS = 7       # 7 days max → close position
+    
+    @classmethod
+    def should_exit(cls, position: Position, current_price: float) -> Tuple[bool, str]:
+        """
+        Decide if we should close a position based on active trading rules.
+        
+        Args:
+            position: Current position to evaluate
+            current_price: Current market price (0-1)
+        
+        Returns:
+            Tuple of (should_exit: bool, reason: str)
+        """
+        entry_price = position.entry_price
+        days_held = position.age_hours / 24.0
+        
+        # Calculate P&L percentage
+        pnl_pct = (current_price - entry_price) / entry_price
+        
+        # For BUY_NO positions, invert the P&L calculation
+        # (we profit when price goes down)
+        if position.direction == "BUY_NO":
+            pnl_pct = -pnl_pct
+        
+        # Check exit conditions
+        if pnl_pct >= cls.TAKE_PROFIT_PCT:
+            return True, "take_profit"
+        
+        if pnl_pct <= cls.STOP_LOSS_PCT:
+            return True, "stop_loss"
+        
+        if days_held >= cls.MAX_HOLD_DAYS:
+            return True, "time_limit"
+        
+        return False, "hold"
+    
+    @classmethod
+    def evaluate_position(cls, position: Position, current_price: float) -> ExitDecision:
+        """
+        Comprehensive evaluation of a position for exit.
+        
+        Args:
+            position: Position to evaluate
+            current_price: Current market price
+        
+        Returns:
+            ExitDecision with complete analysis
+        """
+        should_exit, reason = cls.should_exit(position, current_price)
+        
+        # Calculate current P&L percentage
+        entry_price = position.entry_price
+        pnl_pct = (current_price - entry_price) / entry_price
+        
+        # Adjust for BUY_NO positions
+        if position.direction == "BUY_NO":
+            pnl_pct = -pnl_pct
+        
+        return ExitDecision(
+            should_exit=should_exit,
+            reason=reason,
+            current_pnl_pct=pnl_pct,
+            days_held=position.age_hours / 24.0,
+            market_id=position.market_id
+        )
+    
+    @classmethod
+    def evaluate_all_positions(
+        cls, 
+        portfolio: PaperPortfolio, 
+        current_prices: Dict[str, float]
+    ) -> List[ExitDecision]:
+        """
+        Evaluate all open positions for exit conditions.
+        
+        Args:
+            portfolio: Portfolio with open positions
+            current_prices: Dict of market_id -> current_price
+        
+        Returns:
+            List of ExitDecision objects for all positions
+        """
+        decisions = []
+        
+        for market_id, position in portfolio.positions.items():
+            # Use current price if available, otherwise use entry price
+            current_price = current_prices.get(market_id, position.entry_price)
+            
+            decision = cls.evaluate_position(position, current_price)
+            decisions.append(decision)
+        
+        return decisions
+    
+    @classmethod
+    def execute_exits(
+        cls,
+        portfolio: PaperPortfolio,
+        current_prices: Dict[str, float]
+    ) -> List[TradeRecord]:
+        """
+        Execute all positions that meet exit criteria.
+        
+        Args:
+            portfolio: Portfolio to modify
+            current_prices: Current market prices
+        
+        Returns:
+            List of TradeRecord objects for closed positions
+        """
+        closed_trades = []
+        
+        # Get exit decisions
+        exit_decisions = cls.evaluate_all_positions(portfolio, current_prices)
+        
+        # Execute exits
+        for decision in exit_decisions:
+            if decision.should_exit:
+                current_price = current_prices.get(
+                    decision.market_id, 
+                    portfolio.positions[decision.market_id].entry_price
+                )
+                
+                trade = portfolio.close_position(
+                    decision.market_id,
+                    current_price,
+                    decision.reason
+                )
+                
+                if trade:
+                    closed_trades.append(trade)
+        
+        return closed_trades
 
 
 class TradingDecisionEngine:
@@ -365,3 +536,119 @@ class TradingDecisionEngine:
         )
         
         return round(health_score, 3)
+    
+    def evaluate_active_exits(
+        self,
+        portfolio: PaperPortfolio,
+        current_prices: Dict[str, float]
+    ) -> List[ExitDecision]:
+        """
+        Evaluate all open positions for active trading exit conditions.
+        
+        This is the core of active trading - we don't wait for market resolution,
+        we take profits and cut losses based on price movements.
+        
+        Args:
+            portfolio: Portfolio with open positions
+            current_prices: Current market prices
+        
+        Returns:
+            List of ExitDecision objects for all positions
+        """
+        return ExitStrategy.evaluate_all_positions(portfolio, current_prices)
+    
+    def execute_active_exits(
+        self,
+        portfolio: PaperPortfolio,
+        current_prices: Dict[str, float]
+    ) -> List[TradeRecord]:
+        """
+        Execute exit strategy for all positions that meet criteria.
+        
+        This should be called on every scan/monitoring loop to implement
+        active trading behavior.
+        
+        Args:
+            portfolio: Portfolio to modify
+            current_prices: Current market prices
+        
+        Returns:
+            List of TradeRecord objects for closed positions
+        """
+        return ExitStrategy.execute_exits(portfolio, current_prices)
+    
+    def format_exit_log_message(self, trade: TradeRecord) -> str:
+        """
+        Format a trade closure into a readable log message.
+        
+        Args:
+            trade: Completed trade record
+        
+        Returns:
+            Formatted message for logging
+        """
+        # Calculate return percentage with sign
+        return_str = f"{trade.return_pct:+.1f}%"
+        
+        # Direction emoji
+        direction_emoji = "📈" if trade.direction == "BUY_YES" else "📉"
+        
+        # Result emoji
+        result_emoji = "✅" if trade.pnl > 0 else "❌" if trade.pnl < 0 else "➡️"
+        
+        # Reason translation
+        reason_map = {
+            "take_profit": "take_profit",
+            "stop_loss": "stop_loss", 
+            "time_limit": "time_limit",
+            "auto_close": "auto_close"
+        }
+        reason_display = reason_map.get(trade.reason, trade.reason)
+        
+        # Truncate market ID for display
+        market_display = trade.market_id[:25] + "..." if len(trade.market_id) > 25 else trade.market_id
+        
+        return f"Closed {direction_emoji} {market_display}: {return_str} ({reason_display})"
+    
+    def scan_and_execute_exits(
+        self,
+        portfolio: PaperPortfolio,
+        current_prices: Dict[str, float],
+        verbose: bool = True
+    ) -> Dict:
+        """
+        Complete active trading scan: evaluate and execute exits.
+        
+        This is the main method to call in monitoring loops for active trading.
+        
+        Args:
+            portfolio: Portfolio to scan
+            current_prices: Current market prices
+            verbose: Whether to return detailed information
+        
+        Returns:
+            Dict with scan results and executed trades
+        """
+        # Evaluate all positions
+        exit_decisions = self.evaluate_active_exits(portfolio, current_prices)
+        
+        # Execute exits
+        closed_trades = self.execute_active_exits(portfolio, current_prices)
+        
+        # Prepare results
+        result = {
+            'positions_evaluated': len(exit_decisions),
+            'positions_closed': len(closed_trades),
+            'total_pnl_from_exits': sum(trade.pnl for trade in closed_trades),
+            'exit_reasons': [trade.reason for trade in closed_trades],
+            'scan_timestamp': datetime.now().isoformat()
+        }
+        
+        if verbose:
+            result.update({
+                'exit_decisions': [decision.to_dict() for decision in exit_decisions],
+                'closed_trades': [trade.to_dict() for trade in closed_trades],
+                'log_messages': [self.format_exit_log_message(trade) for trade in closed_trades]
+            })
+        
+        return result

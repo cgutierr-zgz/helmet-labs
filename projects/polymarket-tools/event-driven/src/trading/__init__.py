@@ -23,7 +23,7 @@ Trading Rules:
 """
 
 from .portfolio import PaperPortfolio, Position, TradeRecord
-from .decision_engine import TradingDecisionEngine, TradingDecision
+from .decision_engine import TradingDecisionEngine, TradingDecision, ExitStrategy, ExitDecision
 from .tracker import TradingTracker
 from .reporter import ReportGenerator
 
@@ -33,6 +33,8 @@ __all__ = [
     'TradeRecord',
     'TradingDecisionEngine',
     'TradingDecision',
+    'ExitStrategy',
+    'ExitDecision',
     'TradingTracker',
     'ReportGenerator'
 ]

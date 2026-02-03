@@ -1,35 +1,24 @@
 {
-  "balance": 940.625,
+  "balance": 1008.75,
   "initial_balance": 1000.0,
-  "positions": {
-    "trump_wins_2024": {
-      "id": "8608134d-1f30-4385-8b65-eb1a463e58b2",
-      "market_id": "trump_wins_2024",
-      "direction": "BUY_YES",
-      "shares": 118.18181818181817,
-      "entry_price": 0.55,
-      "entry_time": "2026-02-03T18:42:13.838026",
-      "signal_id": "evt_election_poll_101",
-      "confidence": 0.8
-    }
-  },
+  "positions": {},
   "history": [
     {
-      "id": "f6fda706-e0c8-487d-a30e-77ff27b54ab8",
-      "market_id": "btc_100k_by_2024",
+      "id": "d09cffa1-a1f5-48cc-a326-5410b8bc313e",
+      "market_id": "demo_market_1",
       "direction": "BUY_YES",
       "shares": 125.0,
       "entry_price": 0.45,
-      "exit_price": 0.49500000000000005,
-      "entry_time": "2026-02-03T18:42:13.837850",
-      "exit_time": "2026-02-03T18:42:13.838133",
-      "signal_id": "evt_btc_breakout_123",
+      "exit_price": 0.52,
+      "entry_time": "2026-02-03T18:45:59.973173",
+      "exit_time": "2026-02-03T18:45:59.973410",
+      "signal_id": "demo_event_1",
       "confidence": 0.75,
-      "pnl": 5.625000000000007,
-      "return_pct": 0.10000000000000013,
-      "reason": "test_close"
+      "pnl": 8.75,
+      "return_pct": 0.15555555555555556,
+      "reason": "take_profit"
     }
   ],
-  "created_at": "2025-02-03T18:37:00",
-  "last_updated": "2026-02-03T18:42:13.838191"
+  "created_at": "2026-02-03T18:45:23+01:00",
+  "last_updated": "2026-02-03T18:45:59.973492"
 }
