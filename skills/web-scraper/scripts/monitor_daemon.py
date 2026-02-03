@@ -18,6 +18,7 @@ import asyncio
 import hashlib
 import json
 import logging
+import random
 import signal
 import sys
 import uuid
@@ -32,6 +33,8 @@ import aiohttp
 sys.path.insert(0, str(Path(__file__).parent))
 from browser_pool import BrowserPool
 from parsers import get_parser, ParsedItem
+from diff_engine import create_diff_engine
+from rate_limiter import RateLimiter, RetryHandler
 
 # === Paths ===
 SCRIPT_DIR = Path(__file__).parent
@@ -48,6 +51,19 @@ logging.basicConfig(
     stream=sys.stderr
 )
 logger = logging.getLogger(__name__)
+
+# === User-Agent Rotation ===
+USER_AGENTS = [
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0",
+]
+
+def get_random_user_agent() -> str:
+    """Get a random user agent for request rotation."""
+    return random.choice(USER_AGENTS)
 
 
 def load_json(path: Path, default: Any = None) -> Any:
@@ -100,6 +116,10 @@ class MonitorDaemon:
         self._shutdown = False
         self._domain_last_request: dict[str, float] = {}
         
+        # Initialize rate limiter and retry handler
+        self.rate_limiter = RateLimiter()
+        self.retry_handler: Optional[RetryHandler] = None
+        
         if verbose:
             logger.setLevel(logging.DEBUG)
     
@@ -108,7 +128,17 @@ class MonitorDaemon:
         data = load_json(self.sources_file, {'sources': [], 'config': {}})
         self.sources = data.get('sources', [])
         self.config = data.get('config', {})
+        
+        # Initialize retry handler from config
+        max_retries = self.config.get('max_retries', 3)
+        retry_base_delay = self.config.get('retry_base_delay_ms', 1000) / 1000
+        self.retry_handler = RetryHandler(max_retries=max_retries, base_delay=retry_base_delay)
+        
+        # Configure rate limiter from config
+        self.rate_limiter.default_delay = self.config.get('rate_limit_per_domain_ms', 2000) / 1000
+        
         logger.info(f"Loaded {len(self.sources)} sources from {self.sources_file.name}")
+        logger.debug(f"Rate limiter: {self.rate_limiter.default_delay}s per domain, max {max_retries} retries")
     
     def load_state(self) -> None:
         """Load monitor state from file."""
@@ -171,47 +201,81 @@ class MonitorDaemon:
         }
         return event
     
-    async def rate_limit_domain(self, domain: str) -> None:
-        """Wait if needed to respect domain rate limit."""
-        rate_limit_ms = self.config.get('rate_limit_per_domain_ms', 2000)
-        rate_limit_s = rate_limit_ms / 1000
-        
-        last_request = self._domain_last_request.get(domain, 0)
-        elapsed = asyncio.get_event_loop().time() - last_request
-        
-        if elapsed < rate_limit_s:
-            wait_time = rate_limit_s - elapsed
-            logger.debug(f"Rate limiting {domain}: waiting {wait_time:.1f}s")
-            await asyncio.sleep(wait_time)
-        
-        self._domain_last_request[domain] = asyncio.get_event_loop().time()
-    
     async def fetch_http(self, url: str, user_agent: Optional[str] = None) -> str:
-        """Fetch URL using aiohttp (no JS rendering)."""
+        """Fetch URL using aiohttp (no JS rendering) with rate limiting and retry."""
+        # Check if domain should be skipped
+        max_errors = self.config.get('max_consecutive_errors', 5)
+        if self.rate_limiter.should_skip(url, max_errors):
+            domain = self.rate_limiter._get_domain(url)
+            raise RuntimeError(f"Domain {domain} skipped due to too many consecutive errors")
+        
+        # Wait for rate limit
+        await self.rate_limiter.acquire(url)
+        
         timeout = aiohttp.ClientTimeout(
             total=self.config.get('request_timeout_ms', 15000) / 1000
         )
+        
+        # Use user-agent rotation if enabled
+        use_rotation = self.config.get('user_agent_rotation', True)
+        if use_rotation and not user_agent:
+            user_agent = get_random_user_agent()
+        
         headers = {
             'User-Agent': user_agent or 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) WebScraper/1.0'
         }
         
-        async with aiohttp.ClientSession(timeout=timeout) as session:
-            async with session.get(url, headers=headers) as response:
-                response.raise_for_status()
-                return await response.text()
+        async def _fetch():
+            async with aiohttp.ClientSession(timeout=timeout) as session:
+                async with session.get(url, headers=headers) as response:
+                    if response.status == 429:
+                        # Report 429 to rate limiter for aggressive backoff
+                        self.rate_limiter.report_error(url, 429)
+                        logger.warning(f"⚠️ HTTP 429 (Too Many Requests) for {url}")
+                    response.raise_for_status()
+                    return await response.text()
+        
+        try:
+            result = await self.retry_handler.execute(_fetch)
+            self.rate_limiter.report_success(url)
+            return result
+        except Exception as e:
+            error_count = self.rate_limiter.report_error(url)
+            logger.warning(f"⚠️ Fetch error for {url} ({error_count} consecutive errors)")
+            raise
     
     async def fetch_browser(self, url: str, selector: Optional[str] = None) -> str:
-        """Fetch URL using browser pool (with JS rendering)."""
+        """Fetch URL using browser pool (with JS rendering) with rate limiting and retry."""
         if not self.browser_pool:
             raise RuntimeError("Browser pool not initialized")
         
+        # Check if domain should be skipped
+        max_errors = self.config.get('max_consecutive_errors', 5)
+        if self.rate_limiter.should_skip(url, max_errors):
+            domain = self.rate_limiter._get_domain(url)
+            raise RuntimeError(f"Domain {domain} skipped due to too many consecutive errors")
+        
+        # Wait for rate limit
+        await self.rate_limiter.acquire(url)
+        
         timeout = self.config.get('request_timeout_ms', 15000) / 1000
-        return await self.browser_pool.get_content(
-            url, 
-            selector=selector,
-            timeout=timeout,
-            wait=2.0
-        )
+        
+        async def _fetch():
+            return await self.browser_pool.get_content(
+                url, 
+                selector=selector,
+                timeout=timeout,
+                wait=2.0
+            )
+        
+        try:
+            result = await self.retry_handler.execute(_fetch)
+            self.rate_limiter.report_success(url)
+            return result
+        except Exception as e:
+            error_count = self.rate_limiter.report_error(url)
+            logger.warning(f"⚠️ Browser fetch error for {url} ({error_count} consecutive errors)")
+            raise
     
     async def check_source(self, source: dict) -> list[dict]:
         """
@@ -227,13 +291,10 @@ class MonitorDaemon:
         logger.debug(f"Checking {source_id}...")
         
         try:
-            # Rate limit
-            await self.rate_limit_domain(domain)
-            
-            # Fetch content
+            # Fetch content (rate limiting is handled inside fetch methods)
             if source.get('needs_js', False):
-                selector = source.get('selector') if source_type == 'html' else None
-                content = await self.fetch_browser(url, selector)
+                # Don't pass selector to browser - let parser handle it
+                content = await self.fetch_browser(url, selector=None)
             else:
                 content = await self.fetch_http(url, source.get('user_agent'))
             
@@ -243,6 +304,7 @@ class MonitorDaemon:
             
             prev_state = self.state.get(source_id, {})
             prev_hash = prev_state.get('last_hash')
+            prev_content = prev_state.get('last_content', '')
             
             # Quick check: if hash unchanged, no new items
             if prev_hash == content_hash:
@@ -253,6 +315,28 @@ class MonitorDaemon:
                     'consecutive_errors': 0,
                 }
                 return []
+            
+            # Semantic diff: check if change is significant or just noise
+            diff_engine = create_diff_engine(source)
+            is_significant, change_ratio, diff_summary = diff_engine.is_significant_change(
+                prev_content, content
+            )
+            
+            if not is_significant and prev_content:
+                logger.info(f"🔇 {source_id}: Change ignored (noise only, {change_ratio:.1%})")
+                logger.debug(f"   Noise summary: {diff_summary}")
+                self.state[source_id] = {
+                    **prev_state,
+                    'last_check': now,
+                    'last_hash': content_hash,
+                    'last_content': content[:50000],  # Store truncated content for diff
+                    'consecutive_errors': 0,
+                }
+                return []
+            
+            if prev_content and is_significant:
+                logger.debug(f"📊 {source_id}: Significant change detected ({change_ratio:.1%})")
+                logger.debug(f"   Change summary: {diff_summary[:200]}")
             
             # Parse content into items
             parser = get_parser(source_type)
@@ -281,9 +365,10 @@ class MonitorDaemon:
                 if item.guid not in seen_guids:
                     new_items.append(item)
             
-            # Update state
+            # Update state (store truncated content for semantic diff)
             self.state[source_id] = {
                 'last_hash': content_hash,
+                'last_content': content[:50000],  # Truncate to 50KB to limit state file size
                 'last_check': now,
                 'consecutive_errors': 0,
                 'items_count': len(items),

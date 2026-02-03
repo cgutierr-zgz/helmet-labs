@@ -14,7 +14,8 @@
       "priority": 1,
       "needs_js": false,
       "user_agent": "TradingBot/1.0 (contact@example.com)",
-      "notes": "8-K filings: material events (mergers, acquisitions, earnings, leadership changes). ATOM feed. Requires custom User-Agent."
+      "diff_threshold": 0.05,
+      "notes": "8-K filings: material events (mergers, acquisitions, earnings, leadership changes). ATOM feed. Requires custom User-Agent. Low threshold (5%) due to high-value, infrequent changes."
     },
     {
       "id": "fed_all_releases",
@@ -67,46 +68,64 @@
       "name": "Treasury Press Releases",
       "url": "https://home.treasury.gov/news/press-releases",
       "type": "html",
-      "selector": "h3.featured-stories__headline a, div.news-title a",
+      "selector": ".mm-news-row",
+      "title_selector": ".news-title a",
+      "link_selector": ".news-title a",
+      "date_selector": "time.datetime",
       "interval_seconds": 180,
       "category": "government",
       "priority": 2,
       "needs_js": true,
-      "notes": "Sanctions, borrowing estimates, policy statements. HTML scraping with JS required. Selectors: h3.featured-stories__headline a"
+      "diff_threshold": 0.08,
+      "ignore_patterns": [
+        "Press Release \\d+-\\d+",
+        "Treasury\\.gov ID: \\d+"
+      ],
+      "notes": "Sanctions, borrowing estimates, policy statements. HTML scraping with JS required. Fixed selectors: .mm-news-row container, .news-title a for links"
     },
     {
       "id": "whitehouse_briefings",
       "name": "White House Briefings & Statements",
       "url": "https://www.whitehouse.gov/briefings-statements/",
       "type": "html",
-      "selector": "ul.wp-block-post-template li h2.wp-block-post-title a",
+      "selector": "li.wp-block-post",
+      "title_selector": "h2.wp-block-post-title a",
+      "link_selector": "h2.wp-block-post-title a",
+      "date_selector": ".wp-block-post-date time",
       "interval_seconds": 180,
       "category": "government",
       "priority": 2,
       "needs_js": true,
-      "notes": "Presidential statements, executive orders, policy announcements. WordPress site, needs JS rendering."
+      "notes": "Presidential statements, executive orders, policy announcements. WordPress site, needs JS rendering. Fixed selectors: li.wp-block-post container"
     },
     {
       "id": "ofac_recent_actions",
       "name": "OFAC Sanctions Recent Actions",
       "url": "https://ofac.treasury.gov/recent-actions",
       "type": "html",
-      "selector": ".view-content .views-row",
+      "selector": ".views-row",
+      "title_selector": ".font-sans-lg a",
+      "link_selector": ".font-sans-lg a",
+      "date_selector": ".font-sans-2xs",
       "interval_seconds": 300,
       "category": "sanctions",
       "priority": 1,
       "needs_js": true,
-      "notes": "New sanctions designations. Major impact on affected companies/countries. Drupal site."
+      "notes": "New sanctions designations. Major impact on affected companies/countries. Fixed selectors after RSS retirement (Jan 31, 2025). Requires JS rendering."
     }
   ],
   "config": {
     "default_interval_seconds": 120,
     "max_concurrent_requests": 3,
     "request_timeout_ms": 15000,
-    "retry_attempts": 2,
-    "retry_delay_ms": 5000,
+    "rate_limit_per_domain_ms": 2000,
+    "max_retries": 3,
+    "retry_base_delay_ms": 1000,
+    "max_consecutive_errors": 5,
+    "user_agent_rotation": true,
     "respect_robots_txt": true,
-    "rate_limit_per_domain_ms": 2000
+    "default_diff_threshold": 0.1,
+    "_diff_notes": "Semantic diff filters noise (timestamps, session IDs, counters, ads). Per-source: 'diff_threshold' (0.0-1.0, default 0.1=10% change), 'ignore_patterns' (custom regex list)."
   },
   "categories": {
     "corporate": "SEC filings, earnings, M&A",
