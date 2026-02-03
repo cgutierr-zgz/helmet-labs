@@ -1,209 +1,146 @@
 """
 Market mapping configuration for Polymarket.
 Maps keywords, entities, and categories to specific market slugs.
+UPDATED: 2026-02-03 with REAL Polymarket slugs
 """
 
 # Main market mapping: keyword/entity → list of Polymarket market slugs
 MARKET_MAPPING = {
-    # Trump-related markets
+    # Trump-related markets (REAL SLUGS)
     "trump": [
-        "will-trump-be-impeached-2025",
-        "trump-deportations-2025", 
-        "trump-tariffs-revenue",
-        "trump-approval-rating-2025"
+        "how-many-people-will-trump-deport-in-2025",
+        "will-trump-deport-750000-or-more-people-in-2025",
+        "trump-cabinet-member-out-by",
     ],
-    "donald trump": [
-        "will-trump-be-impeached-2025",
-        "trump-deportations-2025",
-        "trump-tariffs-revenue"
+    "deportation": [
+        "how-many-people-will-trump-deport-in-2025",
+        "will-trump-deport-750000-or-more-people-in-2025",
     ],
-    
-    # Federal Reserve / Monetary Policy
-    "fed": [
-        "fed-rate-cut-march-2025",
-        "inflation-above-3-percent",
-        "fed-rate-cut-december-2025"
+    "doge": [
+        "how-much-spending-will-elon-and-doge-cut-in-2025",
+        "will-elon-cut-the-budget-by-at-least-10-in-2025",
+        "will-elon-cut-the-budget-by-at-least-5-in-2025",
     ],
-    "federal reserve": [
-        "fed-rate-cut-march-2025",
-        "inflation-above-3-percent"
-    ],
-    "jerome powell": [
-        "fed-rate-cut-march-2025",
-        "inflation-above-3-percent"
-    ],
-    "fomc": [
-        "fed-rate-cut-march-2025",
-        "fed-rate-cut-december-2025"
-    ],
-    "interest rates": [
-        "fed-rate-cut-march-2025",
-        "fed-rate-cut-december-2025"
-    ],
-    "inflation": [
-        "inflation-above-3-percent"
+    "elon": [
+        "how-much-spending-will-elon-and-doge-cut-in-2025",
+        "will-elon-cut-the-budget-by-at-least-10-in-2025",
     ],
     
-    # Russia-Ukraine conflict
+    # Russia-Ukraine (REAL SLUGS)
     "russia": [
-        "russia-ukraine-ceasefire-2025",
-        "zelensky-president-end-2025",
-        "putin-president-end-2025"
+        "natoeu-troops-fighting-in-ukraine-in-2025",
+        "ukraine-recognizes-russian-sovereignty-over-ukrainian-territory-in-2025",
     ],
     "ukraine": [
-        "russia-ukraine-ceasefire-2025",
-        "zelensky-president-end-2025"
+        "natoeu-troops-fighting-in-ukraine-in-2025",
+        "ukraine-recognizes-russian-sovereignty-over-ukrainian-territory-in-2025",
+        "ukraine-election-called-in-2025",
+        "ukraine-election-held-in-2025",
     ],
-    "russia_ukraine": [
-        "russia-ukraine-ceasefire-2025",
-        "zelensky-president-end-2025"
-    ],
-    "zelensky": [
-        "zelensky-president-end-2025"
-    ],
-    "putin": [
-        "putin-president-end-2025"
+    "nato": [
+        "natoeu-troops-fighting-in-ukraine-in-2025",
+        "will-any-country-leave-nato-in-2025",
     ],
     
-    # Cryptocurrency
-    "btc": [
-        "btc-above-100k-2025",
-        "btc-above-150k-2025",
-        "btc-below-50k-2025"
+    # Crypto (REAL SLUGS)
+    "microstrategy": [
+        "microstrategy-sell-any-bitcoin-in-2025",
     ],
     "bitcoin": [
-        "btc-above-100k-2025",
-        "btc-above-150k-2025",
-        "btc-below-50k-2025"
+        "microstrategy-sell-any-bitcoin-in-2025",
     ],
-    "ethereum": [
-        "eth-above-5k-2025",
-        "eth-staking-rewards-2025"
+    "btc": [
+        "microstrategy-sell-any-bitcoin-in-2025",
     ],
-    "crypto": [
-        "btc-above-100k-2025",
-        "crypto-regulation-2025"
+    "kraken": [
+        "kraken-ipo-in-2025",
     ],
-    "sec": [
-        "crypto-regulation-2025",
-        "bitcoin-etf-approval"
+    "ipo": [
+        "kraken-ipo-in-2025",
     ],
     
-    # Gaming / Entertainment
+    # Gaming (REAL SLUGS)  
     "gta": [
-        "gta-6-release-2025",
-        "gta-6-price-above-100"
+        "will-gta-6-cost-100",
     ],
     "gta 6": [
-        "gta-6-release-2025", 
-        "gta-6-price-above-100"
-    ],
-    "grand theft auto": [
-        "gta-6-release-2025",
-        "gta-6-price-above-100"
-    ],
-    "rockstar": [
-        "gta-6-release-2025"
+        "will-gta-6-cost-100",
     ],
     
-    # Tech / AI
-    "openai": [
-        "openai-ipo-2025",
-        "gpt5-release-2025"
+    # European Politics (REAL SLUGS)
+    "macron": [
+        "macron-out-in-2025",
     ],
-    "chatgpt": [
-        "gpt5-release-2025"
+    "france": [
+        "macron-out-in-2025",
     ],
-    "nvidia": [
-        "nvidia-above-200-2025"
+    "starmer": [
+        "starmer-out-in-2025",
+    ],
+    "uk election": [
+        "uk-election-called-by",
     ],
     
-    # Elections / Politics
-    "biden": [
-        "biden-2024-election",
-        "biden-approval-rating"
+    # China (REAL SLUGS)
+    "china": [
+        "china-x-india-military-clash-by-december-31",
     ],
-    "election": [
-        "biden-2024-election",
-        "trump-2024-election"
-    ]
+    "india": [
+        "china-x-india-military-clash-by-december-31",
+    ],
 }
 
-# Category-based market mapping
+# Category mapping: category → list of market slugs
 CATEGORY_MAPPING = {
-    "fed": [
-        "fed-rate-cut-march-2025",
-        "inflation-above-3-percent",
-        "fed-rate-cut-december-2025"
-    ],
-    "crypto": [
-        "btc-above-100k-2025",
-        "btc-above-150k-2025",
-        "eth-above-5k-2025"
-    ],
-    "politics": [
-        "will-trump-be-impeached-2025",
-        "biden-approval-rating",
-        "election-2024-winner"
+    "politics_us": [
+        "how-many-people-will-trump-deport-in-2025",
+        "trump-cabinet-member-out-by",
+        "how-much-spending-will-elon-and-doge-cut-in-2025",
     ],
     "geopolitics": [
-        "russia-ukraine-ceasefire-2025",
-        "zelensky-president-end-2025",
-        "putin-president-end-2025"
+        "natoeu-troops-fighting-in-ukraine-in-2025",
+        "ukraine-recognizes-russian-sovereignty-over-ukrainian-territory-in-2025",
+        "china-x-india-military-clash-by-december-31",
+        "will-any-country-leave-nato-in-2025",
+    ],
+    "crypto": [
+        "microstrategy-sell-any-bitcoin-in-2025",
+        "kraken-ipo-in-2025",
     ],
     "entertainment": [
-        "gta-6-release-2025",
-        "gta-6-price-above-100"
+        "will-gta-6-cost-100",
     ],
-    "tech": [
-        "openai-ipo-2025",
-        "gpt5-release-2025",
-        "nvidia-above-200-2025"
-    ]
 }
 
-# Market direction hints based on event sentiment
+# Direction hints: market_slug → {"bullish_keywords": [], "bearish_keywords": []}
 MARKET_DIRECTION_HINTS = {
-    # FED markets - rate cuts generally bullish for markets, bearish for rate cut predictions
-    "fed-rate-cut-march-2025": {
-        "hawkish": "bearish",  # Less likely rate cut
-        "dovish": "bullish",   # More likely rate cut
-        "inflation": "bearish", # High inflation = less likely cut
-        "employment": "neutral"
+    "how-many-people-will-trump-deport-in-2025": {
+        "bullish_keywords": ["record", "mass", "surge", "increase", "accelerate"],
+        "bearish_keywords": ["slow", "halt", "court", "blocked", "delay"],
     },
-    "inflation-above-3-percent": {
-        "inflation": "bullish", # High inflation = bullish for this market
-        "cpi": "bullish",
-        "pce": "bullish"
+    "natoeu-troops-fighting-in-ukraine-in-2025": {
+        "bullish_keywords": ["troops", "deploy", "nato", "escalation", "intervention"],
+        "bearish_keywords": ["ceasefire", "peace", "negotiate", "withdraw"],
     },
-    
-    # Crypto markets
-    "btc-above-100k-2025": {
-        "bullish": "bullish",
-        "bearish": "bearish",
-        "adoption": "bullish",
-        "regulation": "bearish",
-        "etf": "bullish"
+    "macron-out-in-2025": {
+        "bullish_keywords": ["resign", "quit", "step down", "crisis", "vote of no confidence"],
+        "bearish_keywords": ["support", "stable", "coalition", "survive"],
     },
-    
-    # Gaming
-    "gta-6-release-2025": {
-        "delay": "bearish",
-        "development": "neutral",
-        "release": "bullish",
-        "trailer": "bullish"
-    }
+    "microstrategy-sell-any-bitcoin-in-2025": {
+        "bullish_keywords": ["sell", "liquidate", "forced", "margin call"],
+        "bearish_keywords": ["buy more", "hodl", "accumulate", "treasury"],
+    },
 }
 
-# Fuzzy matching configuration
-FUZZY_MATCH_THRESHOLD = 0.8
-MIN_RELEVANCE_SCORE = 0.1
+# Fuzzy match configuration
+FUZZY_MATCH_THRESHOLD = 0.6
+MIN_RELEVANCE_SCORE = 0.3
 
-# Market slug aliases for fuzzy matching
+# Aliases for common variations
 MARKET_ALIASES = {
-    "trump-impeachment": "will-trump-be-impeached-2025",
-    "bitcoin-100k": "btc-above-100k-2025",
-    "fed-rates": "fed-rate-cut-march-2025",
-    "ukraine-peace": "russia-ukraine-ceasefire-2025",
-    "gta6": "gta-6-release-2025"
+    "trump deportations": "how-many-people-will-trump-deport-in-2025",
+    "ukraine war": "natoeu-troops-fighting-in-ukraine-in-2025", 
+    "russia ukraine": "natoeu-troops-fighting-in-ukraine-in-2025",
+    "elon budget": "will-elon-cut-the-budget-by-at-least-10-in-2025",
+    "doge cuts": "how-much-spending-will-elon-and-doge-cut-in-2025",
 }

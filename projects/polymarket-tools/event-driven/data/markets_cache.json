@@ -1,0 +1,446 @@
+{
+  "timestamp": "2026-02-03T23:55:23.057957",
+  "markets": [
+    {
+      "slug": "microstrategy-sell-any-bitcoin-in-2025",
+      "question": "MicroStrategy sells any Bitcoin in 2025?",
+      "title": "MicroStrategy sells any Bitcoin by ___ ?",
+      "volume": 17976157.529867,
+      "active": true
+    },
+    {
+      "slug": "microstrategy-sells-any-bitcoin-by-december-31-2026",
+      "question": "MicroStrategy sells any Bitcoin by December 31, 2026?",
+      "title": "MicroStrategy sells any Bitcoin by ___ ?",
+      "volume": 201743.683981,
+      "active": true
+    },
+    {
+      "slug": "microstrategy-sells-any-bitcoin-by-march-31-2026",
+      "question": "MicroStrategy sells any Bitcoin by March 31, 2026?",
+      "title": "MicroStrategy sells any Bitcoin by ___ ?",
+      "volume": 1152563.527889,
+      "active": true
+    },
+    {
+      "slug": "microstrategy-sells-any-bitcoin-by-june-30-2026",
+      "question": "MicroStrategy sells any Bitcoin by June 30, 2026?",
+      "title": "MicroStrategy sells any Bitcoin by ___ ?",
+      "volume": 506667.1485,
+      "active": true
+    },
+    {
+      "slug": "kraken-ipo-in-2025",
+      "question": "Kraken IPO in 2025?",
+      "title": "Kraken IPO by ___ ?",
+      "volume": 494516.53254,
+      "active": true
+    },
+    {
+      "slug": "kraken-ipo-by-march-31-2026",
+      "question": "Kraken IPO by March 31, 2026?",
+      "title": "Kraken IPO by ___ ?",
+      "volume": 223682.430472,
+      "active": true
+    },
+    {
+      "slug": "kraken-ipo-by-december-31-2026",
+      "question": "Kraken IPO by December 31, 2026?",
+      "title": "Kraken IPO by ___ ?",
+      "volume": 132470.585056,
+      "active": true
+    },
+    {
+      "slug": "macron-out-in-2025-834",
+      "question": "Macron out in 2025?",
+      "title": "Macron out by...?",
+      "volume": 1386219.767204,
+      "active": true
+    },
+    {
+      "slug": "macron-out-by-june-30-2026-273",
+      "question": "Macron out by June 30, 2026?",
+      "title": "Macron out by...?",
+      "volume": 192181.337844,
+      "active": true
+    },
+    {
+      "slug": "macron-out-by-october-31-2025",
+      "question": "Macron out by October 31, 2025?",
+      "title": "Macron out by...?",
+      "volume": 205624.507422,
+      "active": true
+    },
+    {
+      "slug": "macron-out-in-2025",
+      "question": "Macron out by...?",
+      "title": "Macron out by...?",
+      "volume": 1784025.61247,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-less-than-250000",
+      "question": "Will Trump deport less than 250,000?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 1042280.992475,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-250000-500000-people",
+      "question": "Will Trump deport 250,000-500,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 1272379.773298,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-500000-750000-people",
+      "question": "Will Trump deport 500,000-750,000- people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 470551.933378,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-750000-1000000-people",
+      "question": "Will Trump deport 750,000-1,000,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 457114.974265,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-1000000-1250000-people",
+      "question": "Will Trump deport 1,000,000-1,250,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 446909.728923,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-1750000-2000000-people",
+      "question": "Will Trump deport 1,750,000-2,000,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 321285.180521,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-1250000-1500000-people",
+      "question": "Will Trump deport 1,250,000-1,500,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 363586.608067,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-1500000-1750000-people",
+      "question": "Will Trump deport 1,500,000-1,750,000 people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 386748.157724,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-2000000-or-more-people",
+      "question": "Will Trump deport 2,000,000 or more people?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 328834.111223,
+      "active": true
+    },
+    {
+      "slug": "how-many-people-will-trump-deport-in-2025",
+      "question": "How many people will Trump deport in 2025?",
+      "title": "How many people will Trump deport in 2025?",
+      "volume": 5089691.459874,
+      "active": true
+    },
+    {
+      "slug": "will-trump-deport-750000-or-more-people-in-2025",
+      "question": "Will Trump deport 750,000 or more people in 2025?",
+      "title": "Will Trump deport 750,000 or more people in 2025?",
+      "volume": 738465.374767,
+      "active": true
+    },
+    {
+      "slug": "will-the-next-uk-election-be-called-by-march-31",
+      "question": "Will the next UK election be called by March 31?",
+      "title": "UK election called by...?",
+      "volume": 577431.026465,
+      "active": true
+    },
+    {
+      "slug": "will-the-next-uk-election-is-called-by-december-31",
+      "question": "Will the next UK election be called by December 31?",
+      "title": "UK election called by...?",
+      "volume": 91962.29858,
+      "active": true
+    },
+    {
+      "slug": "will-the-next-uk-election-be-called-by-june-30",
+      "question": "Will the next UK election be called by June 30?",
+      "title": "UK election called by...?",
+      "volume": 56330.877836,
+      "active": true
+    },
+    {
+      "slug": "will-the-next-uk-election-is-called-by-june-30-2026",
+      "question": "Will the next UK election be called by June 30, 2026?",
+      "title": "UK election called by...?",
+      "volume": 2501.423491,
+      "active": true
+    },
+    {
+      "slug": "uk-election-called-by",
+      "question": "UK election called by...?",
+      "title": "UK election called by...?",
+      "volume": 728225.626372,
+      "active": true
+    },
+    {
+      "slug": "china-x-india-military-clash-by-december-31",
+      "question": "China x India military clash by December 31?",
+      "title": "China x India military clash by...?",
+      "volume": 73185.754279,
+      "active": true
+    },
+    {
+      "slug": "china-x-india-military-clash-by-june-30",
+      "question": "China x India military clash by June 30?",
+      "title": "China x India military clash by...?",
+      "volume": 37693.17445,
+      "active": true
+    },
+    {
+      "slug": "china-x-india-military-clash-by-december-31-2026",
+      "question": "China x India military clash by December 31, 2026?",
+      "title": "China x India military clash by...?",
+      "volume": 66193.759019,
+      "active": true
+    },
+    {
+      "slug": "natoeu-troops-fighting-in-ukraine-in-2025",
+      "question": "NATO/EU troops fighting in Ukraine in 2025?",
+      "title": "NATO/EU troops fighting in Ukraine by...?",
+      "volume": 170793.703881,
+      "active": true
+    },
+    {
+      "slug": "natoeu-troops-fighting-in-ukraine-in-june-30-2026",
+      "question": "NATO/EU troops fighting in Ukraine in June 30, 2026?",
+      "title": "NATO/EU troops fighting in Ukraine by...?",
+      "volume": 54623.614829,
+      "active": true
+    },
+    {
+      "slug": "starmer-out-in-2025",
+      "question": "Starmer out in 2025?",
+      "title": "Starmer out by...?",
+      "volume": 1321879.731075,
+      "active": true
+    },
+    {
+      "slug": "starmer-out-by-june-30-2026",
+      "question": "Starmer out by June 30, 2026?",
+      "title": "Starmer out by...?",
+      "volume": 238885.639004,
+      "active": true
+    },
+    {
+      "slug": "starmer-out-by-december-31-2026",
+      "question": "Starmer out by December 31, 2026?",
+      "title": "Starmer out by...?",
+      "volume": 105250.592197,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-more-than-250b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut more than $250b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 689398.407759,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-between-100-150b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut between $100-150b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 285836.534154,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-between-50-100b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut between $50-100b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 364135.379415,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-between-200-250b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut between $200-250b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 432593.128001,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-less-than-50b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut less than $50b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 336572.660439,
+      "active": true
+    },
+    {
+      "slug": "will-elon-and-doge-cut-between-150-200b-in-federal-spending-in-2025",
+      "question": "Will Elon and DOGE cut between $150-200b in federal spending in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 314965.713814,
+      "active": true
+    },
+    {
+      "slug": "how-much-spending-will-elon-and-doge-cut-in-2025",
+      "question": "How much spending will DOGE cut in 2025?",
+      "title": "How much spending will DOGE cut in 2025?",
+      "volume": 2423501.823582,
+      "active": true
+    },
+    {
+      "slug": "will-elon-cut-the-budget-by-at-least-10-in-2025",
+      "question": "Will Elon cut the budget by at least 10% in 2025?",
+      "title": "Will Elon cut the budget by at least 10% in 2025?",
+      "volume": 154862.96716,
+      "active": true
+    },
+    {
+      "slug": "will-elon-cut-the-budget-by-at-least-5-in-2025",
+      "question": "Will Elon cut the budget by at least 5% in 2025?",
+      "title": "Will Elon cut the budget by at least 5% in 2025?",
+      "volume": 172267.179351,
+      "active": true
+    },
+    {
+      "slug": "ukraine-recognizes-russian-sovereignty-over-ukrainian-territory-in-2025",
+      "question": "Ukraine recognizes Russian sovereignty over its territory by December 31, 2025?",
+      "title": "Ukraine recognizes Russian sovereignty over its territory by...?",
+      "volume": 2130098.430134,
+      "active": true
+    },
+    {
+      "slug": "ukraine-recognizes-russian-sovereignty-over-its-territory-by-june-30-2026",
+      "question": "Ukraine recognizes Russian sovereignty over its territory by June 30, 2026?",
+      "title": "Ukraine recognizes Russian sovereignty over its territory by...?",
+      "volume": 126832.666184,
+      "active": true
+    },
+    {
+      "slug": "ukraine-recognizes-russian-sovereignty-over-its-territory-by-december-31-2026",
+      "question": "Ukraine recognizes Russian sovereignty over its territory by December 31, 2026?",
+      "title": "Ukraine recognizes Russian sovereignty over its territory by...?",
+      "volume": 472.941137,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-called-in-2025",
+      "question": "Ukraine election called in 2025?",
+      "title": "Ukraine election called by...?",
+      "volume": 982716.694339,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-called-by-june-30-2026-392",
+      "question": "Ukraine election called by June 30, 2026?",
+      "title": "Ukraine election called by...?",
+      "volume": 91107.033508,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-called-by-march-31-2026",
+      "question": "Ukraine election called by March 31, 2026?",
+      "title": "Ukraine election called by...?",
+      "volume": 83466.566118,
+      "active": true
+    },
+    {
+      "slug": "will-any-country-leave-nato-in-2025",
+      "question": "Will any country leave NATO in 2025?",
+      "title": "Will any country leave NATO by...?",
+      "volume": 277041.272422,
+      "active": true
+    },
+    {
+      "slug": "will-any-country-leave-nato-by-june-30-2026",
+      "question": "Will any country leave NATO by June 30, 2026?",
+      "title": "Will any country leave NATO by...?",
+      "volume": 59717.899514,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-held-in-2025",
+      "question": "Ukraine election held by December 31, 2025?",
+      "title": "Ukraine election held by...?",
+      "volume": 1589428.067032,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-held-by-june-30-2026-465-757",
+      "question": "Ukraine election held by June 30, 2026?",
+      "title": "Ukraine election held by...?",
+      "volume": 147503.120147,
+      "active": true
+    },
+    {
+      "slug": "ukraine-election-held-by-december-31-2026-344-142",
+      "question": "Ukraine election held by December 31, 2026?",
+      "title": "Ukraine election held by...?",
+      "volume": 61855.944017,
+      "active": true
+    },
+    {
+      "slug": "trump-cabinet-member-out-in-2025",
+      "question": "Trump cabinet member out by December 31, 2025?",
+      "title": "Trump cabinet member out by...?",
+      "volume": 87972.734909,
+      "active": true
+    },
+    {
+      "slug": "trump-cabinet-member-out-by-june-30",
+      "question": "Trump cabinet member out by June 30, 2026?",
+      "title": "Trump cabinet member out by...?",
+      "volume": 2340.973929,
+      "active": true
+    },
+    {
+      "slug": "trump-cabinet-member-out-by-december-31-2026",
+      "question": "Trump cabinet member out by December 31, 2026?",
+      "title": "Trump cabinet member out by...?",
+      "volume": 7830.51388,
+      "active": true
+    },
+    {
+      "slug": "trump-cabinet-member-out-by-march-31",
+      "question": "Trump cabinet member out by March 31, 2026?",
+      "title": "Trump cabinet member out by...?",
+      "volume": 2757.295942,
+      "active": true
+    },
+    {
+      "slug": "trump-cabinet-member-out-by",
+      "question": "Trump cabinet member out by...?",
+      "title": "Trump cabinet member out by...?",
+      "volume": 100901.51866,
+      "active": true
+    },
+    {
+      "slug": "will-gta-6-cost-100",
+      "question": "Will GTA 6 cost $100+?",
+      "title": "Will GTA 6 cost $100+?",
+      "volume": 2535092.815844,
+      "active": true
+    },
+    {
+      "slug": "rojas-guilty-in-texas-illegal-abortion-case",
+      "question": "Rojas guilty in Texas illegal abortion case?",
+      "title": "Rojas guilty in Texas illegal abortion case?",
+      "volume": 18754.538697,
+      "active": true
+    },
+    {
+      "slug": "senator-eichorn-guilty-of-soliciting-a-child",
+      "question": "Senator Eichorn guilty of soliciting a child?",
+      "title": "Senator Eichorn guilty of soliciting a child?",
+      "volume": 17384.881692,
+      "active": true
+    }
+  ]
+}

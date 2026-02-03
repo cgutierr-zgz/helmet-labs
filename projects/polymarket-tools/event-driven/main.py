@@ -36,7 +36,7 @@ from src.fetchers.polymarket import fetch_market_prices
 from src.processors.classifier import classify_event, update_event_with_classification
 from src.processors.scorer import calculate_urgency_score
 from src.processors.dedup import is_duplicate, generate_alert_id
-from src.intelligence.mapper import MarketMapper
+from src.intelligence.dynamic_mapper import DynamicMarketMapper as MarketMapper
 from src.intelligence.signals import process_event_to_signals, filter_signals
 from src.outputs.telegram import TelegramAlertManager, format_alert
 from src.models import Event, ScanState
