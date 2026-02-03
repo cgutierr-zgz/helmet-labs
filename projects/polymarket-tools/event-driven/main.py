@@ -31,6 +31,7 @@ logger = logging.getLogger(__name__)
 # Import all components
 from src.fetchers.rss import scan_rss_feeds
 from src.fetchers.twitter import scan_twitter_accounts
+from src.fetchers.web_scraper import scan_web_scraper
 from src.fetchers.polymarket import fetch_market_prices
 from src.processors.classifier import classify_event, update_event_with_classification
 from src.processors.scorer import calculate_urgency_score
@@ -55,6 +56,7 @@ class PipelineStats:
         self.start_time = datetime.now()
         self.rss_events = 0
         self.twitter_events = 0
+        self.web_scraper_events = 0
         self.classified_events = 0
         self.scored_events = 0
         self.deduplicated_events = 0
@@ -77,7 +79,8 @@ class PipelineStats:
             'events_fetched': {
                 'rss': self.rss_events,
                 'twitter': self.twitter_events,
-                'total': self.rss_events + self.twitter_events
+                'web_scraper': self.web_scraper_events,
+                'total': self.rss_events + self.twitter_events + self.web_scraper_events
             },
             'events_processed': {
                 'classified': self.classified_events,
@@ -180,6 +183,20 @@ class EventPipeline:
         except Exception as e:
             self.stats.add_error("twitter_fetch", str(e))
             logger.warning(f"⚠️  Twitter fetch failed: {str(e)}, continuing with RSS only")
+        
+        # Fetch Web Scraper events (from OpenClaw web-scraper skill)
+        try:
+            logger.info("🌐 Fetching web scraper events...")
+            scraper_events = scan_web_scraper()
+            all_events.extend(scraper_events)
+            # Track web scraper events in stats (add to twitter for simplicity or create new field)
+            if not hasattr(self.stats, 'web_scraper_events'):
+                self.stats.web_scraper_events = 0
+            self.stats.web_scraper_events = len(scraper_events)
+            logger.info(f"   Found {len(scraper_events)} potential events from web scraper")
+        except Exception as e:
+            self.stats.add_error("web_scraper_fetch", str(e))
+            logger.warning(f"⚠️  Web scraper fetch failed: {str(e)}, continuing without scraper events")
         
         logger.info(f"✅ Step 1 complete: {len(all_events)} total events fetched")
         return all_events

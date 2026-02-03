@@ -5,6 +5,8 @@ Monitor Daemon - Async daemon that monitors multiple URLs for changes.
 Watches sources defined in sources.json, detects changes, and emits events
 compatible with the trading bot event system.
 
+Events are now granular: 1 event per item (not per feed).
+
 Usage:
     python monitor_daemon.py --once    # Single check cycle (for testing)
     python monitor_daemon.py           # Run continuously
@@ -26,9 +28,10 @@ from urllib.parse import urlparse
 
 import aiohttp
 
-# Add parent dir to import browser_pool
+# Add parent dir to import browser_pool and parsers
 sys.path.insert(0, str(Path(__file__).parent))
 from browser_pool import BrowserPool
+from parsers import get_parser, ParsedItem
 
 # === Paths ===
 SCRIPT_DIR = Path(__file__).parent
@@ -68,32 +71,6 @@ def compute_hash(content: str) -> str:
     return hashlib.md5(content.encode('utf-8')).hexdigest()
 
 
-def extract_title(content: str, source: dict) -> str:
-    """Extract title from content for event."""
-    # For RSS/Atom, try to find first title tag
-    if source.get('type') in ('rss', 'atom'):
-        import re
-        match = re.search(r'<title[^>]*>([^<]+)</title>', content, re.IGNORECASE)
-        if match:
-            return match.group(1).strip()[:200]
-    
-    # For HTML, try first heading or first line
-    import re
-    match = re.search(r'<h[1-3][^>]*>([^<]+)</h[1-3]>', content, re.IGNORECASE)
-    if match:
-        return match.group(1).strip()[:200]
-    
-    # Fallback: first non-empty line
-    for line in content.split('\n'):
-        line = line.strip()
-        # Remove HTML tags
-        clean = re.sub(r'<[^>]+>', '', line).strip()
-        if clean and len(clean) > 5:
-            return clean[:200]
-    
-    return f"Update from {source.get('name', source['id'])}"
-
-
 def get_domain(url: str) -> str:
     """Extract domain from URL for rate limiting."""
     return urlparse(url).netloc
@@ -108,7 +85,8 @@ class MonitorDaemon:
     - Per-domain rate limiting
     - Browser pool for JS-rendered pages
     - State persistence for change detection
-    - Event emission for detected changes
+    - Per-item event generation (granular events)
+    - GUID-based deduplication
     """
     
     def __init__(self, sources_file: Path = SOURCES_FILE, verbose: bool = False):
@@ -152,22 +130,45 @@ class MonitorDaemon:
         save_json(EVENTS_FILE, self.events)
         logger.debug(f"Saved {len(self.events)} events")
     
-    def add_event(self, source: dict, content: str, change_type: str) -> dict:
-        """Create and add a new event."""
+    def get_seen_guids(self, source_id: str) -> set[str]:
+        """Get set of previously seen GUIDs for a source."""
+        source_state = self.state.get(source_id, {})
+        return set(source_state.get('seen_guids', []))
+    
+    def update_seen_guids(self, source_id: str, guids: set[str], max_guids: int = 500) -> None:
+        """
+        Update seen GUIDs for a source.
+        
+        Keeps only the most recent max_guids to prevent unbounded growth.
+        """
+        if source_id not in self.state:
+            self.state[source_id] = {}
+        
+        # Convert to list and truncate if needed
+        guid_list = list(guids)
+        if len(guid_list) > max_guids:
+            guid_list = guid_list[-max_guids:]  # Keep most recent
+        
+        self.state[source_id]['seen_guids'] = guid_list
+    
+    def create_event(self, source: dict, item: ParsedItem, change_type: str = 'new_item') -> dict:
+        """Create a single event from a parsed item."""
         event = {
             'id': str(uuid.uuid4()),
             'source': 'web_scraper',
             'source_id': source['id'],
             'source_url': source['url'],
-            'title': extract_title(content, source),
-            'content': content[:5000] if change_type == 'new_content' else f"Content modified ({len(content)} bytes)",
+            'title': item.title,
+            'link': item.link,
+            'content': item.content[:5000] if item.content else "",
             'detected_at': datetime.now(timezone.utc).isoformat(),
+            'published_at': item.published_at,
             'category': source.get('category', 'unknown'),
+            'item_category': item.category,
             'priority': source.get('priority', 5),
-            'change_type': change_type
+            'change_type': change_type,
+            'guid': item.guid,
         }
-        self.events.append(event)
-        logger.info(f"📢 Event: [{change_type}] {source['id']} - {event['title'][:60]}")
         return event
     
     async def rate_limit_domain(self, domain: str) -> None:
@@ -212,13 +213,14 @@ class MonitorDaemon:
             wait=2.0
         )
     
-    async def check_source(self, source: dict) -> Optional[dict]:
+    async def check_source(self, source: dict) -> list[dict]:
         """
-        Check a single source for changes.
+        Check a single source for new items.
         
-        Returns event dict if change detected, None otherwise.
+        Returns list of events for new items (one event per new item).
         """
         source_id = source['id']
+        source_type = source.get('type', 'html')
         url = source['url']
         domain = get_domain(url)
         
@@ -230,41 +232,87 @@ class MonitorDaemon:
             
             # Fetch content
             if source.get('needs_js', False):
-                selector = source.get('selector') if source.get('type') == 'html' else None
+                selector = source.get('selector') if source_type == 'html' else None
                 content = await self.fetch_browser(url, selector)
             else:
                 content = await self.fetch_http(url, source.get('user_agent'))
             
-            # Compute hash
-            content_hash = compute_hash(content)
+            # Update basic state
             now = datetime.now(timezone.utc).isoformat()
+            content_hash = compute_hash(content)
             
-            # Get previous state
             prev_state = self.state.get(source_id, {})
             prev_hash = prev_state.get('last_hash')
+            
+            # Quick check: if hash unchanged, no new items
+            if prev_hash == content_hash:
+                logger.debug(f"✓ {source_id}: No change (hash match)")
+                self.state[source_id] = {
+                    **prev_state,
+                    'last_check': now,
+                    'consecutive_errors': 0,
+                }
+                return []
+            
+            # Parse content into items
+            parser = get_parser(source_type)
+            items = parser.parse(content, source)
+            
+            if not items:
+                logger.warning(f"⚠️ {source_id}: No items parsed from content")
+                self.state[source_id] = {
+                    **prev_state,
+                    'last_check': now,
+                    'last_hash': content_hash,
+                    'consecutive_errors': 0,
+                }
+                return []
+            
+            # Get previously seen GUIDs
+            seen_guids = self.get_seen_guids(source_id)
+            is_first_run = len(seen_guids) == 0 and prev_hash is None
+            
+            # Find new items
+            new_items = []
+            current_guids = set()
+            
+            for item in items:
+                current_guids.add(item.guid)
+                if item.guid not in seen_guids:
+                    new_items.append(item)
             
             # Update state
             self.state[source_id] = {
                 'last_hash': content_hash,
                 'last_check': now,
-                'last_content': content[:10000],  # Keep truncated for diff
-                'consecutive_errors': 0
+                'consecutive_errors': 0,
+                'items_count': len(items),
+                'seen_guids': list(seen_guids.union(current_guids)),
             }
             
-            # Detect change
-            if prev_hash is None:
-                # First time - this is new content
-                logger.info(f"✅ {source_id}: First check ({len(content)} bytes)")
-                return self.add_event(source, content, 'new_content')
+            # Truncate seen_guids to prevent unbounded growth
+            if len(self.state[source_id]['seen_guids']) > 500:
+                self.state[source_id]['seen_guids'] = self.state[source_id]['seen_guids'][-500:]
             
-            if content_hash != prev_hash:
-                # Content changed
-                logger.info(f"🔄 {source_id}: Content changed!")
-                return self.add_event(source, content, 'modified')
+            # On first run, don't generate events (just record current state)
+            if is_first_run:
+                logger.info(f"🆕 {source_id}: First run - recorded {len(items)} items (no events)")
+                return []
             
-            # No change
-            logger.debug(f"✓ {source_id}: No change")
-            return None
+            # Generate events for new items
+            events = []
+            for item in new_items:
+                event = self.create_event(source, item, 'new_item')
+                events.append(event)
+                self.events.append(event)
+                logger.info(f"📢 [new_item] {source_id}: {item.title[:60]}")
+            
+            if new_items:
+                logger.info(f"✅ {source_id}: {len(new_items)} new items of {len(items)} total")
+            else:
+                logger.debug(f"✓ {source_id}: {len(items)} items, none new")
+            
+            return events
             
         except Exception as e:
             # Track consecutive errors
@@ -279,7 +327,7 @@ class MonitorDaemon:
             }
             
             logger.warning(f"⚠️ {source_id}: Error ({errors}x): {e}")
-            return None
+            return []
     
     async def run_cycle(self) -> list[dict]:
         """
@@ -296,7 +344,7 @@ class MonitorDaemon:
         # Check if we need browser pool
         needs_browser = any(s.get('needs_js', False) for s in self.sources)
         
-        events = []
+        all_events = []
         max_concurrent = self.config.get('max_concurrent_requests', 3)
         semaphore = asyncio.Semaphore(max_concurrent)
         
@@ -316,8 +364,8 @@ class MonitorDaemon:
         
         # Collect events
         for result in results:
-            if isinstance(result, dict):
-                events.append(result)
+            if isinstance(result, list):
+                all_events.extend(result)
             elif isinstance(result, Exception):
                 logger.error(f"Task exception: {result}")
         
@@ -325,7 +373,7 @@ class MonitorDaemon:
         self.save_state()
         self.save_events()
         
-        return events
+        return all_events
     
     async def run_forever(self) -> None:
         """Run the daemon continuously until shutdown signal."""
@@ -350,9 +398,9 @@ class MonitorDaemon:
             try:
                 events = await self.run_cycle()
                 if events:
-                    logger.info(f"🎯 Cycle complete: {len(events)} events detected")
+                    logger.info(f"🎯 Cycle complete: {len(events)} new item events")
                 else:
-                    logger.info("✓ Cycle complete: no changes")
+                    logger.info("✓ Cycle complete: no new items")
                 
                 # Wait for next cycle
                 if not self._shutdown:
@@ -386,12 +434,12 @@ async def main():
     if args.once:
         logger.info("🔄 Running single check cycle...")
         events = await daemon.run_cycle()
-        print(f"\n{'='*50}")
-        print(f"📊 Results: {len(events)} events detected")
+        print(f"\n{'='*60}")
+        print(f"📊 Results: {len(events)} new item events")
         if events:
             for e in events:
                 print(f"  • [{e['change_type']}] {e['source_id']}: {e['title'][:60]}")
-        print(f"{'='*50}")
+        print(f"{'='*60}")
     else:
         await daemon.run_forever()
 

@@ -152,8 +152,8 @@ class Event:
         if not self.title:
             errors.append("Event title is required")
         
-        if not self.source or self.source not in ['rss', 'twitter']:
-            errors.append("Valid source (rss/twitter) is required")
+        if not self.source or self.source not in ['rss', 'twitter', 'web_scraper']:
+            errors.append("Valid source (rss/twitter/web_scraper) is required")
         
         if not (1 <= self.urgency_score <= 10):
             errors.append("Urgency score must be between 1-10")
