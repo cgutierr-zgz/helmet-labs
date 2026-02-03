@@ -1,0 +1,118 @@
+{
+  "sources": [
+    {
+      "id": "sec_8k_filings",
+      "name": "SEC 8-K Filings (Material Events)",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcurrent&type=8-K&count=40&output=atom",
+      "type": "atom",
+      "selector": "entry",
+      "title_selector": "title",
+      "link_selector": "link[rel='alternate']",
+      "date_selector": "updated",
+      "interval_seconds": 60,
+      "category": "corporate",
+      "priority": 1,
+      "needs_js": false,
+      "user_agent": "TradingBot/1.0 (contact@example.com)",
+      "notes": "8-K filings: material events (mergers, acquisitions, earnings, leadership changes). ATOM feed. Requires custom User-Agent."
+    },
+    {
+      "id": "fed_all_releases",
+      "name": "Federal Reserve - All Press Releases",
+      "url": "https://www.federalreserve.gov/feeds/press_all.xml",
+      "type": "rss",
+      "selector": "item",
+      "title_selector": "title",
+      "link_selector": "link",
+      "date_selector": "pubDate",
+      "category_selector": "category",
+      "interval_seconds": 120,
+      "category": "monetary",
+      "priority": 1,
+      "needs_js": false,
+      "notes": "All Fed releases: FOMC statements, rate decisions, banking orders, enforcement. RSS feed works directly."
+    },
+    {
+      "id": "fed_monetary_policy",
+      "name": "Federal Reserve - Monetary Policy Only",
+      "url": "https://www.federalreserve.gov/feeds/press_monetary.xml",
+      "type": "rss",
+      "selector": "item",
+      "title_selector": "title",
+      "link_selector": "link",
+      "date_selector": "pubDate",
+      "interval_seconds": 300,
+      "category": "monetary",
+      "priority": 1,
+      "needs_js": false,
+      "notes": "FOMC statements, rate decisions, discount rate minutes. High-impact market movers."
+    },
+    {
+      "id": "fda_press_announcements",
+      "name": "FDA Press Announcements",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "type": "rss",
+      "selector": "item",
+      "title_selector": "title",
+      "link_selector": "link",
+      "date_selector": "pubDate",
+      "interval_seconds": 120,
+      "category": "regulatory",
+      "priority": 1,
+      "needs_js": false,
+      "notes": "Drug approvals, recalls, safety alerts. Major impact on pharma stocks. RSS feed works directly."
+    },
+    {
+      "id": "treasury_press_releases",
+      "name": "Treasury Press Releases",
+      "url": "https://home.treasury.gov/news/press-releases",
+      "type": "html",
+      "selector": "h3.featured-stories__headline a, div.news-title a",
+      "interval_seconds": 180,
+      "category": "government",
+      "priority": 2,
+      "needs_js": true,
+      "notes": "Sanctions, borrowing estimates, policy statements. HTML scraping with JS required. Selectors: h3.featured-stories__headline a"
+    },
+    {
+      "id": "whitehouse_briefings",
+      "name": "White House Briefings & Statements",
+      "url": "https://www.whitehouse.gov/briefings-statements/",
+      "type": "html",
+      "selector": "ul.wp-block-post-template li h2.wp-block-post-title a",
+      "interval_seconds": 180,
+      "category": "government",
+      "priority": 2,
+      "needs_js": true,
+      "notes": "Presidential statements, executive orders, policy announcements. WordPress site, needs JS rendering."
+    },
+    {
+      "id": "ofac_recent_actions",
+      "name": "OFAC Sanctions Recent Actions",
+      "url": "https://ofac.treasury.gov/recent-actions",
+      "type": "html",
+      "selector": ".view-content .views-row",
+      "interval_seconds": 300,
+      "category": "sanctions",
+      "priority": 1,
+      "needs_js": true,
+      "notes": "New sanctions designations. Major impact on affected companies/countries. Drupal site."
+    }
+  ],
+  "config": {
+    "default_interval_seconds": 120,
+    "max_concurrent_requests": 3,
+    "request_timeout_ms": 15000,
+    "retry_attempts": 2,
+    "retry_delay_ms": 5000,
+    "respect_robots_txt": true,
+    "rate_limit_per_domain_ms": 2000
+  },
+  "categories": {
+    "corporate": "SEC filings, earnings, M&A",
+    "monetary": "Federal Reserve, interest rates",
+    "regulatory": "FDA, approval/rejection of drugs",
+    "government": "White House, executive actions",
+    "sanctions": "OFAC designations, Treasury actions"
+  }
+}
