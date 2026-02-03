@@ -93,6 +93,31 @@
       "https://feeds.reuters.com/Reuters/worldNews"
     ]
   },
+  "rss_tiers": {
+    "tier1_breaking": [
+      "https://feeds.bbci.co.uk/news/world/rss.xml",
+      "https://feeds.reuters.com/reuters/topNews",
+      "https://feeds.reuters.com/reuters/breakingviews", 
+      "https://www.federalreserve.gov/feeds/press_all.xml",
+      "https://feeds.bloomberg.com/politics/articles.rss"
+    ],
+    "tier2_politics": [
+      "https://feeds.reuters.com/Reuters/politicsNews",
+      "https://thehill.com/feed/",
+      "https://feeds.politico.com/political-news",
+      "https://feeds.washingtonpost.com/rss/politics",
+      "https://kyivindependent.com/rss/"
+    ],
+    "tier3_finance": [
+      "https://feeds.reuters.com/reuters/businessNews",
+      "https://feeds.finance.yahoo.com/rss/2.0/headline",
+      "https://feeds.marketwatch.com/marketwatch/topstories/",
+      "https://feeds.marketwatch.com/marketwatch/economy/",
+      "https://feeds.coindesk.com/coindesk/bitcoin",
+      "https://feeds.coindesk.com/coindesk/policy",
+      "https://cointelegraph.com/rss"
+    ]
+  },
   "market_mappings": {
     "trump": ["deportations", "tariffs", "impeachment"],
     "fed": ["rate_decision", "inflation"],

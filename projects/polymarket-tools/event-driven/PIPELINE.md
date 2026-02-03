@@ -1,27 +1,20 @@
 # Agent Pipeline Status 🔄
 
 ## Current State
-- **Active Task**: TASK-001
-- **Last Completed**: Pre-work (Fase 2 improvements by sub-agent)
-- **Progress**: 0/12 tasks
-
-## Pre-work Done ✅
-Sub-agent completed preliminary Fase 2 improvements:
-- Added 15+ RSS feeds
-- Implemented urgency scoring (1-10)
-- Added deduplication
-- Code works but needs refactoring to modular structure
+- **Active Task**: TASK-002
+- **Last Completed**: TASK-001 (Refactor to modular structure)
+- **Progress**: 1/12 tasks ████░░░░░░░░ 8%
 
 ## Task Queue
 
 | Task | Status | Description |
 |------|--------|-------------|
-| TASK-001 | 🔨 IN_PROGRESS | Refactor scan.py into modular src/ structure |
-| TASK-002 | ⏳ PENDING | RSS Fetcher module |
+| TASK-001 | ✅ DONE | Refactor scan.py into modular src/ structure |
+| TASK-002 | 🔨 IN_PROGRESS | RSS Fetcher with tier system |
 | TASK-003 | ⏳ PENDING | Twitter Fetcher module |
-| TASK-004 | ⏳ PENDING | Event Data Model |
+| TASK-004 | ⏳ PENDING | Event Data Model enhancements |
 | TASK-005 | ⏳ PENDING | Classifier module |
-| TASK-006 | ⏳ PENDING | Scorer module |
+| TASK-006 | ⏳ PENDING | Scorer module improvements |
 | TASK-007 | ⏳ PENDING | Deduplicator module |
 | TASK-008 | ⏳ PENDING | Market Mapper |
 | TASK-009 | ⏳ PENDING | Polymarket Fetcher |
@@ -31,23 +24,15 @@ Sub-agent completed preliminary Fase 2 improvements:
 
 ## Completed Tasks Log
 
-| Task | Agent | Duration | Commits | Notes |
-|------|-------|----------|---------|-------|
-| Pre-work | Sonnet | 4m | 2 | Fase 2 improvements |
+| Task | Agent | Duration | Commit | Notes |
+|------|-------|----------|--------|-------|
+| Pre-work | Sonnet | 4m | 1e44d93 | Fase 2 improvements |
+| TASK-001 | Sonnet | 5m | 248a4d2 | Modular structure |
 
-## Instructions for Agents
+## Quality Reviews
 
-### Starting a task:
-1. Read PRD.md section 7 for file structure
-2. Read the existing code to understand current state
-3. Implement according to PRD specifications
-4. Test your implementation
-5. Commit with: `✅ TASK-XXX: <description>`
-6. At the end, call sessions_send to main session with completion report
-
-### On completion:
-Report must include:
-- What was implemented
-- Files created/modified
-- Any issues found
-- Recommendation for next task
+### TASK-001 Review ✅
+- Structure matches PRD spec
+- All modules created correctly
+- Code runs without errors
+- Ready for next task
