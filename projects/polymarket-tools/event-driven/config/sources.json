@@ -118,6 +118,29 @@
       "https://cointelegraph.com/rss"
     ]
   },
+  "twitter_tiers": {
+    "critical": [
+      "BNONews",
+      "disclosetv", 
+      "DeItaone",
+      "unusual_whales"
+    ],
+    "politics": [
+      "realDonaldTrump",
+      "WhiteHouse",
+      "POTUS"
+    ],
+    "crypto": [
+      "whale_alert",
+      "DocumentingBTC",
+      "tier10k"
+    ],
+    "geopolitics": [
+      "TheStudyofWar",
+      "sentdefender",
+      "RALee85"
+    ]
+  },
   "market_mappings": {
     "trump": ["deportations", "tariffs", "impeachment"],
     "fed": ["rate_decision", "inflation"],
