@@ -1,0 +1,55 @@
+{
+  "twitter_accounts": {
+    "politics": [
+      "realDonaldTrump",
+      "WhiteHouse", 
+      "ABORDELOMKT",
+      "Politico",
+      "theabordelomkt"
+    ],
+    "geopolitics": [
+      "TheStudyofWar",
+      "IntelCrab",
+      "RALee85",
+      "sentdefender"
+    ],
+    "crypto": [
+      "whale_alert",
+      "DocumentingBTC",
+      "tier10k",
+      "WatcherGuru"
+    ],
+    "econ": [
+      "federalreserve",
+      "WSJ",
+      "markets",
+      "DeItaone"
+    ],
+    "breaking": [
+      "BNONews",
+      "disclosetv",
+      "unusual_whales"
+    ]
+  },
+  "rss_feeds": {
+    "politics": [
+      "https://feeds.reuters.com/Reuters/politicsNews",
+      "https://thehill.com/feed/"
+    ],
+    "world": [
+      "https://feeds.reuters.com/Reuters/worldNews",
+      "https://feeds.bbci.co.uk/news/world/rss.xml"
+    ],
+    "markets": [
+      "https://feeds.reuters.com/reuters/businessNews"
+    ]
+  },
+  "market_mappings": {
+    "trump": ["deportations", "tariffs", "impeachment"],
+    "fed": ["rate_decision", "inflation"],
+    "russia": ["ukraine_ceasefire"],
+    "china": ["taiwan_invasion"],
+    "btc": ["price_targets"],
+    "gta": ["release_date", "price"]
+  }
+}

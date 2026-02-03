@@ -1,0 +1,24 @@
+# Virtual environments
+venv/
+.venv/
+__pycache__/
+
+# Logs and state
+*.log
+*.pid
+*.jsonl
+scan_state.json
+
+# Node
+node_modules/
+
+# Secrets (NEVER commit these)
+.env
+*.env
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
