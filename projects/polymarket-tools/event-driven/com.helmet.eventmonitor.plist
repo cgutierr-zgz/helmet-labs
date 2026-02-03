@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Service identifier -->
+	<key>Label</key>
+	<string>com.helmet.eventmonitor</string>
+	
+	<!-- Program to run -->
+	<key>ProgramArguments</key>
+	<array>
+		<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven/venv/bin/python</string>
+		<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven/run_monitor.py</string>
+		<string>--interval</string>
+		<string>5</string>
+	</array>
+	
+	<!-- Working directory -->
+	<key>WorkingDirectory</key>
+	<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven</string>
+	
+	<!-- Run on load and keep alive -->
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	
+	<!-- Restart if crashes -->
+	<key>KeepAlive</key>
+	<dict>
+		<key>SuccessfulExit</key>
+		<false/>
+	</dict>
+	
+	<!-- Environment variables -->
+	<key>EnvironmentVariables</key>
+	<dict>
+		<key>PATH</key>
+		<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven/venv/bin:/usr/local/bin:/usr/bin:/bin</string>
+		<key>PYTHONPATH</key>
+		<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven</string>
+	</dict>
+	
+	<!-- Logging -->
+	<key>StandardOutPath</key>
+	<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven/logs/launchd_stdout.log</string>
+	<key>StandardErrorPath</key>
+	<string>/Users/helmet/.openclaw/workspace/helmet-labs/projects/polymarket-tools/event-driven/logs/launchd_stderr.log</string>
+	
+	<!-- Process limits -->
+	<key>SoftResourceLimits</key>
+	<dict>
+		<key>NumberOfFiles</key>
+		<integer>1024</integer>
+	</dict>
+	
+	<!-- Run as user (not root) -->
+	<key>UserName</key>
+	<string>helmet</string>
+	<key>GroupName</key>
+	<string>staff</string>
+	
+	<!-- Throttling (prevent rapid restarts) -->
+	<key>ThrottleInterval</key>
+	<integer>30</integer>
+	
+	<!-- Exit timeout -->
+	<key>ExitTimeOut</key>
+	<integer>30</integer>
+	
+	<!-- Disabled by default (enable manually) -->
+	<key>Disabled</key>
+	<false/>
+</dict>
+</plist>
