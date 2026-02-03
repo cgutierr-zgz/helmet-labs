@@ -25,16 +25,26 @@ def load_sources():
 
 SOURCES = load_sources()
 
-# Keywords that trigger alerts by category (more specific to avoid false positives)
-KEYWORDS = {
+# Import categories from new configuration
+from config.categories import CATEGORIES, get_category_names
+
+# Legacy keywords mapping for backward compatibility
+KEYWORDS = {}
+for category_name, category_config in CATEGORIES.items():
+    # Convert to legacy format - use lowercase category name
+    legacy_name = category_name.lower().replace("_", "")
+    KEYWORDS[legacy_name] = category_config["keywords"]
+
+# Add some legacy mappings
+KEYWORDS.update({
     "trump_deportations": ["deportation", "deported", "ice raid", "mass deportation", "immigration enforcement"],
     "tariffs": ["tariff", "trade war", "import tax", "trump tariff"],
-    "fed": ["fomc", "rate cut", "rate hike", "powell", "federal reserve", "basis points", "fed decision", "interest rate"],
+    "fed": CATEGORIES["FED_MONETARY"]["keywords"],
     "russia_ukraine": ["ceasefire", "peace talk", "zelensky", "putin negotiate", "ukraine offensive", "russia attack"],
     "china_taiwan": ["taiwan strait", "china taiwan", "pla exercise", "taiwan invasion", "blockade taiwan"],
     "btc": ["bitcoin price", "btc price", "whale alert", "bitcoin etf", "btc 100k", "btc million"],
     "gta": ["gta 6", "gta vi", "rockstar games", "grand theft auto 6"]
-}
+})
 
 # Urgency scoring factors
 URGENCY_MULTIPLIERS = {

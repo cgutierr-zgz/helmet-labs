@@ -10,8 +10,8 @@
 | Task | Status | Description |
 |------|--------|-------------|
 | TASK-001 | ✅ DONE | Refactor scan.py into modular src/ structure |
-| TASK-002 | 🔨 IN_PROGRESS | RSS Fetcher with tier system |
-| TASK-003 | ⏳ PENDING | Twitter Fetcher module |
+| TASK-002 | ✅ DONE | RSS Fetcher with tier system |
+| TASK-003 | 🔨 IN_PROGRESS | Twitter Fetcher with tiers + rate limiting |
 | TASK-004 | ⏳ PENDING | Event Data Model enhancements |
 | TASK-005 | ⏳ PENDING | Classifier module |
 | TASK-006 | ⏳ PENDING | Scorer module improvements |
