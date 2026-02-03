@@ -170,16 +170,35 @@ def scan_twitter_accounts() -> List[Event]:
                     # Check against keywords
                     for alert_cat, keywords in KEYWORDS.items():
                         if any(kw in text for kw in keywords):
-                            event = Event(
-                                timestamp=datetime.now().isoformat(),
-                                source="twitter",
-                                account=username,
-                                category=alert_cat,
-                                headline=tweet.get("text", "")[:200],  # Truncate long tweets
-                                matched_keywords=[kw for kw in keywords if kw in text],
-                                tweet_id=tweet.get("id", ""),
-                                source_category=tier_name
-                            )
+                            # Create event with new model
+                            matched_kw = [kw for kw in keywords if kw in text]
+                            tweet_text = tweet.get("text", "")
+                            event_data = {
+                                "timestamp": datetime.now().isoformat(),
+                                "source": "twitter",
+                                "source_tier": tier_name,
+                                "category": alert_cat,
+                                "title": tweet_text[:200],  # Truncate long tweets for title
+                                "content": tweet_text,
+                                "url": f"https://twitter.com/{username}/status/{tweet.get('id', '')}",
+                                "author": username,
+                                "keywords_matched": matched_kw,
+                                "urgency_score": 6.0 if tier_name == "critical" else 5.0,  # Higher urgency for critical tier
+                                "is_duplicate": False,
+                                "duplicate_of": None,
+                                "raw_data": {
+                                    "tweet": tweet,
+                                    "tier": tier_name,
+                                    "username": username
+                                },
+                                # Legacy fields for compatibility
+                                "headline": tweet_text[:200],
+                                "matched_keywords": matched_kw,
+                                "account": username,
+                                "tweet_id": tweet.get("id", ""),
+                                "source_category": tier_name
+                            }
+                            event = Event.from_dict(event_data)
                             events.append(event)
                             break  # Only match first category
                             

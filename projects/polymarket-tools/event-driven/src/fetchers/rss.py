@@ -93,16 +93,34 @@ def scan_rss_feeds() -> List[Event]:
                     # Check against keywords
                     for alert_cat, keywords in KEYWORDS.items():
                         if any(kw in text for kw in keywords):
-                            event = Event(
-                                timestamp=datetime.now().isoformat(),
-                                source="rss",
-                                feed=feed_url,
-                                category=alert_cat,
-                                headline=entry.get("title", ""),
-                                link=entry.get("link", ""),
-                                matched_keywords=[kw for kw in keywords if kw in text],
-                                source_category=tier_name
-                            )
+                            # Create event with new model
+                            matched_kw = [kw for kw in keywords if kw in text]
+                            event_data = {
+                                "timestamp": datetime.now().isoformat(),
+                                "source": "rss",
+                                "source_tier": tier_name,
+                                "category": alert_cat,
+                                "title": entry.get("title", ""),
+                                "content": entry.get("summary", entry.get("title", "")),
+                                "url": entry.get("link", ""),
+                                "author": None,
+                                "keywords_matched": matched_kw,
+                                "urgency_score": 5.0,  # Default, can be enhanced later
+                                "is_duplicate": False,
+                                "duplicate_of": None,
+                                "raw_data": {
+                                    "feed_url": feed_url,
+                                    "entry": dict(entry),
+                                    "tier": tier_name
+                                },
+                                # Legacy fields for compatibility
+                                "headline": entry.get("title", ""),
+                                "matched_keywords": matched_kw,
+                                "feed": feed_url,
+                                "link": entry.get("link", ""),
+                                "source_category": tier_name
+                            }
+                            event = Event.from_dict(event_data)
                             events.append(event)
                             break  # Only match first category
                             
