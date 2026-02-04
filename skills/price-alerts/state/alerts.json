@@ -1,0 +1,22 @@
+{
+  "alerts": [
+    {
+      "id": "btc-exit",
+      "symbol": "BTCUSDT",
+      "condition": "above",
+      "threshold": 80000.0,
+      "message": "BTC >80k - EXIT position BTC 70k dip YES",
+      "triggered": false,
+      "created": "2026-02-04T15:12:40.811189"
+    },
+    {
+      "id": "btc-profit",
+      "symbol": "BTCUSDT",
+      "condition": "below",
+      "threshold": 70000.0,
+      "message": "BTC <70k - TAKE PROFITS on BTC 70k dip YES",
+      "triggered": false,
+      "created": "2026-02-04T15:12:40.861285"
+    }
+  ]
+}

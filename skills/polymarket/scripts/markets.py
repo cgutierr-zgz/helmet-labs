@@ -6,46 +6,77 @@ from urllib.request import urlopen, Request
 from urllib.parse import quote
 
 def search_markets(query: str = None, limit: int = 10, trending: bool = False) -> list:
-    if trending:
-        url = f"https://gamma-api.polymarket.com/markets?limit={limit}&active=true&order=volume24hr&ascending=false"
-    elif query:
-        url = f"https://gamma-api.polymarket.com/markets?limit={limit}&active=true&tag_all={quote(query)}"
-    else:
-        url = f"https://gamma-api.polymarket.com/markets?limit={limit}&active=true"
+    """
+    Search markets. For trending, sorts by 24h volume.
+    For text search, downloads active markets and filters locally (API has no text search).
+    """
+    # Always fetch more for filtering, sort by recent activity
+    fetch_limit = 200 if query else limit
+    url = f"https://gamma-api.polymarket.com/markets?limit={fetch_limit}&active=true&closed=false&order=volume24hr&ascending=false"
     
-    req = Request(url, headers={"User-Agent": "PolymarketSkill/1.0"})
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+        "Accept": "application/json",
+        "Origin": "https://polymarket.com",
+        "Referer": "https://polymarket.com/"
+    }
+    req = Request(url, headers=headers)
     try:
         with urlopen(req, timeout=30) as resp:
-            return json.loads(resp.read())
-    except:
-        # Fallback to clob API
-        if query:
-            url = f"https://clob.polymarket.com/markets?next_cursor=&tag={quote(query)}"
-        else:
-            url = "https://clob.polymarket.com/markets"
-        req = Request(url, headers={"User-Agent": "PolymarketSkill/1.0"})
-        with urlopen(req, timeout=30) as resp:
-            data = json.loads(resp.read())
-            return data.get('data', data)[:limit]
+            markets = json.loads(resp.read())
+    except Exception as e:
+        print(f"API error: {e}")
+        return []
+    
+    if trending:
+        return markets[:limit]
+    
+    if query:
+        # Filter locally by question text (case-insensitive)
+        query_lower = query.lower()
+        filtered = [
+            m for m in markets 
+            if query_lower in m.get('question', '').lower() 
+            or query_lower in m.get('description', '').lower()
+        ]
+        # Sort filtered by volume
+        filtered.sort(key=lambda x: float(x.get('volume24hr', 0) or 0), reverse=True)
+        return filtered[:limit]
+    
+    return markets[:limit]
 
 def format_market(m: dict) -> str:
-    question = m.get('question', m.get('title', 'Unknown'))[:60]
-    volume = m.get('volume', m.get('volume24hr', 0))
+    question = m.get('question', m.get('title', 'Unknown'))[:50]
+    volume = m.get('volume24hr', m.get('volume', 0))
     # Convert volume to float if it's a string
     try:
         volume = float(volume) if volume else 0
     except (ValueError, TypeError):
         volume = 0
-    # Get best price if available
-    outcomes = m.get('outcomes', [])
-    prices = m.get('outcomePrices', [])
+    
+    # Get prices - outcomePrices is a JSON string, need to parse it
+    prices_raw = m.get('outcomePrices', '[]')
     price_str = ""
-    if prices and len(prices) >= 1:
-        try:
-            price_str = f" | Yes: {float(prices[0])*100:.0f}%"
-        except:
-            pass
-    return f"• {question}...{price_str} | Vol: ${volume:,.0f}"
+    try:
+        if isinstance(prices_raw, str):
+            prices = json.loads(prices_raw)
+        else:
+            prices = prices_raw
+        if prices and len(prices) >= 1:
+            yes_price = float(prices[0]) * 100
+            price_str = f" | YES: {yes_price:.1f}%"
+    except:
+        pass
+    
+    # Format volume nicely
+    if volume >= 1_000_000:
+        vol_str = f"${volume/1_000_000:.1f}M"
+    elif volume >= 1_000:
+        vol_str = f"${volume/1_000:.0f}k"
+    else:
+        vol_str = f"${volume:.0f}"
+    
+    return f"• {question}...{price_str} | {vol_str}"
 
 def main():
     parser = argparse.ArgumentParser(description='Search Polymarket markets')
