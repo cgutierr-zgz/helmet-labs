@@ -10,7 +10,8 @@
 | Pool | Capital | Uso |
 |------|---------|-----|
 | **Conservador** | $350 (70%) | Trades de alta convicción |
-| **Activo** | $150 (30%) | Momentum, whale-following, aprendizaje |
+| **Activo** | $100 (20%) | Momentum, whale-following |
+| **15min** | $50 (10%) | BTC 15min arbitraje/momentum |
 
 ---
 

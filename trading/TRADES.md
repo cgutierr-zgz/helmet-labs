@@ -2,14 +2,14 @@
 
 ## Resumen
 
-| Métrica | Conservador | Activo | Total |
-|---------|-------------|--------|-------|
-| Capital asignado | $350 | $150 | $500 |
-| Capital disponible | $350 | $135 | $485 |
-| En posiciones | $0 | $15 | $15 |
-| P&L realizado | $0 | $0 | $0 |
-| Trades totales | 0 | 1 | 1 |
-| Win rate | N/A | N/A | N/A |
+| Métrica | Conservador | Activo | 15min | Total |
+|---------|-------------|--------|-------|-------|
+| Capital asignado | $350 | $100 | $50 | $500 |
+| Capital disponible | $350 | $85 | $50 | $485 |
+| En posiciones | $0 | $15 | $0 | $15 |
+| P&L realizado | $0 | $0 | $0 | $0 |
+| Trades totales | 0 | 1 | 0 | 1 |
+| Win rate | N/A | N/A | N/A | N/A |
 
 ---
 
