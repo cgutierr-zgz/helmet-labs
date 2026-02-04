@@ -1,0 +1,6 @@
+
+# Trading state (paper trading balances, ephemeral)
+projects/trading-bots/state.json
+projects/trading-bots/strategy_log.json
+**/health_status.json
+**/processed_scraper_ids.json
