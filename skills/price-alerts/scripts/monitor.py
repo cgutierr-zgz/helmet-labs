@@ -26,6 +26,7 @@ except ImportError:
 
 SCRIPT_DIR = Path(__file__).parent.parent
 STATE_FILE = SCRIPT_DIR / "state" / "alerts.json"
+PRICES_FILE = SCRIPT_DIR / "state" / "prices.json"
 LOG_FILE = Path.home() / "Library" / "Logs" / "price-alerts.log"
 PID_FILE = Path.home() / ".openclaw" / "price-alerts.pid"
 BINANCE_WS = "wss://stream.binance.com:9443/ws"
@@ -53,6 +54,24 @@ def load_alerts() -> dict:
         except:
             pass
     return {"alerts": []}
+
+
+def load_prices() -> dict:
+    """Load last known prices."""
+    if PRICES_FILE.exists():
+        try:
+            with open(PRICES_FILE) as f:
+                return json.load(f)
+        except:
+            pass
+    return {}
+
+
+def save_prices(prices: dict):
+    """Save prices to state file."""
+    PRICES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(PRICES_FILE, "w") as f:
+        json.dump(prices, f, indent=2)
 
 
 def save_alerts(data: dict):
@@ -106,11 +125,23 @@ async def monitor_prices():
         async with websockets.connect(url) as ws:
             log("Connected to Binance WebSocket")
             
+            price_update_counter = 0
             async for message in ws:
                 try:
                     trade = json.loads(message)
                     symbol = trade.get("s", "").upper()
                     price = float(trade.get("p", 0))
+                    
+                    # Save price periodically (every 100 updates to avoid disk thrashing)
+                    price_update_counter += 1
+                    if price_update_counter >= 100:
+                        prices = load_prices()
+                        prices[symbol] = {
+                            "price": price,
+                            "updated": datetime.now().isoformat()
+                        }
+                        save_prices(prices)
+                        price_update_counter = 0
                     
                     # Check alerts
                     data = load_alerts()  # Reload in case of changes
@@ -243,6 +274,50 @@ def cmd_start(args):
     asyncio.run(monitor_prices())
 
 
+def cmd_price(args):
+    """Show current prices from monitor."""
+    prices = load_prices()
+    
+    if not prices:
+        print("❌ No price data yet. Monitor may not be running or no trades received.")
+        return
+    
+    symbol = args.symbol.upper() if args.symbol else None
+    
+    if symbol and symbol in prices:
+        p = prices[symbol]
+        age = ""
+        try:
+            updated = datetime.fromisoformat(p["updated"])
+            seconds_ago = (datetime.now() - updated).total_seconds()
+            if seconds_ago < 60:
+                age = f"{int(seconds_ago)}s ago"
+            elif seconds_ago < 3600:
+                age = f"{int(seconds_ago/60)}m ago"
+            else:
+                age = f"{int(seconds_ago/3600)}h ago"
+        except:
+            age = "unknown"
+        print(f"💰 {symbol}: ${p['price']:,.2f} (updated {age})")
+    elif symbol:
+        print(f"❌ No data for {symbol}")
+    else:
+        print("💰 Current prices:\n")
+        for sym, p in prices.items():
+            try:
+                updated = datetime.fromisoformat(p["updated"])
+                seconds_ago = (datetime.now() - updated).total_seconds()
+                if seconds_ago < 60:
+                    age = f"{int(seconds_ago)}s ago"
+                elif seconds_ago < 3600:
+                    age = f"{int(seconds_ago/60)}m ago"
+                else:
+                    age = f"{int(seconds_ago/3600)}h ago"
+            except:
+                age = "unknown"
+            print(f"  {sym}: ${p['price']:,.2f} ({age})")
+
+
 def cmd_status(args):
     """Check monitor status."""
     if PID_FILE.exists():
@@ -282,6 +357,11 @@ def main():
     # status
     sub = subparsers.add_parser("status", help="Check monitor status")
     sub.set_defaults(func=cmd_status)
+    
+    # price
+    sub = subparsers.add_parser("price", help="Show current prices")
+    sub.add_argument("symbol", nargs="?", help="Symbol to check (e.g. BTCUSDT)")
+    sub.set_defaults(func=cmd_price)
     
     # add
     sub = subparsers.add_parser("add", help="Add alert")
