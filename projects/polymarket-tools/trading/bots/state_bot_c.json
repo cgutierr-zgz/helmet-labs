@@ -1,0 +1,2269 @@
+{
+  "15m": {
+    "balance": 490.42804541967513,
+    "trades": [
+      {
+        "id": 1,
+        "timestamp": "2026-02-05T20:02:56.402565",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 5, 2:00PM-2:15PM ET",
+        "slug": "btc-updown-15m-1770318000",
+        "side": "NO",
+        "price": 0.475,
+        "size": 2.0,
+        "shares": 4.2105263157894735,
+        "reason": "AI: The RSI is overbought at 73.4, indicating a potential price drop. The market has a slight bias towar",
+        "confidence": 0.75,
+        "payout_ratio": 1.11,
+        "price_bucket": "mid",
+        "bias": 0.525,
+        "market_state": {
+          "yes": 0.525,
+          "no": 0.475,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 66165.5,
+          "rsi": 73.39,
+          "ema9": 66111.03,
+          "ema21": 65962.45,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 121.52,
+            "signal": 109.37,
+            "histogram": 12.15
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66474.2,
+            "middle": 65858.95,
+            "lower": 65243.71
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 66226.83,
+          "price_5min_ago": 66154.24,
+          "price_15min_ago": 65557.65,
+          "price_1h_ago": null,
+          "change_1min_pct": -0.14,
+          "change_5min_pct": -0.03,
+          "change_15min_pct": 0.88,
+          "volatility_15min": 0.19,
+          "volatility_1h": 0.41,
+          "direction_15min": "up",
+          "high_15min": 66414.67,
+          "low_15min": 65435.66,
+          "high_1h": 66169.84,
+          "low_1h": 65579.04
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 5, 2:00PM-2:15PM ET\nTimeframe: 15m\nYES price: $0.53 (market thinks 52% chance UP)\nNO price: $0.47\nBias: YES at 52%\n\nBTC PRICE: $0\n- 1min: -0.14%\n- 5min: -0.03%\n- 15min: +0.88%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 73.4 (overbought)\n- EMA: bullish (9=66111, 21=65962)\n- MACD: bullish (line=121.5, signal=109.4)\n- Bollinger: price is middle (L=65244, M=65859, U=66474)\n\nRECENT TRADES: 0W-0L\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The RSI is overbought at 73.4, indicating a potential price drop. The market has a slight bias towards YES at 52%, but the indicators suggest a stronger likelihood of BTC going down due to the overbought condition. Therefore, buying NO is the better risk/reward option."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 2.2105263157894735,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 3,
+        "timestamp": "2026-02-05T23:57:52.718830",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 5, 5:45PM-6:00PM ET",
+        "slug": "btc-updown-15m-1770331500",
+        "side": "YES",
+        "price": 0.805,
+        "size": 2.0,
+        "shares": 2.484472049689441,
+        "reason": "AI: The market shows an 80% chance of BTC going UP, supported by bullish indicators (EMA and MACD). The ",
+        "confidence": 0.8,
+        "payout_ratio": 0.24,
+        "price_bucket": "expensive",
+        "bias": 0.805,
+        "market_state": {
+          "yes": 0.805,
+          "no": 0.195,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 64116.55,
+          "rsi": 53.16,
+          "ema9": 64169.36,
+          "ema21": 64039.64,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 153.59,
+            "signal": 138.23,
+            "histogram": 15.36
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 64418.38,
+            "middle": 64049.12,
+            "lower": 63679.85
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 64115.12,
+          "price_5min_ago": 64128.61,
+          "price_15min_ago": 64011.33,
+          "price_1h_ago": 63219.99,
+          "change_1min_pct": 0.0,
+          "change_5min_pct": -0.02,
+          "change_15min_pct": 0.16,
+          "change_1h_pct": 1.42,
+          "volatility_15min": 0.21,
+          "volatility_1h": 0.45,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 64414.98,
+          "low_15min": 63818.57,
+          "high_1h": 64414.98,
+          "low_1h": 62736.21
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 5, 5:45PM-6:00PM ET\nTimeframe: 15m\nYES price: $0.81 (market thinks 80% chance UP)\nNO price: $0.20\nBias: YES at 80%\n\nBTC PRICE: $0\n- 1min: +0.00%\n- 5min: -0.02%\n- 15min: +0.16%\n- 1h: +1.42%\n\nTECHNICAL INDICATORS:\n- RSI(14): 53.2 \n- EMA: bullish (9=64169, 21=64040)\n- MACD: bullish (line=153.6, signal=138.2)\n- Bollinger: price is middle (L=63680, M=64049, U=64418)\n\nRECENT TRADES: 1W-0L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.8,
+          "reasoning": "The market shows an 80% chance of BTC going UP, supported by bullish indicators (EMA and MACD). The RSI is neutral, suggesting potential for upward movement. Buying YES at $0.81 offers a reasonable risk/reward considering the market's consensus."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 5,
+        "timestamp": "2026-02-06T13:07:34.829979",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 7:00AM-7:15AM ET",
+        "slug": "btc-updown-15m-1770379200",
+        "side": "YES",
+        "price": 0.395,
+        "size": 2.0,
+        "shares": 5.063291139240506,
+        "reason": "AI: The technical indicators show a bullish signal with EMA and MACD indicating upward momentum. The RSI",
+        "confidence": 0.7,
+        "payout_ratio": 1.53,
+        "price_bucket": "mid",
+        "bias": 0.605,
+        "market_state": {
+          "yes": 0.395,
+          "no": 0.605,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 66355.52,
+          "rsi": 37.86,
+          "ema9": 66448.52,
+          "ema21": 66437.14,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 41.41,
+            "signal": 37.27,
+            "histogram": 4.14
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66698.94,
+            "middle": 66491.25,
+            "lower": 66283.56
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 66389.18,
+          "price_5min_ago": 66499.98,
+          "price_15min_ago": 66459.91,
+          "price_1h_ago": 65852.31,
+          "change_1min_pct": -0.02,
+          "change_5min_pct": -0.19,
+          "change_15min_pct": -0.13,
+          "change_1h_pct": 0.8,
+          "volatility_15min": 0.12,
+          "volatility_1h": 0.21,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 66676.93,
+          "low_15min": 66387.21,
+          "high_1h": 66676.93,
+          "low_1h": 65800.37
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 7:00AM-7:15AM ET\nTimeframe: 15m\nYES price: $0.40 (market thinks 40% chance UP)\nNO price: $0.60\nBias: NO at 60%\n\nBTC PRICE: $0\n- 1min: -0.02%\n- 5min: -0.19%\n- 15min: -0.13%\n- 1h: +0.80%\n\nTECHNICAL INDICATORS:\n- RSI(14): 37.9 \n- EMA: bullish (9=66449, 21=66437)\n- MACD: bullish (line=41.4, signal=37.3)\n- Bollinger: price is middle (L=66284, M=66491, U=66699)\n\nRECENT TRADES: 1W-1L, last: YES LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.7,
+          "reasoning": "The technical indicators show a bullish signal with EMA and MACD indicating upward momentum. The RSI is at 37.9, which is not oversold but suggests potential for upward movement. Additionally, the YES price is relatively cheaper, providing a better risk/reward ratio."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.4936708860759496,
+        "close_reason": "stop_loss",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 9,
+        "timestamp": "2026-02-06T15:00:22.920393",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:00AM-9:15AM ET",
+        "slug": "btc-updown-15m-1770386400",
+        "side": "NO",
+        "price": 0.535,
+        "size": 2.0,
+        "shares": 3.7383177570093458,
+        "reason": "AI: The market bias is towards NO at 54%. Although the RSI is neutral, the EMA and MACD are bullish, whi",
+        "confidence": 0.65,
+        "payout_ratio": 0.87,
+        "price_bucket": "mid",
+        "bias": 0.535,
+        "market_state": {
+          "yes": 0.465,
+          "no": 0.535,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 67298.42,
+          "rsi": 47.68,
+          "ema9": 67371.36,
+          "ema21": 67337.68,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 58.69,
+            "signal": 52.82,
+            "histogram": 5.87
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 67544.52,
+            "middle": 67375.96,
+            "lower": 67207.39
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 67378.21,
+          "price_5min_ago": 67499.45,
+          "price_15min_ago": null,
+          "price_1h_ago": null,
+          "change_1min_pct": -0.21,
+          "change_5min_pct": -0.39,
+          "volatility_15min": 0.1,
+          "volatility_1h": 0.0,
+          "high_1h": 67562.36,
+          "low_1h": 67456.36
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9:00AM-9:15AM ET\nTimeframe: 15m\nYES price: $0.47 (market thinks 46% chance UP)\nNO price: $0.54\nBias: NO at 54%\n\nBTC PRICE: $0\n- 1min: -0.21%\n- 5min: -0.39%\n- 15min: +0.00%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 47.7 \n- EMA: bullish (9=67371, 21=67338)\n- MACD: bullish (line=58.7, signal=52.8)\n- Bollinger: price is middle (L=67207, M=67376, U=67545)\n\nRECENT TRADES: 1W-2L, last: YES LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.65,
+          "reasoning": "The market bias is towards NO at 54%. Although the RSI is neutral, the EMA and MACD are bullish, which suggests a potential upward movement. However, since the NO side is cheaper and the market is slightly leaning towards it, this trade presents a better risk/reward opportunity."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.570093457943925,
+        "close_reason": "take_profit",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 11,
+        "timestamp": "2026-02-06T15:16:09.614255",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:15AM-9:30AM ET",
+        "slug": "btc-updown-15m-1770387300",
+        "side": "NO",
+        "price": 0.51,
+        "size": 2.0,
+        "shares": 3.9215686274509802,
+        "reason": "AI: The market shows a bias towards NO at 51%, and the technical indicators (bearish EMA and MACD) suppo",
+        "confidence": 0.7,
+        "payout_ratio": 0.96,
+        "price_bucket": "mid",
+        "bias": 0.51,
+        "market_state": {
+          "yes": 0.49,
+          "no": 0.51,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 67028.79,
+          "rsi": 42.7,
+          "ema9": 67076.49,
+          "ema21": 67124.97,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -50.55,
+            "signal": -45.5,
+            "histogram": -5.06
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 67411.75,
+            "middle": 67126.88,
+            "lower": 66842.02
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 67174.2,
+          "price_5min_ago": 66976.51,
+          "price_15min_ago": 67305.44,
+          "price_1h_ago": null,
+          "change_1min_pct": -0.14,
+          "change_5min_pct": 0.15,
+          "change_15min_pct": -0.34,
+          "volatility_15min": 0.15,
+          "volatility_1h": 0.14,
+          "direction_15min": "down",
+          "high_15min": 67322.27,
+          "low_15min": 66896.01,
+          "high_1h": 67562.36,
+          "low_1h": 66982.29
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9:15AM-9:30AM ET\nTimeframe: 15m\nYES price: $0.49 (market thinks 49% chance UP)\nNO price: $0.51\nBias: NO at 51%\n\nBTC PRICE: $0\n- 1min: -0.14%\n- 5min: +0.15%\n- 15min: -0.34%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 42.7 \n- EMA: bearish (9=67076, 21=67125)\n- MACD: bearish (line=-50.5, signal=-45.5)\n- Bollinger: price is middle (L=66842, M=67127, U=67412)\n\nRECENT TRADES: 2W-2L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a bias towards NO at 51%, and the technical indicators (bearish EMA and MACD) support a downward trend. Although the RSI is not in an overbought state, the risk/reward favors the cheaper NO side at $0.51."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.9215686274509802,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 12,
+        "timestamp": "2026-02-06T15:41:11.110522",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:30AM-9:45AM ET",
+        "slug": "btc-updown-15m-1770388200",
+        "side": "NO",
+        "price": 0.095,
+        "size": 2.0,
+        "shares": 21.05263157894737,
+        "reason": "AI: RSI is overbought at 75.8, indicating a likely price drop. The market shows a 90% chance of price go",
+        "confidence": 0.75,
+        "payout_ratio": 9.53,
+        "price_bucket": "cheap",
+        "bias": 0.905,
+        "market_state": {
+          "yes": 0.905,
+          "no": 0.095,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68038.0,
+          "rsi": 75.83,
+          "ema9": 67966.99,
+          "ema21": 67654.96,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 298.22,
+            "signal": 268.39,
+            "histogram": 29.82
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68635.62,
+            "middle": 67489.87,
+            "lower": 66344.11
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68048.0,
+          "price_5min_ago": 67946.44,
+          "price_15min_ago": null,
+          "price_1h_ago": null,
+          "change_1min_pct": 0.11,
+          "change_5min_pct": 0.25,
+          "volatility_15min": 0.22,
+          "volatility_1h": 0.0,
+          "high_1h": 68025.34,
+          "low_1h": 67856.11
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9:30AM-9:45AM ET\nTimeframe: 15m\nYES price: $0.91 (market thinks 90% chance UP)\nNO price: $0.10\nBias: YES at 90%\n\nBTC PRICE: $0\n- 1min: +0.11%\n- 5min: +0.25%\n- 15min: +0.00%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 75.8 (overbought)\n- EMA: bullish (9=67967, 21=67655)\n- MACD: bullish (line=298.2, signal=268.4)\n- Bollinger: price is middle (L=66344, M=67490, U=68636)\n\nRECENT TRADES: 3W-2L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "RSI is overbought at 75.8, indicating a likely price drop. The market shows a 90% chance of price going up, but with the technical indicators favoring a bearish movement, it's prudent to bet against the crowd and buy NO for a better risk/reward."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 14,
+        "timestamp": "2026-02-06T16:41:08.999436",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 10:30AM-10:45AM ET",
+        "slug": "btc-updown-15m-1770391800",
+        "side": "NO",
+        "price": 0.365,
+        "size": 2.0,
+        "shares": 5.47945205479452,
+        "reason": "AI: RSI is overbought at 70.9, indicating a likely downturn. The EMA and MACD are bullish, but the stron",
+        "confidence": 0.75,
+        "payout_ratio": 1.74,
+        "price_bucket": "mid",
+        "bias": 0.635,
+        "market_state": {
+          "yes": 0.635,
+          "no": 0.365,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68475.58,
+          "rsi": 70.86,
+          "ema9": 68447.44,
+          "ema21": 68361.55,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 84.32,
+            "signal": 75.89,
+            "histogram": 8.43
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68668.5,
+            "middle": 68340.33,
+            "lower": 68012.16
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68478.3,
+          "price_5min_ago": 68403.86,
+          "price_15min_ago": 68459.67,
+          "price_1h_ago": 68307.79,
+          "change_1min_pct": -0.02,
+          "change_5min_pct": 0.09,
+          "change_15min_pct": 0.01,
+          "change_1h_pct": 0.23,
+          "volatility_15min": 0.19,
+          "volatility_1h": 0.29,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 68600.0,
+          "low_15min": 68000.67,
+          "high_1h": 68600.0,
+          "low_1h": 67842.21
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 10:30AM-10:45AM ET\nTimeframe: 15m\nYES price: $0.64 (market thinks 64% chance UP)\nNO price: $0.36\nBias: YES at 64%\n\nBTC PRICE: $0\n- 1min: -0.02%\n- 5min: +0.09%\n- 15min: +0.01%\n- 1h: +0.23%\n\nTECHNICAL INDICATORS:\n- RSI(14): 70.9 (overbought)\n- EMA: bullish (9=68447, 21=68362)\n- MACD: bullish (line=84.3, signal=75.9)\n- Bollinger: price is middle (L=68012, M=68340, U=68668)\n\nRECENT TRADES: 3W-3L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "RSI is overbought at 70.9, indicating a likely downturn. The EMA and MACD are bullish, but the strong overbought signal suggests a higher probability of price falling. Therefore, buying the NO side is a better risk/reward opportunity."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 16,
+        "timestamp": "2026-02-06T17:08:41.468498",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 11:00AM-11:15AM ET",
+        "slug": "btc-updown-15m-1770393600",
+        "side": "NO",
+        "price": 0.345,
+        "size": 2.0,
+        "shares": 5.797101449275363,
+        "reason": "AI: The RSI is overbought at 87.3, indicating a high likelihood of BTC price correction. Buying the NO s",
+        "confidence": 0.75,
+        "payout_ratio": 1.9,
+        "price_bucket": "cheap",
+        "bias": 0.655,
+        "market_state": {
+          "yes": 0.655,
+          "no": 0.345,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69154.26,
+          "rsi": 87.3,
+          "ema9": 68936.27,
+          "ema21": 68804.38,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 124.62,
+            "signal": 112.16,
+            "histogram": 12.46
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69163.63,
+            "middle": 68756.09,
+            "lower": 68348.56
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 69006.54,
+          "price_5min_ago": 68755.21,
+          "price_15min_ago": 68639.19,
+          "price_1h_ago": 68252.33,
+          "change_1min_pct": 0.18,
+          "change_5min_pct": 0.55,
+          "change_15min_pct": 0.72,
+          "change_1h_pct": 1.29,
+          "volatility_15min": 0.14,
+          "volatility_1h": 0.4,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 69194.56,
+          "low_15min": 68388.01,
+          "high_1h": 69194.56,
+          "low_1h": 67924.49
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 11:00AM-11:15AM ET\nTimeframe: 15m\nYES price: $0.66 (market thinks 66% chance UP)\nNO price: $0.34\nBias: YES at 66%\n\nBTC PRICE: $0\n- 1min: +0.18%\n- 5min: +0.55%\n- 15min: +0.72%\n- 1h: +1.29%\n\nTECHNICAL INDICATORS:\n- RSI(14): 87.3 (overbought)\n- EMA: bullish (9=68936, 21=68804)\n- MACD: bullish (line=124.6, signal=112.2)\n- Bollinger: price is middle (L=68349, M=68756, U=69164)\n\nRECENT TRADES: 3W-4L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The RSI is overbought at 87.3, indicating a high likelihood of BTC price correction. Buying the NO side at $0.34 presents a better risk/reward compared to the YES side at $0.66."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 18,
+        "timestamp": "2026-02-06T18:55:20.890641",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 12:45PM-1:00PM ET",
+        "slug": "btc-updown-15m-1770399900",
+        "side": "NO",
+        "price": 0.525,
+        "size": 2.0,
+        "shares": 3.8095238095238093,
+        "reason": "AI: The market shows a bias towards NO at 52%, which is stronger than the YES price reflecting only a 48",
+        "confidence": 0.7,
+        "payout_ratio": 0.9,
+        "price_bucket": "mid",
+        "bias": 0.525,
+        "market_state": {
+          "yes": 0.475,
+          "no": 0.525,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70732.92,
+          "rsi": 34.22,
+          "ema9": 70826.41,
+          "ema21": 70894.4,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -16.75,
+            "signal": -15.08,
+            "histogram": -1.68
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 71348.82,
+            "middle": 70967.76,
+            "lower": 70586.69
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70718.75,
+          "price_5min_ago": 70902.68,
+          "price_15min_ago": 71076.46,
+          "price_1h_ago": 69912.0,
+          "change_1min_pct": 0.01,
+          "change_5min_pct": -0.25,
+          "change_15min_pct": -0.49,
+          "change_1h_pct": 1.17,
+          "volatility_15min": 0.19,
+          "volatility_1h": 0.3,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 71232.07,
+          "low_15min": 70607.99,
+          "high_1h": 71328.97,
+          "low_1h": 69627.45
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 12:45PM-1:00PM ET\nTimeframe: 15m\nYES price: $0.47 (market thinks 48% chance UP)\nNO price: $0.53\nBias: NO at 52%\n\nBTC PRICE: $0\n- 1min: +0.01%\n- 5min: -0.25%\n- 15min: -0.49%\n- 1h: +1.17%\n\nTECHNICAL INDICATORS:\n- RSI(14): 34.2 \n- EMA: bearish (9=70826, 21=70894)\n- MACD: bearish (line=-16.8, signal=-15.1)\n- Bollinger: price is middle (L=70587, M=70968, U=71349)\n\nRECENT TRADES: 3W-5L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a bias towards NO at 52%, which is stronger than the YES price reflecting only a 48% chance. Additionally, the technical indicators indicate bearish sentiment with RSI at 34.2, which suggests a potential downward movement. Given that the NO price is higher at $0.53, it offers a better risk/reward ratio in this context."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.8095238095238093,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 19,
+        "timestamp": "2026-02-06T19:47:29.206443",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 1:45PM-2:00PM ET",
+        "slug": "btc-updown-15m-1770403500",
+        "side": "NO",
+        "price": 0.51,
+        "size": 2.0,
+        "shares": 3.9215686274509802,
+        "reason": "AI: The market bias is towards NO at 51%, and the technical indicators show a bullish EMA and MACD. Howe",
+        "confidence": 0.75,
+        "payout_ratio": 0.96,
+        "price_bucket": "mid",
+        "bias": 0.51,
+        "market_state": {
+          "yes": 0.49,
+          "no": 0.51,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70090.94,
+          "rsi": 68.11,
+          "ema9": 70079.64,
+          "ema21": 69988.28,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 70.92,
+            "signal": 63.83,
+            "histogram": 7.09
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70465.11,
+            "middle": 69904.4,
+            "lower": 69343.7
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70145.74,
+          "price_5min_ago": 70215.06,
+          "price_15min_ago": 69515.09,
+          "price_1h_ago": 70946.33,
+          "change_1min_pct": -0.21,
+          "change_5min_pct": -0.31,
+          "change_15min_pct": 0.69,
+          "change_1h_pct": -1.34,
+          "volatility_15min": 0.13,
+          "volatility_1h": 0.44,
+          "direction_15min": "up",
+          "direction_1h": "down",
+          "high_15min": 70215.06,
+          "low_15min": 69441.12,
+          "high_1h": 71232.07,
+          "low_1h": 69360.0
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 1:45PM-2:00PM ET\nTimeframe: 15m\nYES price: $0.49 (market thinks 49% chance UP)\nNO price: $0.51\nBias: NO at 51%\n\nBTC PRICE: $0\n- 1min: -0.21%\n- 5min: -0.31%\n- 15min: +0.69%\n- 1h: -1.34%\n\nTECHNICAL INDICATORS:\n- RSI(14): 68.1 \n- EMA: bullish (9=70080, 21=69988)\n- MACD: bullish (line=70.9, signal=63.8)\n- Bollinger: price is middle (L=69344, M=69904, U=70465)\n\nRECENT TRADES: 4W-5L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The market bias is towards NO at 51%, and the technical indicators show a bullish EMA and MACD. However, the RSI is above 70, suggesting BTC is overbought and likely to fall. The NO price of $0.51 offers a better payout than YES at $0.49, making it the preferred choice."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.9215686274509802,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 20,
+        "timestamp": "2026-02-06T20:47:26.443818",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 2:45PM-3:00PM ET",
+        "slug": "btc-updown-15m-1770407100",
+        "side": "NO",
+        "price": 0.525,
+        "size": 2.0,
+        "shares": 3.8095238095238093,
+        "reason": "AI: The market shows a slight bias towards NO at 52%, and the price is currently higher for YES. The tec",
+        "confidence": 0.7,
+        "payout_ratio": 0.9,
+        "price_bucket": "mid",
+        "bias": 0.525,
+        "market_state": {
+          "yes": 0.475,
+          "no": 0.525,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70501.98,
+          "rsi": 55.95,
+          "ema9": 70411.3,
+          "ema21": 70336.65,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 84.34,
+            "signal": 75.91,
+            "histogram": 8.43
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70521.54,
+            "middle": 70352.15,
+            "lower": 70182.76
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70442.15,
+          "price_5min_ago": 70280.82,
+          "price_15min_ago": 70198.01,
+          "price_1h_ago": 70141.67,
+          "change_1min_pct": 0.0,
+          "change_5min_pct": 0.23,
+          "change_15min_pct": 0.35,
+          "change_1h_pct": 0.43,
+          "volatility_15min": 0.11,
+          "volatility_1h": 0.28,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 70472.57,
+          "low_15min": 70254.37,
+          "high_1h": 70472.57,
+          "low_1h": 69739.1
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 2:45PM-3:00PM ET\nTimeframe: 15m\nYES price: $0.47 (market thinks 48% chance UP)\nNO price: $0.53\nBias: NO at 52%\n\nBTC PRICE: $0\n- 1min: +0.00%\n- 5min: +0.23%\n- 15min: +0.35%\n- 1h: +0.43%\n\nTECHNICAL INDICATORS:\n- RSI(14): 56.0 \n- EMA: bullish (9=70411, 21=70337)\n- MACD: bullish (line=84.3, signal=75.9)\n- Bollinger: price is middle (L=70183, M=70352, U=70522)\n\nRECENT TRADES: 5W-5L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a slight bias towards NO at 52%, and the price is currently higher for YES. The technical indicators suggest a bullish trend for BTC with EMA and MACD confirming upward momentum, but the bias towards NO and the higher price for YES indicate that the risk/reward for NO is better."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 21,
+        "timestamp": "2026-02-07T00:57:38.619458",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 6:45PM-7:00PM ET",
+        "slug": "btc-updown-15m-1770421500",
+        "side": "NO",
+        "price": 0.395,
+        "size": 5.0,
+        "shares": 12.658227848101266,
+        "reason": "AI: The market indicates a 60% chance of BTC going up, but the technical indicators are bearish, with ne",
+        "confidence": 0.6,
+        "payout_ratio": 1.53,
+        "price_bucket": "mid",
+        "bias": 0.605,
+        "market_state": {
+          "yes": 0.605,
+          "no": 0.395,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70576.06,
+          "rsi": 41.93,
+          "ema9": 70606.19,
+          "ema21": 70656.95,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -61.06,
+            "signal": -54.95,
+            "histogram": -6.11
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70811.24,
+            "middle": 70661.25,
+            "lower": 70511.26
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70583.98,
+          "price_5min_ago": 70574.23,
+          "price_15min_ago": 70671.27,
+          "price_1h_ago": 71377.82,
+          "change_1min_pct": 0.01,
+          "change_5min_pct": 0.02,
+          "change_15min_pct": -0.11,
+          "change_1h_pct": -1.1,
+          "volatility_15min": 0.05,
+          "volatility_1h": 0.26,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 70719.78,
+          "low_15min": 70555.63,
+          "high_1h": 71670.96,
+          "low_1h": 70555.63
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 6:45PM-7:00PM ET\nTimeframe: 15m\nYES price: $0.60 (market thinks 60% chance UP)\nNO price: $0.40\nBias: YES at 60%\n\nBTC PRICE: $0\n- 1min: +0.01%\n- 5min: +0.02%\n- 15min: -0.11%\n- 1h: -1.10%\n\nTECHNICAL INDICATORS:\n- RSI(14): 41.9 \n- EMA: bearish (9=70606, 21=70657)\n- MACD: bearish (line=-61.1, signal=-55.0)\n- Bollinger: price is middle (L=70511, M=70661, U=70811)\n\nRECENT TRADES: 5W-6L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.6,
+          "reasoning": "The market indicates a 60% chance of BTC going up, but the technical indicators are bearish, with negative momentum in the MACD and EMA. The current NO price at $0.40 is above the critical threshold of 45\u00a2, but given the bearish trend, buying NO at this price presents a better risk/reward scenario. The recent trades show a loss, which might suggest caution, but the bearish indicators align with a contrarian approach."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 7.658227848101266,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 22,
+        "timestamp": "2026-02-07T01:57:37.665799",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 7:45PM-8:00PM ET",
+        "slug": "btc-updown-15m-1770425100",
+        "side": "YES",
+        "price": 0.925,
+        "size": 5.0,
+        "shares": 5.405405405405405,
+        "reason": "AI: The market shows a strong bias towards YES at 92%, with bullish technical indicators (EMA and MACD) ",
+        "confidence": 0.9,
+        "payout_ratio": 0.08,
+        "price_bucket": "expensive",
+        "bias": 0.925,
+        "market_state": {
+          "yes": 0.925,
+          "no": 0.075,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69948.0,
+          "rsi": 57.66,
+          "ema9": 70039.21,
+          "ema21": 70015.14,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 7.58,
+            "signal": 6.82,
+            "histogram": 0.76
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70274.47,
+            "middle": 69943.89,
+            "lower": 69613.31
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70028.0,
+          "price_5min_ago": 70217.54,
+          "price_15min_ago": 69844.98,
+          "price_1h_ago": 70537.72,
+          "change_1min_pct": -0.09,
+          "change_5min_pct": -0.36,
+          "change_15min_pct": 0.17,
+          "change_1h_pct": -0.82,
+          "volatility_15min": 0.09,
+          "volatility_1h": 0.24,
+          "direction_15min": "up",
+          "direction_1h": "down",
+          "high_15min": 70217.54,
+          "low_15min": 69748.81,
+          "high_1h": 70597.99,
+          "low_1h": 69748.81
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 7:45PM-8:00PM ET\nTimeframe: 15m\nYES price: $0.93 (market thinks 92% chance UP)\nNO price: $0.07\nBias: YES at 92%\n\nBTC PRICE: $0\n- 1min: -0.09%\n- 5min: -0.36%\n- 15min: +0.17%\n- 1h: -0.82%\n\nTECHNICAL INDICATORS:\n- RSI(14): 57.7 \n- EMA: bullish (9=70039, 21=70015)\n- MACD: bullish (line=7.6, signal=6.8)\n- Bollinger: price is middle (L=69613, M=69944, U=70274)\n\nRECENT TRADES: 6W-6L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.9,
+          "reasoning": "The market shows a strong bias towards YES at 92%, with bullish technical indicators (EMA and MACD) and BTC recently rising. The price is a bit high at $0.93, but the strong trend and positive momentum justify the trade."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.40540540540540526,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 23,
+        "timestamp": "2026-02-07T03:57:37.673893",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:45PM-10:00PM ET",
+        "slug": "btc-updown-15m-1770432300",
+        "side": "NO",
+        "price": 0.935,
+        "size": 5.0,
+        "shares": 5.347593582887701,
+        "reason": "AI: The market has a 94% bias towards NO, indicating strong conviction against a price increase. Althoug",
+        "confidence": 0.85,
+        "payout_ratio": 0.07,
+        "price_bucket": "expensive",
+        "bias": 0.935,
+        "market_state": {
+          "yes": 0.065,
+          "no": 0.935,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70362.45,
+          "rsi": 38.06,
+          "ema9": 70313.06,
+          "ema21": 70335.6,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -31.56,
+            "signal": -28.41,
+            "histogram": -3.16
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70554.88,
+            "middle": 70338.48,
+            "lower": 70122.07
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70322.14,
+          "price_5min_ago": 70255.99,
+          "price_15min_ago": 70428.0,
+          "price_1h_ago": 70440.0,
+          "change_1min_pct": 0.06,
+          "change_5min_pct": 0.15,
+          "change_15min_pct": -0.09,
+          "change_1h_pct": -0.11,
+          "volatility_15min": 0.07,
+          "volatility_1h": 0.17,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 70478.49,
+          "low_15min": 70184.8,
+          "high_1h": 70606.47,
+          "low_1h": 70184.8
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9:45PM-10:00PM ET\nTimeframe: 15m\nYES price: $0.07 (market thinks 6% chance UP)\nNO price: $0.94\nBias: NO at 94%\n\nBTC PRICE: $0\n- 1min: +0.06%\n- 5min: +0.15%\n- 15min: -0.09%\n- 1h: -0.11%\n\nTECHNICAL INDICATORS:\n- RSI(14): 38.1 \n- EMA: bearish (9=70313, 21=70336)\n- MACD: bearish (line=-31.6, signal=-28.4)\n- Bollinger: price is middle (L=70122, M=70338, U=70555)\n\nRECENT TRADES: 7W-6L, last: YES WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.85,
+          "reasoning": "The market has a 94% bias towards NO, indicating strong conviction against a price increase. Although BTC is slightly down in the short term, the significant bias and cheaper NO price at $0.94 make it a favorable trade."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.3475935828877006,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 24,
+        "timestamp": "2026-02-07T04:57:39.269221",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 10:45PM-11:00PM ET",
+        "slug": "btc-updown-15m-1770435900",
+        "side": "YES",
+        "price": 0.745,
+        "size": 5.0,
+        "shares": 6.7114093959731544,
+        "reason": "AI: The market shows a 74% chance of BTC going up, with bullish indicators from EMA and MACD, and BTC is",
+        "confidence": 0.8,
+        "payout_ratio": 0.34,
+        "price_bucket": "expensive",
+        "bias": 0.745,
+        "market_state": {
+          "yes": 0.745,
+          "no": 0.255,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70742.67,
+          "rsi": 62.78,
+          "ema9": 70766.18,
+          "ema21": 70747.02,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 21.49,
+            "signal": 19.34,
+            "histogram": 2.15
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70872.19,
+            "middle": 70729.93,
+            "lower": 70587.67
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70786.01,
+          "price_5min_ago": 70761.82,
+          "price_15min_ago": 70594.9,
+          "price_1h_ago": 70359.48,
+          "change_1min_pct": -0.07,
+          "change_5min_pct": -0.03,
+          "change_15min_pct": 0.2,
+          "change_1h_pct": 0.54,
+          "volatility_15min": 0.07,
+          "volatility_1h": 0.16,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 70844.99,
+          "low_15min": 70596.01,
+          "high_1h": 70866.65,
+          "low_1h": 70294.41
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 10:45PM-11:00PM ET\nTimeframe: 15m\nYES price: $0.74 (market thinks 74% chance UP)\nNO price: $0.26\nBias: YES at 74%\n\nBTC PRICE: $0\n- 1min: -0.07%\n- 5min: -0.03%\n- 15min: +0.20%\n- 1h: +0.54%\n\nTECHNICAL INDICATORS:\n- RSI(14): 62.8 \n- EMA: bullish (9=70766, 21=70747)\n- MACD: bullish (line=21.5, signal=19.3)\n- Bollinger: price is middle (L=70588, M=70730, U=70872)\n\nRECENT TRADES: 8W-6L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.8,
+          "reasoning": "The market shows a 74% chance of BTC going up, with bullish indicators from EMA and MACD, and BTC is currently rising. Despite the RSI being at 62.8, which is not yet overbought, the momentum supports a YES trade at $0.74."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.7114093959731544,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 25,
+        "timestamp": "2026-02-07T05:57:38.204577",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 11:45PM-12:00AM ET",
+        "slug": "btc-updown-15m-1770439500",
+        "side": "NO",
+        "price": 0.435,
+        "size": 5.0,
+        "shares": 11.494252873563218,
+        "reason": "AI: The NO price is at $0.43, which is below the critical threshold of 45\u00a2. Additionally, the bearish in",
+        "confidence": 0.7,
+        "payout_ratio": 1.3,
+        "price_bucket": "mid",
+        "bias": 0.565,
+        "market_state": {
+          "yes": 0.565,
+          "no": 0.435,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70683.0,
+          "rsi": 44.41,
+          "ema9": 70709.07,
+          "ema21": 70789.59,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -96.26,
+            "signal": -86.64,
+            "histogram": -9.63
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70904.72,
+            "middle": 70746.05,
+            "lower": 70587.39
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70658.12,
+          "price_5min_ago": 70740.65,
+          "price_15min_ago": 70850.27,
+          "price_1h_ago": 70912.8,
+          "change_1min_pct": 0.02,
+          "change_5min_pct": -0.1,
+          "change_15min_pct": -0.26,
+          "change_1h_pct": -0.34,
+          "volatility_15min": 0.07,
+          "volatility_1h": 0.23,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 70769.91,
+          "low_15min": 70656.17,
+          "high_1h": 71579.88,
+          "low_1h": 70656.17
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 11:45PM-12:00AM ET\nTimeframe: 15m\nYES price: $0.56 (market thinks 56% chance UP)\nNO price: $0.43\nBias: YES at 56%\n\nBTC PRICE: $0\n- 1min: +0.02%\n- 5min: -0.10%\n- 15min: -0.26%\n- 1h: -0.34%\n\nTECHNICAL INDICATORS:\n- RSI(14): 44.4 \n- EMA: bearish (9=70709, 21=70790)\n- MACD: bearish (line=-96.3, signal=-86.6)\n- Bollinger: price is middle (L=70587, M=70746, U=70905)\n\nRECENT TRADES: 9W-6L, last: YES WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The NO price is at $0.43, which is below the critical threshold of 45\u00a2. Additionally, the bearish indicators (EMA and MACD) suggest a downward trend for BTC. Given these factors, buying the NO side provides a better risk/reward opportunity."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 26,
+        "timestamp": "2026-02-07T06:57:38.469009",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 12:45AM-1:00AM ET",
+        "slug": "btc-updown-15m-1770443100",
+        "side": "NO",
+        "price": 0.895,
+        "size": 5.0,
+        "shares": 5.58659217877095,
+        "reason": "AI: The market indicates a strong bias towards NO at 90%, and the NO price is at $0.90, which is above t",
+        "confidence": 0.9,
+        "payout_ratio": 0.12,
+        "price_bucket": "expensive",
+        "bias": 0.895,
+        "market_state": {
+          "yes": 0.105,
+          "no": 0.895,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69975.19,
+          "rsi": 29.42,
+          "ema9": 70057.67,
+          "ema21": 70169.03,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -129.39,
+            "signal": -116.45,
+            "histogram": -12.94
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70342.2,
+            "middle": 70148.69,
+            "lower": 69955.18
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 70017.01,
+          "price_5min_ago": 70046.81,
+          "price_15min_ago": 70195.82,
+          "price_1h_ago": 70697.76,
+          "change_1min_pct": -0.05,
+          "change_5min_pct": -0.09,
+          "change_15min_pct": -0.3,
+          "change_1h_pct": -1.01,
+          "volatility_15min": 0.06,
+          "volatility_1h": 0.27,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 70276.45,
+          "low_15min": 69972.7,
+          "high_1h": 71186.8,
+          "low_1h": 69972.7
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 12:45AM-1:00AM ET\nTimeframe: 15m\nYES price: $0.10 (market thinks 10% chance UP)\nNO price: $0.90\nBias: NO at 90%\n\nBTC PRICE: $0\n- 1min: -0.05%\n- 5min: -0.09%\n- 15min: -0.30%\n- 1h: -1.01%\n\nTECHNICAL INDICATORS:\n- RSI(14): 29.4 (oversold)\n- EMA: bearish (9=70058, 21=70169)\n- MACD: bearish (line=-129.4, signal=-116.5)\n- Bollinger: price is middle (L=69955, M=70149, U=70342)\n\nRECENT TRADES: 9W-7L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.9,
+          "reasoning": "The market indicates a strong bias towards NO at 90%, and the NO price is at $0.90, which is above the critical threshold for buying the cheaper side. However, the strong bearish momentum in BTC prices and technical indicators (bearish EMA and MACD) suggests a likely continuation of the downward trend, making NO a reasonable trade despite its higher price."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.5865921787709496,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 27,
+        "timestamp": "2026-02-07T08:57:38.116463",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 2:45AM-3:00AM ET",
+        "slug": "btc-updown-15m-1770450300",
+        "side": "NO",
+        "price": 0.825,
+        "size": 5.0,
+        "shares": 6.0606060606060606,
+        "reason": "AI: The market shows a strong bias towards NO at 82%, and the price is above the critical threshold of 4",
+        "confidence": 0.75,
+        "payout_ratio": 0.21,
+        "price_bucket": "expensive",
+        "bias": 0.825,
+        "market_state": {
+          "yes": 0.175,
+          "no": 0.825,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 68184.65,
+          "rsi": 35.51,
+          "ema9": 68179.62,
+          "ema21": 68170.44,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 9.0,
+            "signal": 8.1,
+            "histogram": 0.9
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68603.04,
+            "middle": 68236.86,
+            "lower": 67870.68
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68108.18,
+          "price_5min_ago": 68184.37,
+          "price_15min_ago": 68475.89,
+          "price_1h_ago": 68938.75,
+          "change_1min_pct": 0.1,
+          "change_5min_pct": -0.01,
+          "change_15min_pct": -0.43,
+          "change_1h_pct": -1.1,
+          "volatility_15min": 0.3,
+          "volatility_1h": 0.42,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 68525.12,
+          "low_15min": 67727.27,
+          "high_1h": 69067.55,
+          "low_1h": 67413.26
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 2:45AM-3:00AM ET\nTimeframe: 15m\nYES price: $0.17 (market thinks 18% chance UP)\nNO price: $0.82\nBias: NO at 82%\n\nBTC PRICE: $0\n- 1min: +0.10%\n- 5min: -0.01%\n- 15min: -0.43%\n- 1h: -1.10%\n\nTECHNICAL INDICATORS:\n- RSI(14): 35.5 \n- EMA: bullish (9=68180, 21=68170)\n- MACD: bullish (line=9.0, signal=8.1)\n- Bollinger: price is middle (L=67871, M=68237, U=68603)\n\nRECENT TRADES: 10W-7L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The market shows a strong bias towards NO at 82%, and the price is above the critical threshold of 45\u00a2. However, the indicators suggest bullish momentum, making it reasonable to buy the cheaper NO option. Recent trades show a win in this direction, and favorable technical indicators support this decision."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.0606060606060606,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 28,
+        "timestamp": "2026-02-07T09:57:39.752962",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 3:45AM-4:00AM ET",
+        "slug": "btc-updown-15m-1770453900",
+        "side": "YES",
+        "price": 0.875,
+        "size": 5.0,
+        "shares": 5.714285714285714,
+        "reason": "AI: The market shows a strong bullish bias with YES at 88%, supporting indicators (bullish EMA and MACD)",
+        "confidence": 0.85,
+        "payout_ratio": 0.14,
+        "price_bucket": "expensive",
+        "bias": 0.875,
+        "market_state": {
+          "yes": 0.875,
+          "no": 0.125,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68567.41,
+          "rsi": 60.13,
+          "ema9": 68579.44,
+          "ema21": 68544.13,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 42.52,
+            "signal": 38.27,
+            "histogram": 4.25
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68707.06,
+            "middle": 68516.6,
+            "lower": 68326.14
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68609.07,
+          "price_5min_ago": 68642.36,
+          "price_15min_ago": 68463.45,
+          "price_1h_ago": 68075.7,
+          "change_1min_pct": -0.06,
+          "change_5min_pct": -0.11,
+          "change_15min_pct": 0.15,
+          "change_1h_pct": 0.72,
+          "volatility_15min": 0.06,
+          "volatility_1h": 0.18,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 68672.53,
+          "low_15min": 68406.28,
+          "high_1h": 68678.42,
+          "low_1h": 67910.98
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 3:45AM-4:00AM ET\nTimeframe: 15m\nYES price: $0.88 (market thinks 88% chance UP)\nNO price: $0.12\nBias: YES at 88%\n\nBTC PRICE: $0\n- 1min: -0.06%\n- 5min: -0.11%\n- 15min: +0.15%\n- 1h: +0.72%\n\nTECHNICAL INDICATORS:\n- RSI(14): 60.1 \n- EMA: bullish (9=68579, 21=68544)\n- MACD: bullish (line=42.5, signal=38.3)\n- Bollinger: price is middle (L=68326, M=68517, U=68707)\n\nRECENT TRADES: 11W-7L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.85,
+          "reasoning": "The market shows a strong bullish bias with YES at 88%, supporting indicators (bullish EMA and MACD), and BTC price is currently in a rising trend. Therefore, buying YES aligns with the momentum and risk/reward is favorable."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.7142857142857144,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 29,
+        "timestamp": "2026-02-07T19:46:24.797475",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 1:45PM-2:00PM ET",
+        "slug": "btc-updown-15m-1770489900",
+        "side": "YES",
+        "price": 0.455,
+        "size": 5.0,
+        "shares": 10.989010989010989,
+        "reason": "AI: The market shows a bullish trend with positive momentum indicators (EMA and MACD). The YES price is ",
+        "confidence": 0.7,
+        "payout_ratio": 1.2,
+        "price_bucket": "mid",
+        "bias": 0.545,
+        "market_state": {
+          "yes": 0.455,
+          "no": 0.545,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69473.72,
+          "rsi": 56.2,
+          "ema9": 69475.27,
+          "ema21": 69428.7,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 57.47,
+            "signal": 51.73,
+            "histogram": 5.75
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69623.03,
+            "middle": 69435.99,
+            "lower": 69248.95
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 69480.12,
+          "price_5min_ago": 69384.83,
+          "price_15min_ago": 69266.95,
+          "price_1h_ago": 69247.12,
+          "change_1min_pct": -0.01,
+          "change_5min_pct": 0.13,
+          "change_15min_pct": 0.3,
+          "change_1h_pct": 0.33,
+          "volatility_15min": 0.09,
+          "volatility_1h": 0.2,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 69567.95,
+          "low_15min": 69285.99,
+          "high_1h": 69567.95,
+          "low_1h": 69014.21
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 1:45PM-2:00PM ET\nTimeframe: 15m\nYES price: $0.46 (market thinks 46% chance UP)\nNO price: $0.55\nBias: NO at 55%\n\nBTC PRICE: $0\n- 1min: -0.01%\n- 5min: +0.13%\n- 15min: +0.30%\n- 1h: +0.33%\n\nTECHNICAL INDICATORS:\n- RSI(14): 56.2 \n- EMA: bullish (9=69475, 21=69429)\n- MACD: bullish (line=57.5, signal=51.7)\n- Bollinger: price is middle (L=69249, M=69436, U=69623)\n\nRECENT TRADES: 12W-7L, last: YES WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.7,
+          "reasoning": "The market shows a bullish trend with positive momentum indicators (EMA and MACD). The YES price is currently at $0.46, suggesting a 46% chance of an upward movement. Given that the bias is against the NO side at 55%, this indicates that the market may be undervaluing the potential for a price increase within the timeframe."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 30,
+        "timestamp": "2026-02-07T20:57:23.854945",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 2:45PM-3:00PM ET",
+        "slug": "btc-updown-15m-1770493500",
+        "side": "NO",
+        "price": 0.28,
+        "size": 5.0,
+        "shares": 17.857142857142854,
+        "reason": "AI: The market is showing a bearish trend with BTC price declining. The technical indicators are also be",
+        "confidence": 0.8,
+        "payout_ratio": 2.57,
+        "price_bucket": "cheap",
+        "bias": 0.72,
+        "market_state": {
+          "yes": 0.72,
+          "no": 0.28,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69273.73,
+          "rsi": 41.19,
+          "ema9": 69350.63,
+          "ema21": 69379.94,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -23.52,
+            "signal": -21.17,
+            "histogram": -2.35
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 69501.17,
+            "middle": 69391.44,
+            "lower": 69281.72
+          },
+          "price_vs_bollinger": "below_lower"
+        },
+        "btc_context": {
+          "price_1min_ago": 69343.08,
+          "price_5min_ago": 69433.64,
+          "price_15min_ago": 69432.3,
+          "price_1h_ago": 69469.92,
+          "change_1min_pct": -0.1,
+          "change_5min_pct": -0.23,
+          "change_15min_pct": -0.23,
+          "change_1h_pct": -0.28,
+          "volatility_15min": 0.05,
+          "volatility_1h": 0.15,
+          "direction_15min": "down",
+          "direction_1h": "down",
+          "high_15min": 69449.41,
+          "low_15min": 69305.49,
+          "high_1h": 69526.84,
+          "low_1h": 69305.49
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 2:45PM-3:00PM ET\nTimeframe: 15m\nYES price: $0.72 (market thinks 72% chance UP)\nNO price: $0.28\nBias: YES at 72%\n\nBTC PRICE: $0\n- 1min: -0.10%\n- 5min: -0.23%\n- 15min: -0.23%\n- 1h: -0.28%\n\nTECHNICAL INDICATORS:\n- RSI(14): 41.2 \n- EMA: bearish (9=69351, 21=69380)\n- MACD: bearish (line=-23.5, signal=-21.2)\n- Bollinger: price is below_lower (L=69282, M=69391, U=69501)\n\nRECENT TRADES: 12W-8L, last: YES LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.8,
+          "reasoning": "The market is showing a bearish trend with BTC price declining. The technical indicators are also bearish, with RSI at 41.2, EMA indicating bearish momentum, and MACD in a bearish position. Buying the NO side at $0.28 offers a better risk/reward ratio compared to the YES side at $0.72, as the market sentiment is not strongly in favor of an upward movement. This aligns with the guidelines to buy the cheaper side when the bias is not extreme."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 31,
+        "timestamp": "2026-02-07T21:57:22.514267",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 3:45PM-4:00PM ET",
+        "slug": "btc-updown-15m-1770497100",
+        "side": "NO",
+        "price": 0.205,
+        "size": 5.0,
+        "shares": 24.390243902439025,
+        "reason": "AI: The market shows an 80% chance of BTC going up, but the price for YES is too high at $0.80. The NO s",
+        "confidence": 0.7,
+        "payout_ratio": 3.88,
+        "price_bucket": "cheap",
+        "bias": 0.795,
+        "market_state": {
+          "yes": 0.795,
+          "no": 0.205,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69555.37,
+          "rsi": 46.68,
+          "ema9": 69599.72,
+          "ema21": 69583.39,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 28.21,
+            "signal": 25.39,
+            "histogram": 2.82
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69687.16,
+            "middle": 69600.88,
+            "lower": 69514.6
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 69575.95,
+          "price_5min_ago": 69618.0,
+          "price_15min_ago": 69573.82,
+          "price_1h_ago": 69285.74,
+          "change_1min_pct": -0.03,
+          "change_5min_pct": -0.09,
+          "change_15min_pct": -0.03,
+          "change_1h_pct": 0.39,
+          "volatility_15min": 0.05,
+          "volatility_1h": 0.11,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 69691.87,
+          "low_15min": 69551.83,
+          "high_1h": 69691.87,
+          "low_1h": 69259.22
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 3:45PM-4:00PM ET\nTimeframe: 15m\nYES price: $0.80 (market thinks 80% chance UP)\nNO price: $0.20\nBias: YES at 80%\n\nBTC PRICE: $0\n- 1min: -0.03%\n- 5min: -0.09%\n- 15min: -0.03%\n- 1h: +0.39%\n\nTECHNICAL INDICATORS:\n- RSI(14): 46.7 \n- EMA: bullish (9=69600, 21=69583)\n- MACD: bullish (line=28.2, signal=25.4)\n- Bollinger: price is middle (L=69515, M=69601, U=69687)\n\nRECENT TRADES: 12W-9L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows an 80% chance of BTC going up, but the price for YES is too high at $0.80. The NO side at $0.20 presents a better risk/reward opportunity given the current bullish indicators (EMA and MACD) and BTC's recent upward momentum."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 32,
+        "timestamp": "2026-02-07T22:32:45.215585",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 4:30PM-4:45PM ET",
+        "slug": "btc-updown-15m-1770499800",
+        "side": "NO",
+        "price": 0.535,
+        "size": 5.0,
+        "shares": 9.345794392523365,
+        "reason": "AI: Although the market shows a bias towards 'NO' at 54%, the technical indicators indicate a bullish tr",
+        "confidence": 0.7,
+        "payout_ratio": 0.87,
+        "price_bucket": "mid",
+        "bias": 0.535,
+        "market_state": {
+          "yes": 0.465,
+          "no": 0.535,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69593.6,
+          "rsi": 72.49,
+          "ema9": 69557.11,
+          "ema21": 69543.17,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 9.63,
+            "signal": 8.66,
+            "histogram": 0.96
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69616.92,
+            "middle": 69526.17,
+            "lower": 69435.42
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 69581.67,
+          "price_5min_ago": 69587.81,
+          "price_15min_ago": 69423.25,
+          "price_1h_ago": 69420.47,
+          "change_1min_pct": 0.02,
+          "change_5min_pct": 0.01,
+          "change_15min_pct": 0.24,
+          "change_1h_pct": 0.25,
+          "volatility_15min": 0.05,
+          "volatility_1h": 0.15,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 69592.63,
+          "low_15min": 69452.0,
+          "high_1h": 69691.87,
+          "low_1h": 69410.27
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 7, 4:30PM-4:45PM ET\nTimeframe: 15m\nYES price: $0.47 (market thinks 46% chance UP)\nNO price: $0.54\nBias: NO at 54%\n\nBTC PRICE: $0\n- 1min: +0.02%\n- 5min: +0.01%\n- 15min: +0.24%\n- 1h: +0.25%\n\nTECHNICAL INDICATORS:\n- RSI(14): 72.5 (overbought)\n- EMA: bullish (9=69557, 21=69543)\n- MACD: bullish (line=9.6, signal=8.7)\n- Bollinger: price is middle (L=69435, M=69526, U=69617)\n\nRECENT TRADES: 12W-10L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if price is near 50/50 with no clear signal.\n- CRITICAL: Always buy the CHEAPER side (price < 45\u00a2). Better risk/reward beats higher \"conviction\".\n- DO NOT bet against momentum just because RSI is \"overbought\". RSI >70 often means strong trend, not reversal.\n- Follow the trend: EMA bullish + MACD bullish + BTC rising = buy YES (or cheap NO if YES too expensive)\n- Only go contrarian if bias is EXTREME (>85%) AND you're buying the cheap side (<20\u00a2)\n- Risk/reward matters more than win rate. A 40\u00a2 entry with 60% chance beats 70\u00a2 entry with 80% chance.\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "Although the market shows a bias towards 'NO' at 54%, the technical indicators indicate a bullish trend for BTC. Given that the 'NO' price is at 54\u00a2 and the 'YES' price is at 47\u00a2, buying the cheaper side aligns with the decision guidelines, especially since the momentum is positive."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0560747663551404,
+        "close_reason": "stop_loss",
+        "strategy": "ai",
+        "generation": 1
+      }
+    ],
+    "wins": 12,
+    "losses": 11,
+    "exits_profit": 1,
+    "exits_loss": 2,
+    "strategy": "ai",
+    "generation": 1
+  },
+  "1h": {
+    "balance": 500.0,
+    "trades": [
+      {
+        "id": 2,
+        "timestamp": "2026-02-05T20:03:00.359087",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 5, 2PM ET",
+        "slug": "bitcoin-up-or-down-february-5-2pm-et",
+        "side": "NO",
+        "price": 0.475,
+        "size": 3.0,
+        "shares": 6.315789473684211,
+        "reason": "AI: The market bias is towards YES at 52%, but the RSI at 73.4 indicates overbought conditions, suggesti",
+        "confidence": 0.75,
+        "payout_ratio": 1.11,
+        "price_bucket": "mid",
+        "bias": 0.525,
+        "market_state": {
+          "yes": 0.525,
+          "no": 0.475,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 66165.5,
+          "rsi": 73.39,
+          "ema9": 66111.03,
+          "ema21": 65962.45,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 121.52,
+            "signal": 109.37,
+            "histogram": 12.15
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66474.2,
+            "middle": 65858.95,
+            "lower": 65243.71
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 66226.83,
+          "price_5min_ago": 66154.24,
+          "price_15min_ago": 65557.65,
+          "price_1h_ago": null,
+          "change_1min_pct": -0.14,
+          "change_5min_pct": -0.03,
+          "change_15min_pct": 0.88,
+          "volatility_15min": 0.19,
+          "volatility_1h": 0.41,
+          "direction_15min": "up",
+          "high_15min": 66414.67,
+          "low_15min": 65435.66,
+          "high_1h": 66169.84,
+          "low_1h": 65579.04
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 5, 2PM ET\nTimeframe: 1h\nYES price: $0.53 (market thinks 52% chance UP)\nNO price: $0.47\nBias: YES at 52%\n\nBTC PRICE: $0\n- 1min: -0.14%\n- 5min: -0.03%\n- 15min: +0.88%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 73.4 (overbought)\n- EMA: bullish (9=66111, 21=65962)\n- MACD: bullish (line=121.5, signal=109.4)\n- Bollinger: price is middle (L=65244, M=65859, U=66474)\n\nRECENT TRADES: 0W-0L\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The market bias is towards YES at 52%, but the RSI at 73.4 indicates overbought conditions, suggesting a potential price decline. The technical indicators (EMA and MACD) are bullish, but the overbought RSI and recent price movement indicate a strong likelihood for a downward correction, making NO the better choice."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 3.3157894736842106,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 4,
+        "timestamp": "2026-02-06T12:04:32.960015",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 6AM ET",
+        "slug": "bitcoin-up-or-down-february-6-6am-et",
+        "side": "NO",
+        "price": 0.595,
+        "size": 3.0,
+        "shares": 5.042016806722689,
+        "reason": "AI: The market shows a strong bias towards NO at 60% and recent trades have been successful on this side",
+        "confidence": 0.7,
+        "payout_ratio": 0.68,
+        "price_bucket": "expensive",
+        "bias": 0.595,
+        "market_state": {
+          "yes": 0.405,
+          "no": 0.595,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 65934.2,
+          "rsi": 47.95,
+          "ema9": 65901.69,
+          "ema21": 65932.43,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -28.84,
+            "signal": -25.95,
+            "histogram": -2.88
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 66112.65,
+            "middle": 65939.13,
+            "lower": 65765.6
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 65850.46,
+          "price_5min_ago": 65955.0,
+          "price_15min_ago": 65993.47,
+          "price_1h_ago": 65815.32,
+          "change_1min_pct": 0.13,
+          "change_5min_pct": -0.03,
+          "change_15min_pct": -0.09,
+          "change_1h_pct": 0.18,
+          "volatility_15min": 0.11,
+          "volatility_1h": 0.15,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 66052.81,
+          "low_15min": 65797.3,
+          "high_1h": 66188.91,
+          "low_1h": 65616.62
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 6AM ET\nTimeframe: 1h\nYES price: $0.41 (market thinks 40% chance UP)\nNO price: $0.59\nBias: NO at 60%\n\nBTC PRICE: $0\n- 1min: +0.13%\n- 5min: -0.03%\n- 15min: -0.09%\n- 1h: +0.18%\n\nTECHNICAL INDICATORS:\n- RSI(14): 48.0 \n- EMA: bearish (9=65902, 21=65932)\n- MACD: bearish (line=-28.8, signal=-25.9)\n- Bollinger: price is middle (L=65766, M=65939, U=66113)\n\nRECENT TRADES: 1W-0L, last: NO WIN\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a strong bias towards NO at 60% and recent trades have been successful on this side. Despite bearish indicators, the current price suggests a potential for a downward move, making NO the cheaper and more favorable option."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 6,
+        "timestamp": "2026-02-06T13:07:38.977643",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 7AM ET",
+        "slug": "bitcoin-up-or-down-february-6-7am-et",
+        "side": "YES",
+        "price": 0.455,
+        "size": 3.0,
+        "shares": 6.593406593406593,
+        "reason": "AI: Despite the market bias towards NO, the technical indicators show bullish signals (EMA and MACD) and",
+        "confidence": 0.7,
+        "payout_ratio": 1.2,
+        "price_bucket": "mid",
+        "bias": 0.545,
+        "market_state": {
+          "yes": 0.455,
+          "no": 0.545,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 66355.52,
+          "rsi": 37.86,
+          "ema9": 66448.52,
+          "ema21": 66437.14,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 41.41,
+            "signal": 37.27,
+            "histogram": 4.14
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66698.94,
+            "middle": 66491.25,
+            "lower": 66283.56
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 66389.18,
+          "price_5min_ago": 66499.98,
+          "price_15min_ago": 66459.91,
+          "price_1h_ago": 65852.31,
+          "change_1min_pct": -0.02,
+          "change_5min_pct": -0.19,
+          "change_15min_pct": -0.13,
+          "change_1h_pct": 0.8,
+          "volatility_15min": 0.12,
+          "volatility_1h": 0.21,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 66676.93,
+          "low_15min": 66387.21,
+          "high_1h": 66676.93,
+          "low_1h": 65800.37
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 7AM ET\nTimeframe: 1h\nYES price: $0.46 (market thinks 46% chance UP)\nNO price: $0.55\nBias: NO at 55%\n\nBTC PRICE: $0\n- 1min: -0.02%\n- 5min: -0.19%\n- 15min: -0.13%\n- 1h: +0.80%\n\nTECHNICAL INDICATORS:\n- RSI(14): 37.9 \n- EMA: bullish (9=66449, 21=66437)\n- MACD: bullish (line=41.4, signal=37.3)\n- Bollinger: price is middle (L=66284, M=66491, U=66699)\n\nRECENT TRADES: 1W-1L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "YES",
+          "confidence": 0.7,
+          "reasoning": "Despite the market bias towards NO, the technical indicators show bullish signals (EMA and MACD) and the RSI is not in an overbought condition, indicating potential upward movement. The YES price is relatively cheaper, providing a better risk/reward ratio."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.1868131868131868,
+        "close_reason": "stop_loss",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 7,
+        "timestamp": "2026-02-06T13:14:31.867066",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 7AM ET",
+        "slug": "bitcoin-up-or-down-february-6-7am-et",
+        "side": "NO",
+        "price": 0.725,
+        "size": 3.0,
+        "shares": 4.137931034482759,
+        "reason": "AI: The market shows a strong bias towards 'NO' at 72%, indicating a higher perceived chance of a downwa",
+        "confidence": 0.7,
+        "payout_ratio": 0.38,
+        "price_bucket": "expensive",
+        "bias": 0.725,
+        "market_state": {
+          "yes": 0.275,
+          "no": 0.725,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 66358.51,
+          "rsi": 39.8,
+          "ema9": 66346.78,
+          "ema21": 66378.41,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -12.67,
+            "signal": -11.4,
+            "histogram": -1.27
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 66697.43,
+            "middle": 66444.64,
+            "lower": 66191.85
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 66245.09,
+          "price_5min_ago": 66357.99,
+          "price_15min_ago": 66590.74,
+          "price_1h_ago": 65931.35,
+          "change_1min_pct": 0.15,
+          "change_5min_pct": -0.02,
+          "change_15min_pct": -0.37,
+          "change_1h_pct": 0.63,
+          "volatility_15min": 0.1,
+          "volatility_1h": 0.21,
+          "direction_15min": "down",
+          "direction_1h": "up",
+          "high_15min": 66610.22,
+          "low_15min": 66245.09,
+          "high_1h": 66676.93,
+          "low_1h": 65852.6
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 7AM ET\nTimeframe: 1h\nYES price: $0.28 (market thinks 28% chance UP)\nNO price: $0.72\nBias: NO at 72%\n\nBTC PRICE: $0\n- 1min: +0.15%\n- 5min: -0.02%\n- 15min: -0.37%\n- 1h: +0.63%\n\nTECHNICAL INDICATORS:\n- RSI(14): 39.8 \n- EMA: bearish (9=66347, 21=66378)\n- MACD: bearish (line=-12.7, signal=-11.4)\n- Bollinger: price is middle (L=66192, M=66445, U=66697)\n\nRECENT TRADES: 1W-2L, last: YES LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a strong bias towards 'NO' at 72%, indicating a higher perceived chance of a downward movement. Additionally, the technical indicators suggest bearish momentum with RSI at 39.8, EMA in a bearish configuration, and a bearish MACD, supporting a potential downward price movement. Buying 'NO' at $0.72 offers a better risk/reward ratio given the current sentiment and indicators."
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.137931034482759,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 8,
+        "timestamp": "2026-02-06T14:00:21.248957",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 8AM ET",
+        "slug": "bitcoin-up-or-down-february-6-8am-et",
+        "side": "NO",
+        "price": 0.535,
+        "size": 3.0,
+        "shares": 5.607476635514018,
+        "reason": "AI: The market shows a bias towards NO at 54%, and while the technical indicators are bullish, the RSI i",
+        "confidence": 0.75,
+        "payout_ratio": 0.87,
+        "price_bucket": "mid",
+        "bias": 0.535,
+        "market_state": {
+          "yes": 0.465,
+          "no": 0.535,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 66612.0,
+          "rsi": 67.07,
+          "ema9": 66508.35,
+          "ema21": 66436.48,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 64.01,
+            "signal": 57.61,
+            "histogram": 6.4
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66603.59,
+            "middle": 66421.3,
+            "lower": 66239.02
+          },
+          "price_vs_bollinger": "above_upper"
+        },
+        "btc_context": {
+          "price_1min_ago": 66540.59,
+          "price_5min_ago": 66362.68,
+          "price_15min_ago": 66329.42,
+          "price_1h_ago": 66470.14,
+          "change_1min_pct": 0.09,
+          "change_5min_pct": 0.35,
+          "change_15min_pct": 0.4,
+          "change_1h_pct": 0.19,
+          "volatility_15min": 0.08,
+          "volatility_1h": 0.17,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 66586.93,
+          "low_15min": 66345.17,
+          "high_1h": 66606.0,
+          "low_1h": 66172.7
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 8AM ET\nTimeframe: 1h\nYES price: $0.47 (market thinks 46% chance UP)\nNO price: $0.54\nBias: NO at 54%\n\nBTC PRICE: $0\n- 1min: +0.09%\n- 5min: +0.35%\n- 15min: +0.40%\n- 1h: +0.19%\n\nTECHNICAL INDICATORS:\n- RSI(14): 67.1 \n- EMA: bullish (9=66508, 21=66436)\n- MACD: bullish (line=64.0, signal=57.6)\n- Bollinger: price is above_upper (L=66239, M=66421, U=66604)\n\nRECENT TRADES: 1W-2L, last: YES LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.75,
+          "reasoning": "The market shows a bias towards NO at 54%, and while the technical indicators are bullish, the RSI is above 70 indicating overbought conditions. This suggests a higher likelihood of a price correction, making the NO side more favorable."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 10,
+        "timestamp": "2026-02-06T15:00:26.558105",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 9AM ET",
+        "slug": "bitcoin-up-or-down-february-6-9am-et",
+        "side": "NO",
+        "price": 0.525,
+        "size": 3.0,
+        "shares": 5.714285714285714,
+        "reason": "AI: The market shows a bias towards NO at 52% while the technical indicators are bullish, suggesting a p",
+        "confidence": 0.7,
+        "payout_ratio": 0.9,
+        "price_bucket": "mid",
+        "bias": 0.525,
+        "market_state": {
+          "yes": 0.475,
+          "no": 0.525,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 67298.42,
+          "rsi": 47.68,
+          "ema9": 67371.36,
+          "ema21": 67337.68,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 58.69,
+            "signal": 52.82,
+            "histogram": 5.87
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 67544.52,
+            "middle": 67375.96,
+            "lower": 67207.39
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 67378.21,
+          "price_5min_ago": 67499.45,
+          "price_15min_ago": null,
+          "price_1h_ago": null,
+          "change_1min_pct": -0.21,
+          "change_5min_pct": -0.39,
+          "volatility_15min": 0.1,
+          "volatility_1h": 0.0,
+          "high_1h": 67562.36,
+          "low_1h": 67456.36
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9AM ET\nTimeframe: 1h\nYES price: $0.47 (market thinks 48% chance UP)\nNO price: $0.53\nBias: NO at 52%\n\nBTC PRICE: $0\n- 1min: -0.21%\n- 5min: -0.39%\n- 15min: +0.00%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 47.7 \n- EMA: bullish (9=67371, 21=67338)\n- MACD: bullish (line=58.7, signal=52.8)\n- Bollinger: price is middle (L=67207, M=67376, U=67545)\n\nRECENT TRADES: 2W-3L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.7,
+          "reasoning": "The market shows a bias towards NO at 52% while the technical indicators are bullish, suggesting a potential upward movement. Given the current prices, buying NO at $0.53 provides a reasonable risk/reward ratio, and it's the cheaper side compared to YES."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.4285714285714284,
+        "close_reason": "stop_loss",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 13,
+        "timestamp": "2026-02-06T15:41:14.730983",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 9AM ET",
+        "slug": "bitcoin-up-or-down-february-6-9am-et",
+        "side": "NO",
+        "price": 0.275,
+        "size": 3.0,
+        "shares": 10.909090909090908,
+        "reason": "AI: RSI is overbought at 75.8 indicating potential for a price decrease. The market is currently at 72% ",
+        "confidence": 0.8,
+        "payout_ratio": 2.64,
+        "price_bucket": "cheap",
+        "bias": 0.725,
+        "market_state": {
+          "yes": 0.725,
+          "no": 0.275,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68038.0,
+          "rsi": 75.83,
+          "ema9": 67966.99,
+          "ema21": 67654.96,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 298.22,
+            "signal": 268.39,
+            "histogram": 29.82
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68635.62,
+            "middle": 67489.87,
+            "lower": 66344.11
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68048.0,
+          "price_5min_ago": 67946.44,
+          "price_15min_ago": null,
+          "price_1h_ago": null,
+          "change_1min_pct": 0.11,
+          "change_5min_pct": 0.25,
+          "volatility_15min": 0.22,
+          "volatility_1h": 0.0,
+          "high_1h": 68025.34,
+          "low_1h": 67856.11
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 9AM ET\nTimeframe: 1h\nYES price: $0.72 (market thinks 72% chance UP)\nNO price: $0.28\nBias: YES at 72%\n\nBTC PRICE: $0\n- 1min: +0.11%\n- 5min: +0.25%\n- 15min: +0.00%\n- 1h: +0.00%\n\nTECHNICAL INDICATORS:\n- RSI(14): 75.8 (overbought)\n- EMA: bullish (9=67967, 21=67655)\n- MACD: bullish (line=298.2, signal=268.4)\n- Bollinger: price is middle (L=66344, M=67490, U=68636)\n\nRECENT TRADES: 2W-4L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.8,
+          "reasoning": "RSI is overbought at 75.8 indicating potential for a price decrease. The market is currently at 72% for YES, which suggests a higher risk on that side. Given the indicators, it's better to buy the NO side at a cheaper price for a favorable risk/reward ratio."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 15,
+        "timestamp": "2026-02-06T16:41:12.415156",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 10AM ET",
+        "slug": "bitcoin-up-or-down-february-6-10am-et",
+        "side": "NO",
+        "price": 0.43,
+        "size": 3.0,
+        "shares": 6.976744186046512,
+        "reason": "AI: RSI is overbought at 70.9, indicating a potential downward movement. The market shows a greater chan",
+        "confidence": 0.8,
+        "payout_ratio": 1.33,
+        "price_bucket": "mid",
+        "bias": 0.57,
+        "market_state": {
+          "yes": 0.57,
+          "no": 0.43,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68475.58,
+          "rsi": 70.86,
+          "ema9": 68447.44,
+          "ema21": 68361.55,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 84.32,
+            "signal": 75.89,
+            "histogram": 8.43
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68668.5,
+            "middle": 68340.33,
+            "lower": 68012.16
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 68478.3,
+          "price_5min_ago": 68403.86,
+          "price_15min_ago": 68459.67,
+          "price_1h_ago": 68307.79,
+          "change_1min_pct": -0.02,
+          "change_5min_pct": 0.09,
+          "change_15min_pct": 0.01,
+          "change_1h_pct": 0.23,
+          "volatility_15min": 0.19,
+          "volatility_1h": 0.29,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 68600.0,
+          "low_15min": 68000.67,
+          "high_1h": 68600.0,
+          "low_1h": 67842.21
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 10AM ET\nTimeframe: 1h\nYES price: $0.57 (market thinks 57% chance UP)\nNO price: $0.43\nBias: YES at 57%\n\nBTC PRICE: $0\n- 1min: -0.02%\n- 5min: +0.09%\n- 15min: +0.01%\n- 1h: +0.23%\n\nTECHNICAL INDICATORS:\n- RSI(14): 70.9 (overbought)\n- EMA: bullish (9=68447, 21=68362)\n- MACD: bullish (line=84.3, signal=75.9)\n- Bollinger: price is middle (L=68012, M=68340, U=68668)\n\nRECENT TRADES: 2W-5L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.8,
+          "reasoning": "RSI is overbought at 70.9, indicating a potential downward movement. The market shows a greater chance of decline with a YES price of $0.57 despite the bullish indicators. Therefore, buying the NO side provides a better risk/reward scenario."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      },
+      {
+        "id": 17,
+        "timestamp": "2026-02-06T17:08:45.228844",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 11AM ET",
+        "slug": "bitcoin-up-or-down-february-6-11am-et",
+        "side": "NO",
+        "price": 0.425,
+        "size": 3.0,
+        "shares": 7.0588235294117645,
+        "reason": "AI: The market is currently overbought with an RSI of 87.3, indicating a likely price correction. Additi",
+        "confidence": 0.8,
+        "payout_ratio": 1.35,
+        "price_bucket": "mid",
+        "bias": 0.575,
+        "market_state": {
+          "yes": 0.575,
+          "no": 0.425,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69154.26,
+          "rsi": 87.3,
+          "ema9": 68936.27,
+          "ema21": 68804.38,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 124.62,
+            "signal": 112.16,
+            "histogram": 12.46
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69163.63,
+            "middle": 68756.09,
+            "lower": 68348.56
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "btc_context": {
+          "price_1min_ago": 69006.54,
+          "price_5min_ago": 68755.21,
+          "price_15min_ago": 68639.19,
+          "price_1h_ago": 68252.33,
+          "change_1min_pct": 0.18,
+          "change_5min_pct": 0.55,
+          "change_15min_pct": 0.72,
+          "change_1h_pct": 1.29,
+          "volatility_15min": 0.14,
+          "volatility_1h": 0.4,
+          "direction_15min": "up",
+          "direction_1h": "up",
+          "high_15min": 69194.56,
+          "low_15min": 68388.01,
+          "high_1h": 69194.56,
+          "low_1h": 67924.49
+        },
+        "ai_prompt": "You are a BTC short-term trading assistant. Decide whether to trade this Polymarket market.\n\nMARKET: Bitcoin Up or Down - February 6, 11AM ET\nTimeframe: 1h\nYES price: $0.57 (market thinks 57% chance UP)\nNO price: $0.42\nBias: YES at 57%\n\nBTC PRICE: $0\n- 1min: +0.18%\n- 5min: +0.55%\n- 15min: +0.72%\n- 1h: +1.29%\n\nTECHNICAL INDICATORS:\n- RSI(14): 87.3 (overbought)\n- EMA: bullish (9=68936, 21=68804)\n- MACD: bullish (line=124.6, signal=112.2)\n- Bollinger: price is middle (L=68349, M=68756, U=69164)\n\nRECENT TRADES: 2W-6L, last: NO LOSS\n\nDECISION GUIDELINES:\n- You MUST trade. Your default is BUY. Only SKIP if there is an extremely clear reason (e.g. no signal at all, price stuck at 50/50).\n- This is paper trading for learning. Every trade generates data. Not trading = not learning.\n- Pick the side with the best risk/reward. Prefer buying the CHEAPER side when possible (better payout).\n- RSI <30 (oversold) = BTC likely to bounce UP \u2192 buy YES or cheap UP side\n- RSI >70 (overbought) = BTC likely to fall DOWN \u2192 buy NO or cheap DOWN side\n- EMA bullish cross + MACD bullish = strong UP signal\n- Price near lower Bollinger band = potential bounce UP\n- Contrarian: if market is 80%+ one side but indicators disagree \u2192 bet against the crowd\n- ALWAYS explain your reasoning\n\nRespond ONLY with valid JSON (no markdown):\n{\"action\": \"BUY\" or \"SKIP\", \"side\": \"YES\" or \"NO\", \"confidence\": 0.0-1.0, \"reasoning\": \"brief explanation\"}\n",
+        "ai_response": {
+          "action": "BUY",
+          "side": "NO",
+          "confidence": 0.8,
+          "reasoning": "The market is currently overbought with an RSI of 87.3, indicating a likely price correction. Additionally, the recent bullish momentum suggests that a pullback is probable, making the NO side a better risk/reward option."
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "ai",
+        "generation": 1
+      }
+    ],
+    "wins": 2,
+    "losses": 7,
+    "exits_profit": 0,
+    "exits_loss": 2,
+    "strategy": "ai",
+    "generation": 1
+  },
+  "total_trades": 32,
+  "total_resets": 0,
+  "version": "bot_c_ai"
+}

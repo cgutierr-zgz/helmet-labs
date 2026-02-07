@@ -1,0 +1,17 @@
+{
+  "last_check_time": "2026-02-08T00:25:58.639398",
+  "signals": [
+    {
+      "timestamp": "2026-02-08T00:25:58.639378",
+      "signal_type": "BEARISH",
+      "amount_btc": 4549.09218878,
+      "reason": "Whale deposit detected: 4549.09 BTC likely moving to exchange",
+      "tx_hash": "a3cecf5e73c4f0677c4f2053c995d3308f0baaba337dbd813e5b482737e01388",
+      "tx_time": 1770506733,
+      "balance": 100.0
+    }
+  ],
+  "tracked_txs": [
+    "a3cecf5e73c4f0677c4f2053c995d3308f0baaba337dbd813e5b482737e01388"
+  ]
+}

@@ -1,0 +1,1310 @@
+{
+  "15m": {
+    "balance": 498.31713424071285,
+    "trades": [
+      {
+        "id": 1,
+        "timestamp": "2026-02-05T19:37:31.568357",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 5, 1:30PM-1:45PM ET",
+        "slug": "btc-updown-15m-1770316200",
+        "side": "NO",
+        "price": 0.695,
+        "size": 2.0,
+        "shares": 2.877697841726619,
+        "reason": "Momentum NO (RSI:54, bearish, bearish)",
+        "payout_ratio": 0.44,
+        "price_bucket": "expensive",
+        "bias": 0.695,
+        "market_state": {
+          "yes": 0.305,
+          "no": 0.695,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 65729.99,
+          "rsi": 54.06,
+          "ema9": 65703.8,
+          "ema21": 65808.99,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -141.6,
+            "signal": -127.44,
+            "histogram": -14.16
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 65991.69,
+            "middle": 65724.66,
+            "lower": 65457.64
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.877697841726619,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 3,
+        "timestamp": "2026-02-05T23:57:47.250081",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 5, 5:45PM-6:00PM ET",
+        "slug": "btc-updown-15m-1770331500",
+        "side": "YES",
+        "price": 0.805,
+        "size": 2.0,
+        "shares": 2.484472049689441,
+        "reason": "Momentum YES + EMA/MACD bullish \u2192 STRONG UP",
+        "payout_ratio": 0.24,
+        "price_bucket": "expensive",
+        "bias": 0.805,
+        "market_state": {
+          "yes": 0.805,
+          "no": 0.195,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 64116.54,
+          "rsi": 53.16,
+          "ema9": 64169.35,
+          "ema21": 64039.64,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 153.59,
+            "signal": 138.23,
+            "histogram": 15.36
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 64418.38,
+            "middle": 64049.12,
+            "lower": 63679.85
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 6,
+        "timestamp": "2026-02-06T13:07:30.252301",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 7:00AM-7:15AM ET",
+        "slug": "btc-updown-15m-1770379200",
+        "side": "NO",
+        "price": 0.605,
+        "size": 2.0,
+        "shares": 3.3057851239669422,
+        "reason": "Momentum NO (RSI:38, bullish, bullish, BTC -0.1%)",
+        "payout_ratio": 0.65,
+        "price_bucket": "expensive",
+        "bias": 0.605,
+        "market_state": {
+          "yes": 0.395,
+          "no": 0.605,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 66355.52,
+          "rsi": 37.86,
+          "ema9": 66448.52,
+          "ema21": 66437.14,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 41.41,
+            "signal": 37.27,
+            "histogram": 4.14
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 66698.94,
+            "middle": 66491.25,
+            "lower": 66283.56
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.3057851239669422,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 8,
+        "timestamp": "2026-02-06T15:41:06.565245",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:30AM-9:45AM ET",
+        "slug": "btc-updown-15m-1770388200",
+        "side": "NO",
+        "price": 0.095,
+        "size": 2.0,
+        "shares": 21.05263157894737,
+        "reason": "Momentum YES + EMA/MACD bullish \u2192 STRONG UP (flip to cheap)",
+        "payout_ratio": 9.53,
+        "price_bucket": "cheap",
+        "bias": 0.905,
+        "market_state": {
+          "yes": 0.905,
+          "no": 0.095,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68065.55,
+          "rsi": 76.9,
+          "ema9": 67972.5,
+          "ema21": 67657.47,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 300.41,
+            "signal": 270.37,
+            "histogram": 30.04
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68639.69,
+            "middle": 67491.24,
+            "lower": 66342.79
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 10,
+        "timestamp": "2026-02-06T17:08:36.431306",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 11:00AM-11:15AM ET",
+        "slug": "btc-updown-15m-1770393600",
+        "side": "YES",
+        "price": 0.655,
+        "size": 2.0,
+        "shares": 3.0534351145038165,
+        "reason": "Base: 66% \u2192 RSI overbought (87): -15% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 BTC rising (+0.7%): +10% \u2192 = 80%",
+        "confidence": 80.5,
+        "payout_ratio": 0.53,
+        "price_bucket": "expensive",
+        "bias": 0.655,
+        "market_state": {
+          "yes": 0.655,
+          "no": 0.345,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69152.0,
+          "rsi": 87.27,
+          "ema9": 68935.82,
+          "ema21": 68804.17,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 124.44,
+            "signal": 111.99,
+            "histogram": 12.44
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69163.07,
+            "middle": 68755.98,
+            "lower": 68348.88
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.0534351145038165,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 16,
+        "timestamp": "2026-02-06T23:57:53.017043",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 5:45PM-6:00PM ET",
+        "slug": "btc-updown-15m-1770417900",
+        "side": "NO",
+        "price": 0.175,
+        "size": 2.5,
+        "shares": 14.285714285714286,
+        "reason": "Base: 82% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 102% \u2192 flipped to cheap: -15%",
+        "confidence": 87.5,
+        "payout_ratio": 4.71,
+        "price_bucket": "cheap",
+        "bias": 0.825,
+        "market_state": {
+          "yes": 0.825,
+          "no": 0.175,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 71383.49,
+          "rsi": 54.12,
+          "ema9": 71393.39,
+          "ema21": 71286.76,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 134.2,
+            "signal": 120.78,
+            "histogram": 13.42
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 71574.03,
+            "middle": 71320.99,
+            "lower": 71067.96
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -2.5,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 17,
+        "timestamp": "2026-02-07T00:57:35.845444",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 6:45PM-7:00PM ET",
+        "slug": "btc-updown-15m-1770421500",
+        "side": "YES",
+        "price": 0.605,
+        "size": 5.0,
+        "shares": 8.264462809917356,
+        "reason": "Base: 60% \u2192 RSI bullish zone (42): +15% \u2192 EMA bearish: -10% \u2192 MACD bearish: -10% \u2192 = 56%",
+        "confidence": 55.5,
+        "payout_ratio": 0.65,
+        "price_bucket": "expensive",
+        "bias": 0.605,
+        "market_state": {
+          "yes": 0.605,
+          "no": 0.395,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70576.05,
+          "rsi": 41.93,
+          "ema9": 70606.19,
+          "ema21": 70656.95,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -61.06,
+            "signal": -54.95,
+            "histogram": -6.11
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70811.24,
+            "middle": 70661.25,
+            "lower": 70511.26
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 18,
+        "timestamp": "2026-02-07T01:57:34.902362",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 7:45PM-8:00PM ET",
+        "slug": "btc-updown-15m-1770425100",
+        "side": "YES",
+        "price": 0.925,
+        "size": 5.0,
+        "shares": 5.405405405405405,
+        "reason": "Base: 92% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 112%",
+        "confidence": 112.5,
+        "payout_ratio": 0.08,
+        "price_bucket": "expensive",
+        "bias": 0.925,
+        "market_state": {
+          "yes": 0.925,
+          "no": 0.075,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69960.28,
+          "rsi": 58.18,
+          "ema9": 70041.66,
+          "ema21": 70016.26,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 8.56,
+            "signal": 7.7,
+            "histogram": 0.86
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70275.16,
+            "middle": 69944.51,
+            "lower": 69613.85
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.40540540540540526,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 19,
+        "timestamp": "2026-02-07T02:57:35.171619",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 8:45PM-9:00PM ET",
+        "slug": "btc-updown-15m-1770428700",
+        "side": "YES",
+        "price": 0.965,
+        "size": 5.0,
+        "shares": 5.181347150259067,
+        "reason": "Base: 96% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 BTC rising (+0.4%): +10% \u2192 = 126%",
+        "confidence": 126.5,
+        "payout_ratio": 0.04,
+        "price_bucket": "expensive",
+        "bias": 0.965,
+        "market_state": {
+          "yes": 0.965,
+          "no": 0.035,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70535.71,
+          "rsi": 68.22,
+          "ema9": 70508.98,
+          "ema21": 70423.1,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 103.16,
+            "signal": 92.85,
+            "histogram": 10.32
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70681.61,
+            "middle": 70435.52,
+            "lower": 70189.44
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.1813471502590671,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 20,
+        "timestamp": "2026-02-07T03:57:35.351675",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 9:45PM-10:00PM ET",
+        "slug": "btc-updown-15m-1770432300",
+        "side": "NO",
+        "price": 0.935,
+        "size": 5.0,
+        "shares": 5.347593582887701,
+        "reason": "Base: 94% \u2192 EMA bearish: +10% \u2192 MACD bearish: +10% \u2192 = 114%",
+        "confidence": 113.5,
+        "payout_ratio": 0.07,
+        "price_bucket": "expensive",
+        "bias": 0.935,
+        "market_state": {
+          "yes": 0.065,
+          "no": 0.935,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70362.45,
+          "rsi": 38.06,
+          "ema9": 70313.06,
+          "ema21": 70335.6,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -31.56,
+            "signal": -28.41,
+            "histogram": -3.16
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70554.88,
+            "middle": 70338.48,
+            "lower": 70122.07
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.3475935828877006,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 21,
+        "timestamp": "2026-02-07T04:57:37.078607",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 6, 10:45PM-11:00PM ET",
+        "slug": "btc-updown-15m-1770435900",
+        "side": "YES",
+        "price": 0.745,
+        "size": 5.0,
+        "shares": 6.7114093959731544,
+        "reason": "Base: 74% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 94%",
+        "confidence": 94.5,
+        "payout_ratio": 0.34,
+        "price_bucket": "expensive",
+        "bias": 0.745,
+        "market_state": {
+          "yes": 0.745,
+          "no": 0.255,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70742.67,
+          "rsi": 62.78,
+          "ema9": 70766.18,
+          "ema21": 70747.02,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 21.49,
+            "signal": 19.34,
+            "histogram": 2.15
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70872.19,
+            "middle": 70729.93,
+            "lower": 70587.67
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.7114093959731544,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 22,
+        "timestamp": "2026-02-07T06:57:35.803612",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 12:45AM-1:00AM ET",
+        "slug": "btc-updown-15m-1770443100",
+        "side": "NO",
+        "price": 0.895,
+        "size": 5.0,
+        "shares": 5.58659217877095,
+        "reason": "Base: 90% \u2192 RSI oversold (29): -15% \u2192 EMA bearish: +10% \u2192 MACD bearish: +10% \u2192 = 94%",
+        "confidence": 94.5,
+        "payout_ratio": 0.12,
+        "price_bucket": "expensive",
+        "bias": 0.895,
+        "market_state": {
+          "yes": 0.105,
+          "no": 0.895,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69975.2,
+          "rsi": 29.42,
+          "ema9": 70057.67,
+          "ema21": 70169.03,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -129.39,
+            "signal": -116.45,
+            "histogram": -12.94
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70342.2,
+            "middle": 70148.69,
+            "lower": 69955.18
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.5865921787709496,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 23,
+        "timestamp": "2026-02-07T07:57:35.620097",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 1:45AM-2:00AM ET",
+        "slug": "btc-updown-15m-1770446700",
+        "side": "NO",
+        "price": 0.985,
+        "size": 5.0,
+        "shares": 5.0761421319796955,
+        "reason": "Base: 98% \u2192 RSI oversold (10): -15% \u2192 EMA bearish: +10% \u2192 MACD bearish: +10% \u2192 BTC falling (-1.8%): +10% \u2192 = 114%",
+        "confidence": 113.5,
+        "payout_ratio": 0.02,
+        "price_bucket": "expensive",
+        "bias": 0.985,
+        "market_state": {
+          "yes": 0.015,
+          "no": 0.985,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69025.15,
+          "rsi": 9.89,
+          "ema9": 69437.73,
+          "ema21": 69707.79,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -243.77,
+            "signal": -219.39,
+            "histogram": -24.38
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70543.62,
+            "middle": 69814.67,
+            "lower": 69085.72
+          },
+          "price_vs_bollinger": "below_lower"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.07614213197969555,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 24,
+        "timestamp": "2026-02-07T08:57:35.714979",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 2:45AM-3:00AM ET",
+        "slug": "btc-updown-15m-1770450300",
+        "side": "NO",
+        "price": 0.825,
+        "size": 5.0,
+        "shares": 6.0606060606060606,
+        "reason": "Base: 82% \u2192 EMA bullish: -10% \u2192 MACD bullish: -10% \u2192 BTC falling (-0.4%): +10% \u2192 = 72%",
+        "confidence": 72.5,
+        "payout_ratio": 0.21,
+        "price_bucket": "expensive",
+        "bias": 0.825,
+        "market_state": {
+          "yes": 0.175,
+          "no": 0.825,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 68190.2,
+          "rsi": 35.84,
+          "ema9": 68180.73,
+          "ema21": 68170.95,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 9.44,
+            "signal": 8.5,
+            "histogram": 0.94
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68603.16,
+            "middle": 68237.14,
+            "lower": 67871.11
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.0606060606060606,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 25,
+        "timestamp": "2026-02-07T09:57:36.817527",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 3:45AM-4:00AM ET",
+        "slug": "btc-updown-15m-1770453900",
+        "side": "YES",
+        "price": 0.875,
+        "size": 5.0,
+        "shares": 5.714285714285714,
+        "reason": "Base: 88% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 108%",
+        "confidence": 107.5,
+        "payout_ratio": 0.14,
+        "price_bucket": "expensive",
+        "bias": 0.875,
+        "market_state": {
+          "yes": 0.875,
+          "no": 0.125,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68567.4,
+          "rsi": 60.13,
+          "ema9": 68579.44,
+          "ema21": 68544.13,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 42.52,
+            "signal": 38.27,
+            "histogram": 4.25
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68707.06,
+            "middle": 68516.6,
+            "lower": 68326.14
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 0.7142857142857144,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 26,
+        "timestamp": "2026-02-07T19:57:22.449391",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 1:45PM-2:00PM ET",
+        "slug": "btc-updown-15m-1770489900",
+        "side": "YES",
+        "price": 0.775,
+        "size": 5.0,
+        "shares": 6.451612903225806,
+        "reason": "Base: 78% \u2192 RSI bullish zone (41): +15% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 112%",
+        "confidence": 112.5,
+        "payout_ratio": 0.29,
+        "price_bucket": "expensive",
+        "bias": 0.775,
+        "market_state": {
+          "yes": 0.775,
+          "no": 0.225,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69439.91,
+          "rsi": 41.27,
+          "ema9": 69503.66,
+          "ema21": 69492.47,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 30.12,
+            "signal": 27.11,
+            "histogram": 3.01
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69657.45,
+            "middle": 69508.82,
+            "lower": 69360.18
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -5.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 27,
+        "timestamp": "2026-02-07T20:57:20.672512",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 2:45PM-3:00PM ET",
+        "slug": "btc-updown-15m-1770493500",
+        "side": "YES",
+        "price": 0.72,
+        "size": 5.0,
+        "shares": 6.944444444444445,
+        "reason": "Base: 72% \u2192 RSI bullish zone (41): +15% \u2192 EMA bearish: -10% \u2192 MACD bearish: -10% \u2192 BB oversold: +5% \u2192 = 72%",
+        "confidence": 72.0,
+        "payout_ratio": 0.39,
+        "price_bucket": "expensive",
+        "bias": 0.72,
+        "market_state": {
+          "yes": 0.72,
+          "no": 0.28,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69273.72,
+          "rsi": 41.19,
+          "ema9": 69350.63,
+          "ema21": 69379.94,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -23.52,
+            "signal": -21.17,
+            "histogram": -2.35
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 69501.17,
+            "middle": 69391.44,
+            "lower": 69281.71
+          },
+          "price_vs_bollinger": "below_lower"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.9444444444444446,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 28,
+        "timestamp": "2026-02-07T21:57:19.588149",
+        "timeframe": "15m",
+        "market": "Bitcoin Up or Down - February 7, 3:45PM-4:00PM ET",
+        "slug": "btc-updown-15m-1770497100",
+        "side": "YES",
+        "price": 0.795,
+        "size": 5.0,
+        "shares": 6.289308176100628,
+        "reason": "Base: 80% \u2192 RSI bullish zone (47): +15% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 114%",
+        "confidence": 114.5,
+        "payout_ratio": 0.26,
+        "price_bucket": "expensive",
+        "bias": 0.795,
+        "market_state": {
+          "yes": 0.795,
+          "no": 0.205,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 69554.4,
+          "rsi": 46.57,
+          "ema9": 69599.52,
+          "ema21": 69583.3,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 28.13,
+            "signal": 25.32,
+            "histogram": 2.81
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 69687.21,
+            "middle": 69600.83,
+            "lower": 69514.45
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.2893081761006284,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      }
+    ],
+    "wins": 13,
+    "losses": 5,
+    "exits_profit": 0,
+    "exits_loss": 0,
+    "strategy": "momentum",
+    "generation": 1
+  },
+  "1h": {
+    "balance": 500.0,
+    "trades": [
+      {
+        "id": 2,
+        "timestamp": "2026-02-05T19:37:31.642664",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 5, 1PM ET",
+        "slug": "bitcoin-up-or-down-february-5-1pm-et",
+        "side": "NO",
+        "price": 0.68,
+        "size": 3.0,
+        "shares": 4.411764705882352,
+        "reason": "Momentum NO (RSI:54, bearish, bearish)",
+        "payout_ratio": 0.47,
+        "price_bucket": "expensive",
+        "bias": 0.68,
+        "market_state": {
+          "yes": 0.32,
+          "no": 0.68,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 65729.99,
+          "rsi": 54.06,
+          "ema9": 65703.8,
+          "ema21": 65808.99,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -141.6,
+            "signal": -127.44,
+            "histogram": -14.16
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 65991.69,
+            "middle": 65724.66,
+            "lower": 65457.64
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 4,
+        "timestamp": "2026-02-05T23:57:47.330309",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 5, 5PM ET",
+        "slug": "bitcoin-up-or-down-february-5-5pm-et",
+        "side": "NO",
+        "price": 0.045,
+        "size": 3.0,
+        "shares": 66.66666666666667,
+        "reason": "Momentum YES + EMA/MACD bullish \u2192 STRONG UP (flip to cheap)",
+        "payout_ratio": 21.22,
+        "price_bucket": "cheap",
+        "bias": 0.955,
+        "market_state": {
+          "yes": 0.955,
+          "no": 0.045,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 64116.54,
+          "rsi": 53.16,
+          "ema9": 64169.35,
+          "ema21": 64039.64,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 153.59,
+            "signal": 138.23,
+            "histogram": 15.36
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 64418.38,
+            "middle": 64049.12,
+            "lower": 63679.85
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 5,
+        "timestamp": "2026-02-06T12:04:28.457509",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 6AM ET",
+        "slug": "bitcoin-up-or-down-february-6-6am-et",
+        "side": "NO",
+        "price": 0.595,
+        "size": 3.0,
+        "shares": 5.042016806722689,
+        "reason": "Momentum NO (RSI:48, bearish, bearish, BTC +0.2%)",
+        "payout_ratio": 0.68,
+        "price_bucket": "expensive",
+        "bias": 0.595,
+        "market_state": {
+          "yes": 0.405,
+          "no": 0.595,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 65933.64,
+          "rsi": 47.92,
+          "ema9": 65901.58,
+          "ema21": 65932.37,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -28.88,
+            "signal": -25.99,
+            "histogram": -2.89
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 66112.63,
+            "middle": 65939.1,
+            "lower": 65765.57
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 7,
+        "timestamp": "2026-02-06T15:16:05.058919",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 9AM ET",
+        "slug": "bitcoin-up-or-down-february-6-9am-et",
+        "side": "NO",
+        "price": 0.655,
+        "size": 3.0,
+        "shares": 4.580152671755725,
+        "reason": "Momentum NO (RSI:44, bearish, bearish)",
+        "payout_ratio": 0.53,
+        "price_bucket": "expensive",
+        "bias": 0.655,
+        "market_state": {
+          "yes": 0.345,
+          "no": 0.655,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 67050.01,
+          "rsi": 43.82,
+          "ema9": 67080.73,
+          "ema21": 67126.9,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -48.86,
+            "signal": -43.97,
+            "histogram": -4.89
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 67411.5,
+            "middle": 67127.95,
+            "lower": 66844.39
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.7404580152671754,
+        "close_reason": "stop_loss",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 9,
+        "timestamp": "2026-02-06T15:41:06.632756",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 9AM ET",
+        "slug": "bitcoin-up-or-down-february-6-9am-et",
+        "side": "YES",
+        "price": 0.725,
+        "size": 3.0,
+        "shares": 4.137931034482759,
+        "reason": "Momentum YES + EMA/MACD bullish \u2192 STRONG UP",
+        "payout_ratio": 0.38,
+        "price_bucket": "expensive",
+        "bias": 0.725,
+        "market_state": {
+          "yes": 0.725,
+          "no": 0.275,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 68065.55,
+          "rsi": 76.9,
+          "ema9": 67972.5,
+          "ema21": 67657.47,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 300.41,
+            "signal": 270.37,
+            "histogram": 30.04
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 68639.69,
+            "middle": 67491.24,
+            "lower": 66342.79
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "WIN",
+        "pnl": 1.137931034482759,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 11,
+        "timestamp": "2026-02-06T19:47:22.945219",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 1PM ET",
+        "slug": "bitcoin-up-or-down-february-6-1pm-et",
+        "side": "YES",
+        "price": 0.06,
+        "size": 3.0,
+        "shares": 50.0,
+        "reason": "Base: 94% \u2192 RSI bearish zone (65): +15% \u2192 EMA bullish: -10% \u2192 MACD bullish: -10% \u2192 BTC falling (-1.3%): +10% \u2192 = 99% \u2192 flipped to cheap: -15%",
+        "confidence": 84.0,
+        "payout_ratio": 15.67,
+        "price_bucket": "cheap",
+        "bias": 0.94,
+        "market_state": {
+          "yes": 0.06,
+          "no": 0.94,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 69996.17,
+          "rsi": 64.78,
+          "ema9": 70060.69,
+          "ema21": 69979.66,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 63.36,
+            "signal": 57.03,
+            "histogram": 6.34
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70455.56,
+            "middle": 69899.66,
+            "lower": 69343.76
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 12,
+        "timestamp": "2026-02-06T20:47:23.857733",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 2PM ET",
+        "slug": "bitcoin-up-or-down-february-6-2pm-et",
+        "side": "NO",
+        "price": 0.065,
+        "size": 3.0,
+        "shares": 46.15384615384615,
+        "reason": "Base: 94% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 BTC rising (+0.4%): +10% \u2192 = 124% \u2192 flipped to cheap: -15%",
+        "confidence": 108.5,
+        "payout_ratio": 14.38,
+        "price_bucket": "cheap",
+        "bias": 0.935,
+        "market_state": {
+          "yes": 0.935,
+          "no": 0.065,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70502.0,
+          "rsi": 55.96,
+          "ema9": 70411.31,
+          "ema21": 70336.65,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 84.34,
+            "signal": 75.91,
+            "histogram": 8.43
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70521.55,
+            "middle": 70352.15,
+            "lower": 70182.76
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -3.0,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 13,
+        "timestamp": "2026-02-06T21:47:20.808109",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 3PM ET",
+        "slug": "bitcoin-up-or-down-february-6-3pm-et",
+        "side": "YES",
+        "price": 0.075,
+        "size": 1.5,
+        "shares": 20.0,
+        "reason": "Base: 92% \u2192 EMA bearish: +10% \u2192 MACD bearish: +10% \u2192 BTC falling (-0.4%): +10% \u2192 = 122% \u2192 flipped to cheap: -15%",
+        "confidence": 107.5,
+        "payout_ratio": 12.33,
+        "price_bucket": "cheap",
+        "bias": 0.925,
+        "market_state": {
+          "yes": 0.075,
+          "no": 0.925,
+          "dominant": "NO"
+        },
+        "indicators": {
+          "current_price": 70328.15,
+          "rsi": 35.78,
+          "ema9": 70337.05,
+          "ema21": 70432.5,
+          "ema_cross": "bearish",
+          "macd": {
+            "macd": -82.61,
+            "signal": -74.35,
+            "histogram": -8.26
+          },
+          "macd_trend": "bearish",
+          "bollinger": {
+            "upper": 70954.34,
+            "middle": 70502.46,
+            "lower": 70050.57
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.5,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 14,
+        "timestamp": "2026-02-06T22:47:23.065278",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 4PM ET",
+        "slug": "bitcoin-up-or-down-february-6-4pm-et",
+        "side": "NO",
+        "price": 0.125,
+        "size": 1.5,
+        "shares": 12.0,
+        "reason": "Base: 88% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 = 108% \u2192 flipped to cheap: -15%",
+        "confidence": 92.5,
+        "payout_ratio": 7.0,
+        "price_bucket": "cheap",
+        "bias": 0.875,
+        "market_state": {
+          "yes": 0.875,
+          "no": 0.125,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 70307.75,
+          "rsi": 59.33,
+          "ema9": 70293.43,
+          "ema21": 70275.88,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 17.44,
+            "signal": 15.69,
+            "histogram": 1.74
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 70447.97,
+            "middle": 70278.82,
+            "lower": 70109.67
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.5,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      },
+      {
+        "id": 15,
+        "timestamp": "2026-02-06T23:47:23.747577",
+        "timeframe": "1h",
+        "market": "Bitcoin Up or Down - February 6, 5PM ET",
+        "slug": "bitcoin-up-or-down-february-6-5pm-et",
+        "side": "NO",
+        "price": 0.015,
+        "size": 1.5,
+        "shares": 100.0,
+        "reason": "Base: 98% \u2192 EMA bullish: +10% \u2192 MACD bullish: +10% \u2192 BTC rising (+1.2%): +10% \u2192 = 128% \u2192 flipped to cheap: -15%",
+        "confidence": 113.5,
+        "payout_ratio": 65.67,
+        "price_bucket": "cheap",
+        "bias": 0.985,
+        "market_state": {
+          "yes": 0.985,
+          "no": 0.015,
+          "dominant": "YES"
+        },
+        "indicators": {
+          "current_price": 71222.78,
+          "rsi": 61.85,
+          "ema9": 71179.91,
+          "ema21": 71071.35,
+          "ema_cross": "bullish",
+          "macd": {
+            "macd": 136.14,
+            "signal": 122.52,
+            "histogram": 13.61
+          },
+          "macd_trend": "bullish",
+          "bollinger": {
+            "upper": 71474.46,
+            "middle": 71094.37,
+            "lower": 70714.28
+          },
+          "price_vs_bollinger": "middle"
+        },
+        "status": "closed",
+        "result": "LOSS",
+        "pnl": -1.5,
+        "close_reason": "resolved",
+        "strategy": "momentum",
+        "generation": 1
+      }
+    ],
+    "wins": 1,
+    "losses": 9,
+    "exits_profit": 0,
+    "exits_loss": 1,
+    "strategy": "volatility",
+    "generation": 1
+  },
+  "total_trades": 28,
+  "total_resets": 0,
+  "version": "bot_b_technical",
+  "paused": false,
+  "paused_reason": null,
+  "iteration": 1,
+  "iteration_notes": "v2: Technicals confirm only, no veto. RSI extremes (<25/>75) boost confidence."
+}

@@ -1,0 +1,15 @@
+{
+  "balance": 100.0,
+  "positions": [],
+  "trades": [
+    {
+      "timestamp": "2026-02-08T00:24:30.221253",
+      "index_value": 6,
+      "classification": "Extreme Fear",
+      "action": "LONG",
+      "reasoning": "\ud83d\ude31 EXTREME FEAR DETECTED (Index: 6/100)\nMarket sentiment: Extreme Fear\nContrarian signal: Everyone is panicking \u2192 Oversold conditions\n\u2192 Bet BULLISH on Polymarket BTC/ETH markets\n\"Be greedy when others are fearful\" - Warren Buffett"
+    }
+  ],
+  "last_check": "2026-02-08T00:24:30.221318",
+  "last_index": 6
+}

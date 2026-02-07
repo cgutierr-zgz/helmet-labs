@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-02-04T16:50:56.127986",
+  "timestamp": "2026-02-05T19:24:44.279121",
   "health": "degraded",
   "metrics": {
-    "uptime_seconds": 60893.058106,
-    "uptime_human": "16:54:53",
+    "uptime_seconds": 66185.527712,
+    "uptime_human": "18:23:05",
     "events_per_hour": 0.0,
     "signals_per_day": 0.0,
     "error_rate": 0.0,
-    "total_scans": 194,
+    "total_scans": 211,
     "total_signals": 0,
     "total_alerts": 0,
     "total_errors": 0,
     "last_scan": {
-      "time": "2026-02-04T16:45:55.556540",
-      "duration_seconds": 13.56,
-      "ago_seconds": 300.571397
+      "time": "2026-02-05T19:19:43.691960",
+      "duration_seconds": 13.38,
+      "ago_seconds": 300.587118
     },
     "pending_alerts": 1,
     "queue_size": 1

@@ -1,0 +1,247 @@
+[
+  {
+    "timestamp": "2026-02-06T12:04:27.602410",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 8,
+    "losses": 2,
+    "win_rate": 80,
+    "pnl": 1.2,
+    "avg_win": 0.662,
+    "avg_loss": -2.047,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 1,
+        "pnl": -2.5
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 8,
+        "l": 1,
+        "pnl": 3.700902817975003
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 7,
+      "resolved_l": 1
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:07:29.445054",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 8,
+    "losses": 2,
+    "win_rate": 80,
+    "pnl": 1.2,
+    "avg_win": 0.662,
+    "avg_loss": -2.047,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 1,
+        "pnl": -2.5
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 8,
+        "l": 1,
+        "pnl": 3.700902817975003
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 7,
+      "resolved_l": 1
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:13:50.754235",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 8,
+    "losses": 2,
+    "win_rate": 80,
+    "pnl": -0.8,
+    "avg_win": 0.662,
+    "avg_loss": -2.047,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 1,
+        "pnl": -2.5
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 8,
+        "l": 1,
+        "pnl": 3.700902817975003
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 7,
+      "resolved_l": 1
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:14:22.666780",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 8,
+    "losses": 2,
+    "win_rate": 80,
+    "pnl": -0.8,
+    "avg_win": 0.662,
+    "avg_loss": -2.047,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 1,
+        "pnl": -2.5
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 8,
+        "l": 1,
+        "pnl": 3.700902817975003
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 7,
+      "resolved_l": 1
+    }
+  },
+  {
+    "timestamp": "2026-02-06T13:15:51.116976",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 8,
+    "losses": 2,
+    "win_rate": 80,
+    "pnl": -0.8,
+    "avg_win": 0.662,
+    "avg_loss": -2.047,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 1,
+        "pnl": -2.5
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 8,
+        "l": 1,
+        "pnl": 3.700902817975003
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 7,
+      "resolved_l": 1
+    }
+  },
+  {
+    "timestamp": "2026-02-06T20:47:22.933133",
+    "timeframe": "1h",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 5,
+    "losses": 5,
+    "win_rate": 50,
+    "pnl": -6.66,
+    "avg_win": 0.945,
+    "avg_loss": -2.278,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 5,
+        "l": 5,
+        "pnl": -6.6640681952228285
+      }
+    },
+    "exits": {
+      "tp": 2,
+      "sl": 2,
+      "resolved_w": 3,
+      "resolved_l": 3
+    }
+  },
+  {
+    "timestamp": "2026-02-07T09:57:35.886405",
+    "timeframe": "15m",
+    "generation": 1,
+    "strategy": "momentum",
+    "wins": 16,
+    "losses": 4,
+    "win_rate": 80,
+    "pnl": 475.2,
+    "avg_win": 0.738,
+    "avg_loss": -3.055,
+    "buckets": {
+      "cheap": {
+        "w": 0,
+        "l": 2,
+        "pnl": -5.625
+      },
+      "mid": {
+        "w": 0,
+        "l": 0,
+        "pnl": 0.0
+      },
+      "expensive": {
+        "w": 16,
+        "l": 2,
+        "pnl": 5.211346414898513
+      }
+    },
+    "exits": {
+      "tp": 1,
+      "sl": 1,
+      "resolved_w": 15,
+      "resolved_l": 3
+    }
+  }
+]

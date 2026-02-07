@@ -1,0 +1,30 @@
+{
+  "15m": {
+    "stop_loss": 0.20,
+    "take_profit": 0.95,
+    "trade_size": 5.0,
+    "min_bias": 0.65,
+    "max_price": 0.95,
+    "min_price": 0.65,
+    "prefer_cheap": false
+  },
+  "1h": {
+    "enabled": false,
+    "stop_loss": 0.20,
+    "take_profit": 0.50,
+    "trade_size": 2.0,
+    "min_bias": 0.70,
+    "max_price": 0.95,
+    "min_price": 0.70,
+    "prefer_cheap": false
+  },
+  "trading_hours": {
+    "timezone": "America/New_York",
+    "start": 6,
+    "end": 14
+  },
+  "pause_1h_all": true,
+  "bot_b_pause_1h": true,
+  "bot_c_pause_1h": true,
+  "notes": "v6 2026-02-07 22:45: LEARNER-DRIVEN UPDATE. Changes: 1) min_bias 0.58→0.65 (higher confidence only), 2) stop_loss 0.10→0.20 (wider SL, less noise exits), 3) min_price 0.58→0.65 (more expensive entries = 75-78% WR), 4) trading_hours 6-14 ET ONLY (morning=88% WR, afternoon/evening=21-25% WR). Goal: fewer trades, higher quality, no evening bleed."
+}
